@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Personal Portfolio</title>
+
+  <script type="importmap">
+            {
+              "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+              }
+            }
+          </script>
+  <style>
+    canvas{
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .main{
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id = "bg"></canvas>
+
+  <div style="font-size: 70px;" class="main">
+  </div>
+  
+  <script type="module" src="portfolio.js"></script>
+</body>
+
+</html>
