@@ -3,7 +3,10 @@ import { OrbitControls } from "jsm/controls/OrbitControls.js";
 
 const w = window.innerWidth;
 const h = window.innerHeight;
+const w2 = 300
+const h2 = 300
 
+//First Scene
 const renderer = new THREE.WebGLRenderer({
     antialias: true,
     canvas: document.querySelector("#bg"),
@@ -19,10 +22,10 @@ const spacetexture = loader.load('./images/Sign Up 1.png', (texture) => {
     texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
     texture.encoding = THREE.sRGBEncoding; 
 });
+
 const scene = new THREE.Scene();
 
 scene.background = spacetexture;
-
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -35,6 +38,33 @@ scene.add(light);
 const stars = []; 
 
 addObjects();
+
+//Second Scene
+const renderer2 = new THREE.WebGLRenderer({
+    antialias: true,
+    canvas: document.querySelector("#bg2"),
+    alpha:true
+});
+renderer2.setSize(w2, h2);
+renderer2.setPixelRatio(window.devicePixelRatio);
+
+const camera2 = new THREE.PerspectiveCamera(85, w2 / h2, 0.1, 1000);
+camera2.position.z = 5;
+
+const scene2 = new THREE.Scene();
+const centerShape = new THREE.IcosahedronGeometry(3, 2)
+const centerMat = new THREE.MeshStandardMaterial({
+    color: "#ffffff",
+    flatShading:true
+})
+
+const centerMesh = new THREE.Mesh(centerShape, centerMat)
+
+scene2.add(centerMesh)
+
+const light2 = new THREE.HemisphereLight("#050505", "#c7c7c7");
+scene2.add(light2)
+
 
 function animate(t = 0) {
     requestAnimationFrame(animate);
@@ -57,8 +87,14 @@ function animate(t = 0) {
 
     controls.update();
     renderer.render(scene, camera);
+
+    renderer2.render(scene2,camera2)
 }
 animate();
+
+
+
+//Helper functions
 
 function handleWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -110,5 +146,6 @@ function addObjects() {
         scene.add(startmesh);
     }
 }
+
 
 
