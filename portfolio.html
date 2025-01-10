@@ -42,20 +42,23 @@
     }
 
     .navigation_bar {
-      background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+      background: linear-gradient(to bottom, black,rgba(0, 0, 0, 0.801),rgba(0, 0, 0, 0));
       height: 75px;
       display: flex;
       flex-direction: row;
       justify-content: center;
-      margin-left: 50px;
-      margin-right: 50px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
     }
 
     .navebar {
       display: flex;
       flex-direction: row;
-      color: white;
+      color: rgb(236, 236, 236);
       font-weight: 500;
+      font-size: 14px;
     }
 
     .home,
@@ -64,8 +67,8 @@
     .work,
     .Contacts {
       cursor: pointer;
-      padding-left: 5px;
-      padding-right: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
       align-items: center;
       display: flex;
       flex-direction: row;
@@ -77,18 +80,11 @@
     .services:hover,
     .work:hover,
     .Contacts:hover {
-      transition: 0.5s;
+      transition: 0.2s;
       transform: scale(1.2);
       color: rgb(255, 155, 198);
       padding-left: 10px;
       padding-right: 10px;
-    }
-
-    .title {
-      color: white;
-      font-size: 30px;
-      font-weight: 500;
-      color: rgb(255, 133, 167);
     }
 
     body {
@@ -97,16 +93,40 @@
       font-weight: 400;
       font-style: normal;
       font-variation-settings: "wdth" 100;
+      letter-spacing: 1px;
+    }
+    .wordContent{
+      display: flex;
+      flex-direction: column;
+    }
+    .homeCont{
+      color: rgb(236, 236, 236); 
+      word-wrap: break-word; 
+      margin-top: 100px; display: flex; 
+      flex-direction: row;
+      justify-content: center;
+    }
+    .compScieclass{
+      font-size: 14px;
+    }
+    .hiClass{
+      font-size: 50px;
+      font-weight: 500;
+    }
+    .nameClass{
+      font-size: 50px;
+      font-weight: 500;
     }
 
 
-    @media (max-width:430px) {
+    @media (max-width:470px) {
       .navebar {
         display: flex;
         flex-direction: row;
         color: white;
         font-weight: 500;
         font-size: 13px;
+        letter-spacing: normal;
       }
 
       .home,
@@ -137,6 +157,16 @@
       </div>
     </div>
 
+    <div class="homeCont">
+      <div class="wordContent">
+        <div class="compScieclass">Computer Science Student</div>
+        <div class="hiClass">Hello! I am</div>
+        <div class="nameClass">Zyle Geralde de la Peña</div>
+      </div>
+      <div class="ImageContent">
+
+      </div>
+    </div>
   </div>
 
   <script type="module" src="portfolio.js"></script>
