@@ -14,7 +14,14 @@ renderer.setPixelRatio(window.devicePixelRatio);
 const camera = new THREE.PerspectiveCamera(85, w / h, 0.1, 1000);
 camera.position.z = 100;
 
+const loader = new THREE.TextureLoader()
+const spacetexture = loader.load('./images/abstract-1780378_1920.png', (texture) => {
+    texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    texture.encoding = THREE.sRGBEncoding; 
+});
 const scene = new THREE.Scene();
+
+scene.background = spacetexture;
 
 
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -24,7 +31,6 @@ controls.dampingFactor = 0.03;
 const light = new THREE.HemisphereLight("#050505","#c7c7c7");
 scene.add(light);
 
-scene.background = new THREE.Color("#170202");
 
 const stars = []; 
 
@@ -38,6 +44,10 @@ function animate(t = 0) {
         const radius = Math.sqrt(star.position.x ** 2 + star.position.z ** 2);
         star.position.x = radius * Math.cos(angle);
         star.position.z = radius * Math.sin(angle);
+        
+        star.rotation.x += 0.005
+        star.rotation.y += 0.005
+        star.rotation.z += 0.005
     });
 
     const radius = 50;
@@ -63,7 +73,8 @@ function addObjects() {
 
     for (let numstars = 0; numstars < 1000; numstars++) {
 
-        const stargeo = new THREE.CylinderGeometry(2, 1, 4, 16); 
+        //const stargeo = new THREE.CylinderGeometry(2, 1, 4, 16); 
+        const stargeo = new THREE.OctahedronGeometry(2,0)
         
         const numselect =Math.floor(Math.random() * colors.length)
         const randomColor = colors[numselect];
@@ -76,6 +87,10 @@ function addObjects() {
 
         const startmesh = new THREE.Mesh(stargeo, starmat);
 
+        startmesh.rotation.x = THREE.MathUtils.randFloatSpread(250);
+        startmesh.rotation.y = THREE.MathUtils.randFloatSpread(250);
+        startmesh.rotation.z = THREE.MathUtils.randFloatSpread(250);
+
         const wireMat = new THREE.MeshBasicMaterial({
             color:wirecolor[numselect],
             wireframe: true,
@@ -86,9 +101,9 @@ function addObjects() {
         
         startmesh.add(wireMesh)
 
-        const xran = THREE.MathUtils.randFloatSpread(250);
-        const yran = THREE.MathUtils.randFloatSpread(250);
-        const zran = THREE.MathUtils.randFloatSpread(250);
+        const xran = THREE.MathUtils.randFloatSpread(200);
+        const yran = THREE.MathUtils.randFloatSpread(200);
+        const zran = THREE.MathUtils.randFloatSpread(200);
 
         startmesh.position.set(xran, yran, zran);
 
