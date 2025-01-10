@@ -18,6 +18,9 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
+  <!--Bootstrap ICON-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <script type="importmap">
             {
               "imports": {
@@ -99,11 +102,13 @@
     .wordContent{
       display: flex;
       flex-direction: column;
+      width: 500px;
     }
     .homeCont{
       color: rgb(236, 236, 236); 
       word-wrap: break-word; 
-      margin-top: 100px; display: flex; 
+      margin-top: 100px; 
+      display: flex; 
       flex-direction: row;
       justify-content: center;
     }
@@ -117,19 +122,57 @@
     .nameClass{
       font-size: 50px;
       font-weight: 500;
-      color: rgb(253, 202, 224);
+      color: rgb(250, 184, 213);
     }
     .ImageContent{
       position: relative;
-      z-index: 100px;
+      width: 500px;
+      height: 500px;
+      background-color: green;
     }
     #bg2{
-      max-width: 300px;
+      max-width: 500px;
       position: absolute;
-      max-height: 300px;
+      max-height: 500px;
       top: 0;
       left: 0;
     }
+    .shortDescClass{
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    .iconList{
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+    }
+    .githubIcon{
+      font-size: 2rem; color: rgb(252, 104, 153);
+      border-style: solid;
+      border-color: rgb(252, 104, 153);
+      padding: 0px 7px;
+      border-radius: 1000px;
+      margin: 0px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .linkedinIcon{
+      font-size: 1.7rem; color: rgb(252, 104, 153);
+      border-style: solid;
+      border-color: rgb(252, 104, 153);
+      padding: 0px 10px;
+      border-radius: 1000px;
+      margin: 0px;
+      padding-top: 3px;
+      cursor: pointer;
+    }
+
+    .githubIcon:hover,.linkedinIcon:hover{
+      color: rgb(252, 176, 201);
+      border-color: rgb(252, 176, 201);
+    }
+    
 
 
     @media (max-width:470px) {
@@ -175,6 +218,11 @@
         <div class="compScieclass">Computer Science Student</div>
         <div class="hiClass">Hello! I am</div>
         <div class="nameClass">Zyle Geralde de la Peña</div>
+        <div class="shortDescClass">A Computer Science student proficient in web development and machine learning.</div>
+        <div class="iconList">
+          <i class="bi bi-github githubIcon"></i>
+          <i class="bi bi-linkedin linkedinIcon"></i>
+        </div>
       </div>
       <div class="ImageContent">
         <canvas id="bg2"></canvas>

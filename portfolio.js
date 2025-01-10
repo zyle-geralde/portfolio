@@ -3,8 +3,8 @@ import { OrbitControls } from "jsm/controls/OrbitControls.js";
 
 const w = window.innerWidth;
 const h = window.innerHeight;
-const w2 = 300
-const h2 = 300
+const w2 = 500
+const h2 = 500
 
 //First Scene
 const renderer = new THREE.WebGLRenderer({
@@ -42,14 +42,13 @@ addObjects();
 //Second Scene
 const renderer2 = new THREE.WebGLRenderer({
     antialias: true,
-    canvas: document.querySelector("#bg2"),
-    alpha:true
+    canvas: document.querySelector("#bg2")
 });
 renderer2.setSize(w2, h2);
 renderer2.setPixelRatio(window.devicePixelRatio);
 
 const camera2 = new THREE.PerspectiveCamera(85, w2 / h2, 0.1, 1000);
-camera2.position.z = 5;
+camera2.position.z = 10;
 
 const scene2 = new THREE.Scene();
 const centerShape = new THREE.IcosahedronGeometry(3, 2)
