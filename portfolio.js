@@ -15,7 +15,7 @@ const camera = new THREE.PerspectiveCamera(85, w / h, 0.1, 1000);
 camera.position.z = 100;
 
 const loader = new THREE.TextureLoader()
-const spacetexture = loader.load('./images/abstract-1780378_1920.png', (texture) => {
+const spacetexture = loader.load('./images/Sign Up 1.png', (texture) => {
     texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
     texture.encoding = THREE.sRGBEncoding; 
 });
