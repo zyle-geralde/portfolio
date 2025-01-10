@@ -73,7 +73,6 @@ function addObjects() {
 
     for (let numstars = 0; numstars < 1000; numstars++) {
 
-        //const stargeo = new THREE.CylinderGeometry(2, 1, 4, 16); 
         const stargeo = new THREE.OctahedronGeometry(2,0)
         
         const numselect =Math.floor(Math.random() * colors.length)
