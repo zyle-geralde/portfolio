@@ -204,6 +204,7 @@ scene2.add(spotlight2helper)*/
 const controls2 = new OrbitControls(camera2, renderer2.domElement);
 controls2.enableDamping = true;
 controls2.dampingFactor = 0.03;
+controls2.enableZoom = false;
 
 
 /*const gridHelp2 = new THREE.GridHelper(100,10)
