@@ -50,19 +50,115 @@ renderer2.setPixelRatio(window.devicePixelRatio);
 const camera2 = new THREE.PerspectiveCamera(85, w2 / h2, 0.1, 1000);
 camera2.position.z = 10;
 
+
 const scene2 = new THREE.Scene();
-const centerShape = new THREE.IcosahedronGeometry(3, 2)
-const centerMat = new THREE.MeshStandardMaterial({
-    color: "#ffffff",
-    flatShading:true
+
+//center circle
+const firstcube = new THREE.IcosahedronGeometry(1,16)
+const cubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
 })
 
-const centerMesh = new THREE.Mesh(centerShape, centerMat)
+const cubeMesh = new THREE.Mesh(firstcube, cubeMat)
+scene2.add(cubeMesh)
 
-scene2.add(centerMesh)
+//firstupper cube
+const firstuppercube = new THREE.BoxGeometry(3, 3, 3)
+const firstuppercubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
+})
+const firstuppercubeMesh = new THREE.Mesh(firstuppercube, firstuppercubeMat)
+firstuppercubeMesh.position.set(-2,2,2)
+scene2.add(firstuppercubeMesh)
 
-const light2 = new THREE.HemisphereLight("#050505", "#c7c7c7");
-scene2.add(light2)
+//seconduppercube
+const seconduppercube = new THREE.BoxGeometry(3, 3, 3)
+const seconduppercubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
+})
+const seconduppercubeMesh = new THREE.Mesh(seconduppercube, seconduppercubeMat)
+seconduppercubeMesh.position.set(-2,2,-2)
+scene2.add(seconduppercubeMesh)
+
+//thirduppercube
+const thirduppercube = new THREE.BoxGeometry(3, 3, 3)
+const thirduppercubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
+})
+const thirduppercubeMesh = new THREE.Mesh(thirduppercube, thirduppercubeMat)
+thirduppercubeMesh.position.set(2,2,-2)
+scene2.add(thirduppercubeMesh)
+
+
+//forthuppercube
+const forthuppercube = new THREE.BoxGeometry(3, 3, 3)
+const forthuppercubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
+})
+const forthuppercubeMesh = new THREE.Mesh(forthuppercube, forthuppercubeMat)
+forthuppercubeMesh.position.set(2,2,2)
+scene2.add(forthuppercubeMesh)
+
+
+
+//firstlowercube
+const firstlowercube = new THREE.BoxGeometry(3, 3, 3)
+const firstlowercubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
+})
+const firstlowercubeMesh = new THREE.Mesh(firstlowercube, firstlowercubeMat)
+firstlowercubeMesh.position.set(-2,-2,2)
+scene2.add(firstlowercubeMesh)
+
+
+//secondlowercube
+const secondlowercube = new THREE.BoxGeometry(3, 3, 3)
+const secondlowercubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
+})
+const secondlowercubeMesh = new THREE.Mesh(secondlowercube, secondlowercubeMat)
+secondlowercubeMesh.position.set(-2,-2,-2)
+scene2.add(secondlowercubeMesh)
+
+
+
+//thirdlowercube
+const thirdlowercube = new THREE.BoxGeometry(3, 3, 3)
+const thirdlowercubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
+})
+const thirdlowercubeMesh = new THREE.Mesh(thirdlowercube, thirdlowercubeMat)
+thirdlowercubeMesh.position.set(2,-2,-2)
+scene2.add(thirdlowercubeMesh)
+
+//forthlowercube
+const forthlowercube = new THREE.BoxGeometry(3, 3, 3)
+const forthlowercubeMat = new THREE.MeshStandardMaterial({
+    color:"#fc4e91"
+})
+const forthlowercubeMesh = new THREE.Mesh(forthlowercube, forthlowercubeMat)
+forthlowercubeMesh.position.set(2,-2,2)
+scene2.add(forthlowercubeMesh)
+
+
+
+
+
+const spotlight2 = new THREE.DirectionalLight("#fafafa", 0.5);
+spotlight2.position.set(5, 5, 5)
+
+const spotlight2helper = new THREE.DirectionalLightHelper(spotlight2)
+scene2.add(spotlight2helper)
+scene2.add(spotlight2)
+
+const controls2 = new OrbitControls(camera2, renderer2.domElement);
+controls2.enableDamping = true;
+controls2.dampingFactor = 0.03;
+
+
+const gridHelp2 = new THREE.GridHelper(100,10)
+scene2.add(gridHelp2)
+
 
 
 function animate(t = 0) {
@@ -84,7 +180,9 @@ function animate(t = 0) {
     camera.position.z = radius * Math.sin(t * 0.00006);
     camera.lookAt(0, 0, 0); 
 
+
     controls.update();
+    controls2.update()
     renderer.render(scene, camera);
 
     renderer2.render(scene2,camera2)
