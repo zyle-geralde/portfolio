@@ -51,7 +51,7 @@
     }
 
     .navigation_bar {
-      background: linear-gradient(to bottom, black,rgba(0, 0, 0, 0.801),rgba(0, 0, 0, 0));
+      background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0));
       height: 75px;
       display: flex;
       flex-direction: row;
@@ -104,55 +104,66 @@
       font-variation-settings: "wdth" 100;
       letter-spacing: 1px;
     }
-    .wordContent{
+
+    .wordContent {
       display: flex;
       flex-direction: column;
       width: 100%;
       max-width: 600px;
     }
-    .homeCont{
-      color: rgb(236, 236, 236); 
-      word-wrap: break-word; 
-      display: flex; 
+
+    .homeCont {
+      color: rgb(236, 236, 236);
+      word-wrap: break-word;
+      display: flex;
       flex-direction: row;
       justify-content: center;
       width: 90%;
     }
-    .compScieclass{
+
+    .compScieclass {
       font-size: 14px;
     }
-    .hiClass{
+
+    .hiClass {
       font-size: 50px;
       font-weight: 500;
     }
-    .nameClass{
+
+    .nameClass {
       font-size: 50px;
       font-weight: 500;
       color: rgb(250, 184, 213);
     }
-    .ImageContent{
+
+    .ImageContent {
       position: relative;
       min-width: 300px;
       min-height: 300px;
     }
-    #bg2{
+
+    #bg2 {
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
     }
-    .shortDescClass{
+
+    .shortDescClass {
       font-size: 14px;
       margin-top: 20px;
     }
-    .iconList{
+
+    .iconList {
       display: flex;
       flex-direction: row;
       margin-top: 20px;
     }
-    .githubIcon{
-      font-size: 2rem; color: rgb(252, 104, 153);
+
+    .githubIcon {
+      font-size: 2rem;
+      color: rgb(252, 104, 153);
       border-style: solid;
       border-color: rgb(252, 104, 153);
       padding: 0px 7px;
@@ -162,8 +173,10 @@
       cursor: pointer;
       transition: 0.2s;
     }
-    .linkedinIcon{
-      font-size: 1.7rem; color: rgb(252, 104, 153);
+
+    .linkedinIcon {
+      font-size: 1.7rem;
+      color: rgb(252, 104, 153);
       border-style: solid;
       border-color: rgb(252, 104, 153);
       padding: 0px 10px;
@@ -173,11 +186,12 @@
       cursor: pointer;
     }
 
-    .githubIcon:hover,.linkedinIcon:hover{
+    .githubIcon:hover,
+    .linkedinIcon:hover {
       color: rgb(252, 176, 201);
       border-color: rgb(252, 176, 201);
     }
-    
+
 
 
     @media (max-width:470px) {
@@ -199,6 +213,76 @@
         padding-left: 3px;
         padding-right: 3px;
         white-space: nowrap;
+      }
+    }
+
+    @media (max-width:700px) {
+      .homeCont {
+        color: rgb(236, 236, 236);
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+      }
+
+      .ImageContent {
+        order: -1;
+      }
+
+      .wordContent {
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .main {
+        min-height: 500px;
+      }
+
+      .hiClass {
+        font-size: 40px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .nameClass {
+        font-size: 40px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .compScieclass {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .shortDescClass {
+        font-size: 12px;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+    }
+
+    @media(max-width:520px) {
+      .hiClass {
+        font-size: 35px;
+        font-weight: 500;
+      }
+
+      .nameClass {
+        font-size: 35px;
+        font-weight: 500;
+      }
+
+      .compScieclass {
+        font-size: 12px;
+      }
+
+      .shortDescClass {
+        font-size: 12px;
+        margin-top: 10px;
       }
     }
   </style>
