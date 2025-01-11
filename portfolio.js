@@ -3,8 +3,8 @@ import { OrbitControls } from "jsm/controls/OrbitControls.js";
 
 const w = window.innerWidth;
 const h = window.innerHeight;
-const w2 = 500
-const h2 = 500
+const w2 = 300
+const h2 = 300
 
 //First Scene
 const renderer = new THREE.WebGLRenderer({
@@ -42,13 +42,15 @@ addObjects();
 //Second Scene
 const renderer2 = new THREE.WebGLRenderer({
     antialias: true,
-    canvas: document.querySelector("#bg2")
+    canvas: document.querySelector("#bg2"),
+    alpha:true
 });
 renderer2.setSize(w2, h2);
 renderer2.setPixelRatio(window.devicePixelRatio);
 
 const camera2 = new THREE.PerspectiveCamera(85, w2 / h2, 0.1, 1000);
-camera2.position.z = 10;
+camera2.position.z = 8;
+camera2.position.y = 5
 
 
 const scene2 = new THREE.Scene();
@@ -56,7 +58,8 @@ const scene2 = new THREE.Scene();
 //center circle
 const firstcube = new THREE.IcosahedronGeometry(1,16)
 const cubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
+    color: "#fda60F",
+    emissive:"#fda60F"
 })
 
 const cubeMesh = new THREE.Mesh(firstcube, cubeMat)
@@ -64,27 +67,45 @@ scene2.add(cubeMesh)
 
 //firstupper cube
 const firstuppercube = new THREE.BoxGeometry(3, 3, 3)
-const firstuppercubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
-})
+
+const firstuppercubeMat = [
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00"}), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }), 
+];
+
 const firstuppercubeMesh = new THREE.Mesh(firstuppercube, firstuppercubeMat)
 firstuppercubeMesh.position.set(-2,2,2)
 scene2.add(firstuppercubeMesh)
 
 //seconduppercube
 const seconduppercube = new THREE.BoxGeometry(3, 3, 3)
-const seconduppercubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
-})
+
+const seconduppercubeMat = [
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00"}), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491"}), 
+];
 const seconduppercubeMesh = new THREE.Mesh(seconduppercube, seconduppercubeMat)
 seconduppercubeMesh.position.set(-2,2,-2)
 scene2.add(seconduppercubeMesh)
 
 //thirduppercube
 const thirduppercube = new THREE.BoxGeometry(3, 3, 3)
-const thirduppercubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
-})
+const thirduppercubeMat = [
+    new THREE.MeshStandardMaterial({color: "#969491", emissive:"#969491"}), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491"}), 
+];
 const thirduppercubeMesh = new THREE.Mesh(thirduppercube, thirduppercubeMat)
 thirduppercubeMesh.position.set(2,2,-2)
 scene2.add(thirduppercubeMesh)
@@ -92,9 +113,15 @@ scene2.add(thirduppercubeMesh)
 
 //forthuppercube
 const forthuppercube = new THREE.BoxGeometry(3, 3, 3)
-const forthuppercubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
-})
+const forthuppercubeMat = [
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive: "#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00", emissive: "#D06E00" }),
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive: "#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00", emissive: "#D06E00" }),
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive: "#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }),
+];
+
 const forthuppercubeMesh = new THREE.Mesh(forthuppercube, forthuppercubeMat)
 forthuppercubeMesh.position.set(2,2,2)
 scene2.add(forthuppercubeMesh)
@@ -103,9 +130,14 @@ scene2.add(forthuppercubeMesh)
 
 //firstlowercube
 const firstlowercube = new THREE.BoxGeometry(3, 3, 3)
-const firstlowercubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
-})
+const firstlowercubeMat = [
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00"}), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive: "#969491" }), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }),
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }), 
+];
 const firstlowercubeMesh = new THREE.Mesh(firstlowercube, firstlowercubeMat)
 firstlowercubeMesh.position.set(-2,-2,2)
 scene2.add(firstlowercubeMesh)
@@ -113,9 +145,15 @@ scene2.add(firstlowercubeMesh)
 
 //secondlowercube
 const secondlowercube = new THREE.BoxGeometry(3, 3, 3)
-const secondlowercubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
-})
+const secondlowercubeMat = [
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00"}), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive: "#969491" }), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }),
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00", emissive: "#D06E00" }), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+];
+
 const secondlowercubeMesh = new THREE.Mesh(secondlowercube, secondlowercubeMat)
 secondlowercubeMesh.position.set(-2,-2,-2)
 scene2.add(secondlowercubeMesh)
@@ -124,18 +162,29 @@ scene2.add(secondlowercubeMesh)
 
 //thirdlowercube
 const thirdlowercube = new THREE.BoxGeometry(3, 3, 3)
-const thirdlowercubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
-})
+const thirdlowercubeMat = [
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive: "#969491" }), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00"}), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }),
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00", emissive: "#D06E00" }), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }),
+];
+
 const thirdlowercubeMesh = new THREE.Mesh(thirdlowercube, thirdlowercubeMat)
 thirdlowercubeMesh.position.set(2,-2,-2)
 scene2.add(thirdlowercubeMesh)
 
 //forthlowercube
 const forthlowercube = new THREE.BoxGeometry(3, 3, 3)
-const forthlowercubeMat = new THREE.MeshStandardMaterial({
-    color:"#fc4e91"
-})
+const forthlowercubeMat = [
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive: "#969491" }),
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00"}), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }),
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }), 
+    new THREE.MeshStandardMaterial({ color: "#969491", emissive:"#969491" }), 
+    new THREE.MeshStandardMaterial({ color: "#D06E00",emissive:"#D06E00" }),
+];
 const forthlowercubeMesh = new THREE.Mesh(forthlowercube, forthlowercubeMat)
 forthlowercubeMesh.position.set(2,-2,2)
 scene2.add(forthlowercubeMesh)
@@ -146,18 +195,19 @@ scene2.add(forthlowercubeMesh)
 
 const spotlight2 = new THREE.DirectionalLight("#fafafa", 0.5);
 spotlight2.position.set(5, 5, 5)
-
-const spotlight2helper = new THREE.DirectionalLightHelper(spotlight2)
-scene2.add(spotlight2helper)
 scene2.add(spotlight2)
+
+/*const spotlight2helper = new THREE.DirectionalLightHelper(spotlight2)
+scene2.add(spotlight2helper)*/
+
 
 const controls2 = new OrbitControls(camera2, renderer2.domElement);
 controls2.enableDamping = true;
 controls2.dampingFactor = 0.03;
 
 
-const gridHelp2 = new THREE.GridHelper(100,10)
-scene2.add(gridHelp2)
+/*const gridHelp2 = new THREE.GridHelper(100,10)
+scene2.add(gridHelp2)*/
 
 
 
