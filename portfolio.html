@@ -334,6 +334,33 @@
       border-bottom-style: solid; border-width: 2px;
     }
 
+    /*Work Section*/
+    .mainWork {
+      position: absolute;
+      top: 60px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.334);
+      display: flex;
+      flex-direction: row;
+    }
+    .workSection{
+      color: rgb(236, 236, 236);
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      animation-name: serviceSectionAnim;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+      overflow: auto;
+      opacity: 0;
+      cursor: pointer;
+    }
+
     @media (max-width:470px) {
       .navebar {
         display: flex;
@@ -477,7 +504,7 @@
 <body>
   <canvas id="bg"></canvas>
 
-  <div class="main">
+  <div class="mainWork">
     <div class="navigation_bar">
       <div class="navebar">
         <div class="home">Home</div>
@@ -488,7 +515,7 @@
       </div>
     </div>
 
-    <div class="homeCont">
+    <div class="homeCont" style="display: none;">
       <div class="wordContent">
         <div class="compScieclass">Computer Science Student</div>
         <div class="hiClass">Hello! I am</div>
@@ -704,6 +731,12 @@
           </div>
         </div>
       </div>        
+    </div>
+
+    <div class = "workSection">
+      <div style="max-width: 800px; background-color: black; word-wrap: break-word;">
+        <div class="ProjectsLink">Projects</div>
+      </div>
     </div>
   </div>
 
