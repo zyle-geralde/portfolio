@@ -390,6 +390,8 @@ $(document).ready(function (e) {
         homeCont.style = ""
         var aboutmeSection = document.querySelector(".aboutmeSection")
         aboutmeSection.style.display = "none"
+        var servicesSection = document.querySelector(".servicesSection")
+        servicesSection.style.display = "none"
 
         var changeClass = document.querySelector("body")
         changeClass.firstElementChild.nextElementSibling.setAttribute("class","main")
@@ -410,6 +412,8 @@ $(document).ready(function (e) {
 
         var homeCont = document.querySelector(".homeCont")
         homeCont.style.display = "none"
+        var servicesSection = document.querySelector(".servicesSection")
+        servicesSection.style.display = "none"
         var aboutmeSection = document.querySelector(".aboutmeSection")
         aboutmeSection.style = ""
 
@@ -425,6 +429,16 @@ $(document).ready(function (e) {
         navaboutme.style = ""
         navwork.style = ""
         navContacts.style = ""
+
+        var homeCont = document.querySelector(".homeCont")
+        homeCont.style.display = "none"
+        var servicesSection = document.querySelector(".servicesSection")
+        servicesSection.style = ""
+        var aboutmeSection = document.querySelector(".aboutmeSection")
+        aboutmeSection.style.display = "none"
+
+        var changeClass = document.querySelector("body")
+        changeClass.firstElementChild.nextElementSibling.setAttribute("class","mainSection")
     })
 
     $(".work").click(function (e) {
