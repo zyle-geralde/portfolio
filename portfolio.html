@@ -366,12 +366,28 @@
       color: rgb(250, 184, 213);
       border-color: white;
       display: inline-block;
+      margin-bottom: 40px;
     }
     .WebTitle{
       padding: 20px;
       font-size: 30px;
       font-weight: 500;
       border-bottom-style: solid;
+      margin-bottom: 40px;
+    }
+    .projectHov{
+      width: 15rem; cursor: pointer;
+      transition: 0.2s;
+    }
+    .projectHov:hover{
+      width: 16rem;
+      background-color: black;
+      color: white;
+    }
+    .webdevproj{
+      margin-bottom: 40px;
+    }
+    .machinelearningproj{
       margin-bottom: 40px;
     }
 
@@ -751,45 +767,91 @@
       <div style="max-width: 800px; word-wrap: break-word;">
         <div class="ProjectsLink">Projects</div>
 
-        <div>
+        <div class="webdevproj">
           <div class = "WebTitle">Web Development</div>
-          <div style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 10px; justify-content: flex-start;">
-            <div class="card" style="width: 15rem;">
+          <div style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            <div class="card projectHov">
               <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Yapper Mail</h5>
+                <p class="card-text">An Email management website that allows users to create and manage emails.</p>
               </div>
             </div>
 
-            <div class="card" style="width: 15rem;">
+            <div class="card projectHov">
               <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">TechnoSpace</h5>
+                <p class="card-text">A Marketplace Website built for CIT-University Students and Faculties.</p>
               </div>
             </div>
-            <div class="card" style="width: 15rem;">
+            <div class="card projectHov">
               <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-
-            <div class="card" style="width: 15rem;">
-              <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">ChatBox</h5>
+                <p class="card-text">A Real-Time Chat Website allowing interactions between users.</p>
               </div>
             </div>
 
-            <div class="card" style="width: 15rem;">
+            <div class="card projectHov">
               <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">PulseNet</h5>
+                <p class="card-text">A Social Media Clone that allows users to create and manage posts.</p>
+              </div>
+            </div>
+
+            <div class="card projectHov">
+              <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Forum Website</h5>
+                <p class="card-text">A Forum Website that allows users to post texts.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+
+        <div class = "machinelearningproj">
+          <div class = "WebTitle">Machine Learning</div>
+          <div style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            <div class="card projectHov">
+              <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Object Detector</h5>
+                <p class="card-text">A computer vision model that can detect Objects using YOLO and the COCO dataset.</p>
+              </div>
+            </div>
+
+            <div class="card projectHov">
+              <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Car Counter</h5>
+                <p class="card-text">A computer vision model that can count the number of moving cars.</p>
+              </div>
+            </div>
+            <div class="card projectHov">
+              <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Image Compressor</h5>
+                <p class="card-text">An unsupervised machine learning model that can compress the image by k means clustering.</p>
+              </div>
+            </div>
+
+            <div class="card projectHov">
+              <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Digit Classifier</h5>
+                <p class="card-text">A supervised machine learning model that can identify the digit(0 - 9) on an image.</p>
+              </div>
+            </div>
+
+            <div class="card projectHov">
+              <img src="./images/frontEnd.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Diabetes Classifier</h5>
+                <p class="card-text"></p>A supervised machine learning model that can identify if a user is diabetic or not.</p>
               </div>
             </div>
             
