@@ -51,7 +51,7 @@
 
     .main {
       position: absolute;
-      top: 75px;
+      top: 60px;
       bottom: 0;
       left: 0;
       right: 0;
@@ -281,6 +281,37 @@
       background-color: rgba(255, 255, 255, 0.436);
     }
 
+    /*Services Section*/
+
+    .mainSection {
+      position: absolute;
+      top: 60px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.334);
+      display: flex;
+      flex-direction: row;
+    }
+    .servicesSection{
+      color: rgb(236, 236, 236);
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      animation-name: aboutmeAnim;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+      overflow: auto;
+      opacity: 0;
+    }
+    .serviceGrid{
+      display: grid;
+      grid-template-columns: 350px 350px;
+    }
+
     @media (max-width:470px) {
       .navebar {
         display: flex;
@@ -399,7 +430,7 @@
 <body>
   <canvas id="bg"></canvas>
 
-  <div class="main">
+  <div class="mainSection">
     <div class="navigation_bar">
       <div class="navebar">
         <div class="home">Home</div>
@@ -410,7 +441,7 @@
       </div>
     </div>
 
-    <div class="homeCont">
+    <div class="homeCont" style="display: none;">
       <div class="wordContent">
         <div class="compScieclass">Computer Science Student</div>
         <div class="hiClass">Hello! I am</div>
@@ -573,6 +604,28 @@
             </div>
           </div>
 
+
+        </div>
+      </div>
+    </div>
+
+    <div class = "servicesSection">
+      <div class="serviceGrid">
+        <div style="width: 100%;background-color: rgba(35, 35, 35, 0.771); padding: 10px; border-radius: 10px;">
+          <div style="font-size: 30px; font-weight: 900; border-style: solid; border-radius: 1000px;display: inline-block; padding: 5px 10px;">
+            01
+          </div>
+          <div style="font-size: 40px; text-align: center; font-weight: 500;">
+            FullStack Web Development
+          </div>
+        </div>
+        <div style="width: 100%; height: 100px;">
+
+        </div>
+        <div style="width: 100%; height: 100px;">
+
+        </div>
+        <div style="width: 100%; height: 100px;">
 
         </div>
       </div>
