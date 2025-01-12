@@ -221,6 +221,7 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
+      overflow: auto;
     }
     #bg3{
       position: absolute;
@@ -231,8 +232,8 @@
     }
     .profileImageCont{
       position: relative;
-      width: 300px;
-      height: 300px;
+      min-width: 300px;
+      min-height: 300px;
     }
     .introSection{
       max-width: 700px;
@@ -378,7 +379,7 @@
       <div class = profileImageCont>
         <canvas id = "bg3"></canvas>
       </div>
-      <div class = "introSection">
+      <div class = "introSection" style="margin-top: 60px;">
         <div>
           <div style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: rgb(243, 243, 243);">INTRODUCTION</div>
           <div style="color:rgb(255, 155, 198); font-size: 40px; font-weight: 500;">Hello!</div>
@@ -389,6 +390,26 @@
           </div>
         </div>
       </div>
+
+      <div class = "introSection" style="margin-top: 50px;">
+        <div>
+          <div style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: rgb(243, 243, 243);">EDUCATION</div>
+          <div style="text-align: justify;">
+            <span style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198);">Bachelor of Science in Computer Science</span>
+            <div style="font-weight: 500; margin-bottom: 20px; color: rgb(243, 243, 243);">Cebu Institute of Technology - University (Expected Year 2025-2026)</div>
+            <div style="color: rgb(243, 243, 243); margin-bottom: 20px;"><span style="color:rgb(255, 155, 198); font-weight: 500; font-size: 20px;">Relevant Courses: </span> AI/Machine Learning, Data Science, Application Development, Software Engineering, Data Structures and Algorithms, Object Oriented Programming </div>
+            <div style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; margin-bottom: 10px;">Certifications</div>
+            <ul>
+              <li style="margin-bottom: 10px;"><a href="https://www.coursera.org/account/accomplishments/specialization/4EVB7STR33JW" target="_blank"  style="color: rgb(243, 243, 243); text-decoration: none;">Machine Learning Specialization</a></li>
+              <li style="margin-bottom: 10px;"><a href="https://www.coursera.org/account/accomplishments/records/8OXEF8R2LEAJ" target="_blank"  style="color: rgb(243, 243, 243); text-decoration: none; ">Advanced Learning Algorithms</a></li>
+              <li style="margin-bottom: 10px;"><a href="https://www.coursera.org/account/accomplishments/records/LKFLNZLFESWP" target="_blank"  style="color: rgb(243, 243, 243); text-decoration: none; ">Supervised Machine Learning: Regression and Classification</a></li>
+              <li style="margin-bottom: 10px;"><a href="https://www.coursera.org/account/accomplishments/records/EMEPNEG5HP0P" target="_blank"  style="color: rgb(243, 243, 243); text-decoration: none; ">Unsupervised Learning, Recommenders, Reinforcement Learning</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
