@@ -386,6 +386,14 @@ $(document).ready(function (e) {
         navwork.style = ""
         navContacts.style = ""
 
+        var homeCont = document.querySelector(".homeCont")
+        homeCont.style = ""
+        var aboutmeSection = document.querySelector(".aboutmeSection")
+        aboutmeSection.style.display = "none"
+
+        var changeClass = document.querySelector("body")
+        changeClass.firstElementChild.nextElementSibling.setAttribute("class","main")
+
 
 
     })
@@ -399,6 +407,14 @@ $(document).ready(function (e) {
         navservices.style = ""
         navwork.style = ""
         navContacts.style = ""
+
+        var homeCont = document.querySelector(".homeCont")
+        homeCont.style.display = "none"
+        var aboutmeSection = document.querySelector(".aboutmeSection")
+        aboutmeSection.style = ""
+
+        var changeClass = document.querySelector("body")
+        changeClass.firstElementChild.nextElementSibling.setAttribute("class","mainAbout")
     })
 
     $(".services").click(function (e) {

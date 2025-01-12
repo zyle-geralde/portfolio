@@ -25,6 +25,15 @@
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
 
+  <!--Devicon-->
+
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!--FontAwesome Icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <script type="importmap">
             {
               "imports": {
@@ -46,7 +55,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: rgba(0, 0, 0, 0.203);
+      background-color: rgba(0, 0, 0, 0.334);
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -124,7 +133,7 @@
       flex-direction: row;
       justify-content: center;
       width: 90%;
-      animation-name:homeContAnim;
+      animation-name: homeContAnim;
       animation-duration: 0.5s;
       animation-fill-mode: forwards;
       animation-delay: 1s;
@@ -204,41 +213,73 @@
 
 
     /*About Section*/
-    .mainAbout{
+    .mainAbout {
       position: absolute;
-      top: 75px;
+      top: 60px;
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: rgba(0, 0, 0, 0.203);
+      background-color: rgba(0, 0, 0, 0.334);
       display: flex;
       flex-direction: row;
     }
-    .aboutmeSection{
+
+    .aboutmeSection {
       color: rgb(236, 236, 236);
       font-size: 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
+      animation-name: aboutmeAnim;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
       overflow: auto;
+      opacity: 0;
+
     }
-    #bg3{
+
+    #bg3 {
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
     }
-    .profileImageCont{
+
+    .profileImageCont {
       position: relative;
       min-width: 300px;
       min-height: 300px;
     }
-    .introSection{
+
+    .introSection {
       max-width: 700px;
+      margin-left: 40px;
+      margin-right: 40px;
     }
 
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    .flex-container i {
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      border-radius: 5px;
+      background-color: rgb(35, 35, 35);
+      padding: 10px;
+      transition: 0.2s;
+    }
+
+    i:hover {
+      background-color: rgba(255, 255, 255, 0.436);
+    }
 
     @media (max-width:470px) {
       .navebar {
@@ -334,11 +375,21 @@
 
 
     /*Animation*/
-    @keyframes homeContAnim{
-      0%{
+    @keyframes homeContAnim {
+      0% {
         opacity: 0;
       }
-      100%{
+
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes aboutmeAnim {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
         opacity: 1;
       }
     }
@@ -348,7 +399,7 @@
 <body>
   <canvas id="bg"></canvas>
 
-  <div class="mainAbout">
+  <div class="main">
     <div class="navigation_bar">
       <div class="navebar">
         <div class="home">Home</div>
@@ -359,7 +410,7 @@
       </div>
     </div>
 
-    <div class="homeCont" style="display: none;">
+    <div class="homeCont">
       <div class="wordContent">
         <div class="compScieclass">Computer Science Student</div>
         <div class="hiClass">Hello! I am</div>
@@ -375,41 +426,156 @@
       </div>
     </div>
 
-    <div class="aboutmeSection">
-      <div class = profileImageCont>
-        <canvas id = "bg3"></canvas>
+    <div class="aboutmeSection" style="display: none;">
+      <div class=profileImageCont>
+        <canvas id="bg3"></canvas>
       </div>
-      <div class = "introSection" style="margin-top: 60px;">
+      <div style="font-style: italic; color:rgb(243, 243, 243); font-size: 30px; max-width: 700px; text-align: center; margin-top: 30px; margin-left: 40px; margin-right: 40px;">"Shaping the future with Innovative Technological Advancements"</div>
+      <div class="introSection" style="margin-top: 60px;">
         <div>
-          <div style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: rgb(243, 243, 243);">INTRODUCTION</div>
+          <div
+            style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: rgb(243, 243, 243);">
+            INTRODUCTION</div>
           <div style="color:rgb(255, 155, 198); font-size: 40px; font-weight: 500;">Hello!</div>
           <div style="text-align: justify; color: rgb(243, 243, 243);">
-            I am Zyle Geralde de la Peña, a third-year computer science student with a passion for developing websites and creating innovative machine learning models. 
-            Over the past four years, I have specialized in technologies like React.js, Django, TensorFlow, and scikit-learn, dedicating my efforts to building unique projects and solving real-world challenges. 
+            I am Zyle Geralde de la Peña, a third-year computer science student with a passion for developing websites
+            and creating innovative machine learning models.
+            Over the past four years, I have specialized in technologies like React.js, Django, TensorFlow, and
+            scikit-learn, dedicating my efforts to building unique projects and solving real-world challenges.
             My goal is to develop technologies that make everyday life easier and more efficient for people.
           </div>
         </div>
       </div>
 
-      <div class = "introSection" style="margin-top: 50px;">
+      <div class="introSection" style="margin-top: 50px;">
         <div>
-          <div style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: rgb(243, 243, 243);">EDUCATION</div>
+          <div
+            style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: rgb(243, 243, 243);">
+            EDUCATION</div>
           <div style="text-align: justify;">
-            <span style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198);">Bachelor of Science in Computer Science</span>
-            <div style="font-weight: 500; margin-bottom: 20px; color: rgb(243, 243, 243);">Cebu Institute of Technology - University (Expected Year 2025-2026)</div>
-            <div style="color: rgb(243, 243, 243); margin-bottom: 20px;"><span style="color:rgb(255, 155, 198); font-weight: 500; font-size: 20px;">Relevant Courses: </span> AI/Machine Learning, Data Science, Application Development, Software Engineering, Data Structures and Algorithms, Object Oriented Programming </div>
-            <div style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; margin-bottom: 10px;">Certifications</div>
+            <span
+              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); text-align: left;">Bachelor of
+              Science in Computer Science</span>
+            <div style="font-weight: 500; margin-bottom: 20px; color: rgb(243, 243, 243);">Cebu Institute of Technology
+              - University (Expected Year 2025-2026)</div>
+            <div style="color: rgb(243, 243, 243); margin-bottom: 20px;"><span
+                style="color:rgb(255, 155, 198); font-weight: 500; font-size: 20px;">Relevant Courses: </span>
+              AI/Machine Learning, Data Science, Application Development, Software Engineering, Data Structures and
+              Algorithms, Object Oriented Programming </div>
+            <div style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; margin-bottom: 10px;">
+              Certifications</div>
             <ul>
-              <li style="margin-bottom: 10px;"><a href="https://www.coursera.org/account/accomplishments/specialization/4EVB7STR33JW" target="_blank"  style="color: rgb(243, 243, 243); text-decoration: none;">Machine Learning Specialization</a></li>
-              <li style="margin-bottom: 10px;"><a href="https://www.coursera.org/account/accomplishments/records/8OXEF8R2LEAJ" target="_blank"  style="color: rgb(243, 243, 243); text-decoration: none; ">Advanced Learning Algorithms</a></li>
-              <li style="margin-bottom: 10px;"><a href="https://www.coursera.org/account/accomplishments/records/LKFLNZLFESWP" target="_blank"  style="color: rgb(243, 243, 243); text-decoration: none; ">Supervised Machine Learning: Regression and Classification</a></li>
-              <li style="margin-bottom: 10px;"><a href="https://www.coursera.org/account/accomplishments/records/EMEPNEG5HP0P" target="_blank"  style="color: rgb(243, 243, 243); text-decoration: none; ">Unsupervised Learning, Recommenders, Reinforcement Learning</a></li>
+              <li style="margin-bottom: 10px;"><a
+                  href="https://www.coursera.org/account/accomplishments/specialization/4EVB7STR33JW" target="_blank"
+                  style="color: rgb(243, 243, 243); text-decoration: none;">Machine Learning Specialization</a></li>
+              <li style="margin-bottom: 10px;"><a
+                  href="https://www.coursera.org/account/accomplishments/records/8OXEF8R2LEAJ" target="_blank"
+                  style="color: rgb(243, 243, 243); text-decoration: none; ">Advanced Learning Algorithms</a></li>
+              <li style="margin-bottom: 10px;"><a
+                  href="https://www.coursera.org/account/accomplishments/records/LKFLNZLFESWP" target="_blank"
+                  style="color: rgb(243, 243, 243); text-decoration: none; ">Supervised Machine Learning: Regression and
+                  Classification</a></li>
+              <li style="margin-bottom: 10px;"><a
+                  href="https://www.coursera.org/account/accomplishments/records/EMEPNEG5HP0P" target="_blank"
+                  style="color: rgb(243, 243, 243); text-decoration: none; ">Unsupervised Learning, Recommenders,
+                  Reinforcement Learning</a></li>
             </ul>
           </div>
         </div>
       </div>
 
 
+
+      <div class="introSection" style="margin-top: 50px;">
+        <div>
+          <div
+            style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: rgb(243, 243, 243);">
+            SKILLS</div>
+          <div style="text-align: justify;">
+            <div
+              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); margin-bottom: 20px; margin-top: 40px;">
+              Programming Languages</div>
+            <div style="font-size: 50px;" class="flex-container">
+              <i class="devicon-python-plain-wordmark colored"></i>
+              <i class="devicon-java-plain-wordmark colored"></i>
+              <i class="devicon-javascript-plain colored"></i>
+              <i class="devicon-c-plain colored"></i>
+              <i class="devicon-cplusplus-plain colored"></i>
+              <i class="devicon-csharp-plain-wordmark colored"></i>
+              <i class="devicon-php-plain colored"></i>
+            </div>
+
+            <div
+              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); margin-bottom: 20px; margin-top: 40px;">
+              FrontEnd</div>
+            <div style="font-size: 50px;" class="flex-container">
+              <i class="devicon-react-original-wordmark colored"></i>
+              <i class="devicon-html5-plain-wordmark colored"></i>
+              <i class="devicon-css3-plain-wordmark colored"></i>
+              <i class="devicon-jquery-plain-wordmark colored"></i>
+              <i class="devicon-bootstrap-plain-wordmark colored"></i>
+            </div>
+
+            <div
+              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); margin-bottom: 20px; margin-top: 40px;">
+              BackEnd</div>
+            <div style="font-size: 50px;" class="flex-container">
+              <i class="devicon-nodejs-plain-wordmark colored"></i>
+              <i class="devicon-express-original-wordmark"></i>
+              <i class="devicon-django-plain-wordmark"></i>
+              <i class="devicon-dotnetcore-plain colored"></i>
+              <i class="devicon-flask-original-wordmark"></i>
+            </div>
+
+            <div
+              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); margin-bottom: 20px; margin-top: 40px;">
+              Machine Learning</div>
+            <div style="font-size: 50px;" class="flex-container">
+              <i class="devicon-tensorflow-original-wordmark colored"></i>
+              <i class="devicon-scikitlearn-plain colored"></i>
+              <i class="devicon-numpy-plain-wordmark colored"></i>
+              <i class="devicon-pandas-plain-wordmark"></i>
+              <i class="devicon-matplotlib-plain-wordmark colored"></i>
+            </div>
+
+            <div
+              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); margin-bottom: 20px; margin-top: 40px;">
+              Database</div>
+            <div style="font-size: 50px;" class="flex-container">
+              <i class="devicon-mysql-plain-wordmark colored"></i>
+              <i class="devicon-postgresql-plain-wordmark colored"></i>
+              <i class="devicon-mongodb-plain-wordmark colored"></i>
+              <i class="devicon-firebase-plain-wordmark colored"></i>
+            </div>
+
+
+            <div
+              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); margin-bottom: 20px; margin-top: 40px;">
+              SoftSkills</div>
+            <div style="font-size: 50px; margin-bottom: 40px;" class="flex-container">
+
+              <i class="fa-solid fa-people-arrows"
+                style="display: flex; flex-direction:column; align-items: center;"><span
+                  style="font-size: 6px;">Communication</span></i>
+              <i class="fa-regular fa-lightbulb"
+                style="display: flex; flex-direction:column; align-items: center;"><span style="font-size: 6px;">Problem
+                  Solving</span></i>
+              <i class="fa-solid fa-person-walking-arrow-right"
+                style="display: flex; flex-direction:column; align-items: center;"><span
+                  style="font-size: 6px;">Leadership</span></i>
+              <i class="fa-solid fa-file-lines" style="display: flex; flex-direction:column; align-items: center;"><span
+                  style="font-size: 6px;">Technical Documentation</span></i>
+              <i class="fa-solid fa-brain" style="display: flex; flex-direction:column; align-items: center;"><span
+                  style="font-size: 6px;">Critical Thinking</span></i>
+              <i class="fa-solid fa-person-digging"
+                style="display: flex; flex-direction:column; align-items: center;"><span style="font-size: 6px;">Work
+                  Under Pressure</span></i>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
     </div>
   </div>
 
