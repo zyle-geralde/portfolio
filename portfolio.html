@@ -21,6 +21,10 @@
   <!--Bootstrap ICON-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+  <!--Jquery-->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
   <script type="importmap">
             {
               "imports": {
@@ -60,6 +64,7 @@
       top: 0;
       left: 0;
       right: 0;
+      z-index: 1000;
     }
 
     .navebar {
@@ -119,6 +124,11 @@
       flex-direction: row;
       justify-content: center;
       width: 90%;
+      animation-name:homeContAnim;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+      opacity: 0;
     }
 
     .compScieclass {
@@ -192,6 +202,37 @@
       border-color: rgb(252, 176, 201);
     }
 
+
+    /*About Section*/
+    .mainAbout{
+      position: absolute;
+      top: 75px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.203);
+      display: flex;
+      flex-direction: row;
+    }
+    .aboutmeSection{
+      color: rgb(236, 236, 236);
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #bg3{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .profileImageCont{
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
 
 
     @media (max-width:470px) {
@@ -285,13 +326,24 @@
         margin-top: 10px;
       }
     }
+
+
+    /*Animation*/
+    @keyframes homeContAnim{
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 
 <body>
   <canvas id="bg"></canvas>
 
-  <div class="main">
+  <div class="mainAbout">
     <div class="navigation_bar">
       <div class="navebar">
         <div class="home">Home</div>
@@ -302,7 +354,7 @@
       </div>
     </div>
 
-    <div class="homeCont">
+    <div class="homeCont" style="display: none;">
       <div class="wordContent">
         <div class="compScieclass">Computer Science Student</div>
         <div class="hiClass">Hello! I am</div>
@@ -315,6 +367,23 @@
       </div>
       <div class="ImageContent">
         <canvas id="bg2"></canvas>
+      </div>
+    </div>
+
+    <div class="aboutmeSection">
+      <div class = profileImageCont>
+        <canvas id = "bg3"></canvas>
+      </div>
+      <div class = "introSection">
+        <div>
+          <div>INTRODUCTION</div>
+          <div>Hello!</div>
+          <div>
+            I am Zyle Geralde de la Peña, a third-year computer science student with a passion for developing websites and creating innovative machine learning models. 
+            Over the past four years, I have specialized in technologies like React.js, Django, TensorFlow, and scikit-learn, dedicating my efforts to building unique projects and solving real-world challenges. 
+            My goal is to develop technologies that make everyday life easier and more efficient for people.
+          </div>
+        </div>
       </div>
     </div>
   </div>
