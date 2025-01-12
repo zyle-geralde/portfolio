@@ -358,7 +358,20 @@
       animation-delay: 1s;
       overflow: auto;
       opacity: 0;
+    }
+    .ProjectsLink{
+      padding: 20px;
+      border-bottom-style:solid;
       cursor: pointer;
+      color: rgb(250, 184, 213);
+      border-color: white;
+      display: inline-block;
+    }
+    .WebTitle{
+      padding: 20px;
+      font-size: 30px;
+      font-weight: 500;
+      border-bottom-style: solid;
     }
 
     @media (max-width:470px) {
@@ -734,8 +747,13 @@
     </div>
 
     <div class = "workSection">
-      <div style="max-width: 800px; background-color: black; word-wrap: break-word;">
+      <div style="max-width: 800px; word-wrap: break-word; background-color: black;">
         <div class="ProjectsLink">Projects</div>
+
+        <div>
+          <div class = "WebTitle">Web Development</div>
+          <div style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 10px; justify-content: flex-start;"></div>
+        </div>
       </div>
     </div>
   </div>
