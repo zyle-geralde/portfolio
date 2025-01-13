@@ -484,6 +484,7 @@ $(document).ready(function (e) {
     $(".PulseNetClick").click(function (e) {
         var pulsenetimg = ['./images/PulseNet1.png', './images/PulseNet2.png', './images/PulseNet3.png', './images/PulseNet4.png', './images/PulseNet5.png', './images/PulseNet6.png']
         
+        $(".holdCarousel").text("")
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
@@ -495,8 +496,7 @@ $(document).ready(function (e) {
         $("#exampleModalLabel").text("PulseNet")
         $(".descPoint").text("A dynamic and interactive social media website designed to connect people, bridge communities, and sharing content. The platform features user-friendly and responsive interface.")
         $(".techPoint").text("React Js, Django, Sqlite, HTML, CSS, Bootstrap.")
-        $(".challPoint").text("Developing an industry prefered application with smooth flow and robust data handling.")
-        $(".solPoint").text("Built a responsive and user-friendly website using JSON webtokens for authorization, and password hashing for privacy")
+        $(".challPoint").text("Responsive User Interface, JSON Web Token Implementation for Authorization, Password Hashing for security enhancement")
         var gitPoint = document.querySelector(".gitPoint")
         gitPoint.href= "https://github.com/zyle-geralde/PulseNet.git"
     })
@@ -504,6 +504,7 @@ $(document).ready(function (e) {
     $(".YapperMailClick").click(function (e) {
         var pulsenetimg = ['./images/YapperMail.png','./images/YapperMail1.png', './images/YapperMail2.png', './images/YapperMail3.png', './images/YapperMail4.png', './images/YapperMail5.png', './images/YapperMail6.png','./images/YapperMail7.png','./images/YapperMail8.png']
         
+        $(".holdCarousel").text("")
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
@@ -515,11 +516,51 @@ $(document).ready(function (e) {
         $("#exampleModalLabel").text("YapperMail")
         $(".descPoint").text("A dynamic email management system that streamlines email organization and categorization. It offers an AI chatbot that serves as a smart assistant for users. The website offers a collaborative email option allowing multiple users to interact with each other.")
         $(".techPoint").text("Django, Websockets, Sqlite, HTML, CSS, Bootstrap, Tailwind, Firebase, Jquery.")
-        $(".challPoint").text("Developing an efficient and smooth email management program")
-        $(".solPoint").text("Categorization of emails, Clustering and reusing similar codes, and integrating real-time capabilities")
+        $(".challPoint").text("Responsive User Interface, One-time-Password(OTP) integration, Integrated a real-time notification system, Integrated chatbot intended for user assistance, User Collaboration.")
         var gitPoint = document.querySelector(".gitPoint")
-        gitPoint.href= "https://github.com/zyle-geralde/PulseNet.git"
+        gitPoint.href = "https://github.com/hulyarein/Yapper-Mail-.git"
     })
+
+    $(".TechnoSpaceClick").click(function (e) {
+        var pulsenetimg = ['./images/technoSpace.png', './images/technoSpace1.png', './images/technoSpace2.png', './images/technoSpace3.png', './images/technoSpace4.png', './images/technoSpace5.png', './images/technoSpace6.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("TechnoSpace")
+        $(".descPoint").text("A MarketPlace that sells second-hand products. This website is intended for the faculties and students of Cebu Institute of Technology-University")
+        $(".techPoint").text("ASP.NET, ReactJS, Azure, Mysql, HTML, CSS, Tailwind, Bootstrap")
+        $(".challPoint").text("Listing Categorization, Transaction Transparency, Filtering System, On App messaging, Ratings and Reviews.")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href = "https://github.com/zyle-geralde/TechnoSpaceFrontEnd.git"
+    })
+
+    $(".ChatBoxClick").click(function (e) {
+        var pulsenetimg = ['./images/technoSpace.png', './images/technoSpace1.png', './images/technoSpace2.png', './images/technoSpace3.png', './images/technoSpace4.png', './images/technoSpace5.png', './images/technoSpace6.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("TechnoSpace")
+        $(".descPoint").text("A MarketPlace that sells second-hand products. This website is intended for the faculties and students of Cebu Institute of Technology-University")
+        $(".techPoint").text("ASP.NET, ReactJS, Azure, Mysql, HTML, CSS, Tailwind, Bootstrap")
+        $(".challPoint").text("Listing Categorization, Transaction Transparency, Filtering System, On App messaging, Ratings and Reviews.")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href = "https://github.com/zyle-geralde/TechnoSpaceFrontEnd.git"
+    })
+
 })
 
 
