@@ -214,7 +214,7 @@ scene2.add(gridHelp2)*/
 var renderer3 = new THREE.WebGLRenderer({
     antialias: true,
     canvas: document.querySelector("#bg3"),
-    alpha:true
+    alpha: true
 });
 renderer3.setSize(w2, h2);
 renderer3.setPixelRatio(window.devicePixelRatio);
@@ -231,41 +231,41 @@ controls3.enableZoom = false;
 var scene3 = new THREE.Scene();
 
 const profile_Cub = new THREE.BoxGeometry(4, 4, 4)
-const profile_CubMat  = [
+const profile_CubMat = [
     new THREE.MeshStandardMaterial({
-        map: loader.load("./images/profileImage.jpg",(texture) => {
+        map: loader.load("./images/profileImage.jpg", (texture) => {
             texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            texture.encoding = THREE.sRGBEncoding; 
+            texture.encoding = THREE.sRGBEncoding;
         }),
     }),
     new THREE.MeshStandardMaterial({
-        map: loader.load("./images/profileImage.jpg",(texture) => {
+        map: loader.load("./images/profileImage.jpg", (texture) => {
             texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            texture.encoding = THREE.sRGBEncoding; 
+            texture.encoding = THREE.sRGBEncoding;
         })
     }),
     new THREE.MeshStandardMaterial({
-        map: loader.load("./images/profileImage.jpg",(texture) => {
+        map: loader.load("./images/profileImage.jpg", (texture) => {
             texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            texture.encoding = THREE.sRGBEncoding; 
+            texture.encoding = THREE.sRGBEncoding;
         })
     }),
     new THREE.MeshStandardMaterial({
-        map: loader.load("./images/profileImage.jpg",(texture) => {
+        map: loader.load("./images/profileImage.jpg", (texture) => {
             texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            texture.encoding = THREE.sRGBEncoding; 
+            texture.encoding = THREE.sRGBEncoding;
         })
     }),
     new THREE.MeshStandardMaterial({
-        map: loader.load("./images/profileImage.jpg",(texture) => {
+        map: loader.load("./images/profileImage.jpg", (texture) => {
             texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            texture.encoding = THREE.sRGBEncoding; 
+            texture.encoding = THREE.sRGBEncoding;
         })
     }),
     new THREE.MeshStandardMaterial({
-        map: loader.load("./images/profileImage.jpg",(texture) => {
+        map: loader.load("./images/profileImage.jpg", (texture) => {
             texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            texture.encoding = THREE.sRGBEncoding; 
+            texture.encoding = THREE.sRGBEncoding;
         })
     }),
 ];
@@ -392,9 +392,11 @@ $(document).ready(function (e) {
         aboutmeSection.style.display = "none"
         var servicesSection = document.querySelector(".servicesSection")
         servicesSection.style.display = "none"
+        var workSection = document.querySelector(".workSection")
+        workSection.style.display = "none"
 
         var changeClass = document.querySelector("body")
-        changeClass.firstElementChild.nextElementSibling.setAttribute("class","main")
+        changeClass.firstElementChild.nextElementSibling.setAttribute("class", "main")
 
 
 
@@ -416,9 +418,11 @@ $(document).ready(function (e) {
         servicesSection.style.display = "none"
         var aboutmeSection = document.querySelector(".aboutmeSection")
         aboutmeSection.style = ""
+        var workSection = document.querySelector(".workSection")
+        workSection.style.display = "none"
 
         var changeClass = document.querySelector("body")
-        changeClass.firstElementChild.nextElementSibling.setAttribute("class","mainAbout")
+        changeClass.firstElementChild.nextElementSibling.setAttribute("class", "mainAbout")
     })
 
     $(".services").click(function (e) {
@@ -436,9 +440,11 @@ $(document).ready(function (e) {
         servicesSection.style = ""
         var aboutmeSection = document.querySelector(".aboutmeSection")
         aboutmeSection.style.display = "none"
+        var workSection = document.querySelector(".workSection")
+        workSection.style.display = "none"
 
         var changeClass = document.querySelector("body")
-        changeClass.firstElementChild.nextElementSibling.setAttribute("class","mainSection")
+        changeClass.firstElementChild.nextElementSibling.setAttribute("class", "mainSection")
     })
 
     $(".work").click(function (e) {
@@ -449,6 +455,18 @@ $(document).ready(function (e) {
         navaboutme.style = ""
         navservices.style = ""
         navContacts.style = ""
+
+        var homeCont = document.querySelector(".homeCont")
+        homeCont.style.display = "none"
+        var servicesSection = document.querySelector(".servicesSection")
+        servicesSection.style.display = "none"
+        var aboutmeSection = document.querySelector(".aboutmeSection")
+        aboutmeSection.style.display = "none"
+        var workSection = document.querySelector(".workSection")
+        workSection.style = ""
+
+        var changeClass = document.querySelector("body")
+        changeClass.firstElementChild.nextElementSibling.setAttribute("class", "mainWork")
     })
 
     $(".Contacts").click(function (e) {
@@ -459,6 +477,13 @@ $(document).ready(function (e) {
         navaboutme.style = ""
         navservices.style = ""
         navwork.style = ""
+    })
+
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
     })
 })
 

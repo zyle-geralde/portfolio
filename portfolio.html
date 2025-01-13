@@ -293,7 +293,8 @@
       display: flex;
       flex-direction: row;
     }
-    .servicesSection{
+
+    .servicesSection {
       color: rgb(236, 236, 236);
       font-size: 14px;
       display: flex;
@@ -308,30 +309,51 @@
       opacity: 0;
       cursor: pointer;
     }
-    .serviceGrid{
+
+    .serviceGrid {
       display: grid;
       grid-template-columns: 300px 300px 300px;
       column-gap: 60px;
     }
-    .serviceGridCont{
-      width: 100%; padding: 20px; 
+
+    .serviceGridCont {
+      width: 100%;
+      padding: 20px;
       transition: 0.2s;
       border-radius: 5px;
     }
-    .serviceGridCont:hover{
-      background-color:rgba(200, 200, 200, 0.641);
+
+    .serviceGridCont:hover {
+      background-color: rgba(200, 200, 200, 0.641);
     }
-    .servicenumber{
-      font-size: 20px; font-weight: 900; border-style: solid; border-radius: 1000px;display: inline-block; padding: 7px 10px;
-      color: rgb(255, 155, 198); ;
+
+    .servicenumber {
+      font-size: 20px;
+      font-weight: 900;
+      border-style: solid;
+      border-radius: 1000px;
+      display: inline-block;
+      padding: 7px 10px;
+      color: rgb(255, 155, 198);
+      ;
     }
-    .serviceimg{
-      width: 100%; height: 200px; object-fit:cover; object-position: center;
-          margin-top: 20px; margin-bottom: 20px; border-radius: 5px;
+
+    .serviceimg {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
     }
-    .servicedesc{
-      font-size: 20px; text-align: center; font-weight: 500;
-      border-bottom-style: solid; border-width: 2px;
+
+    .servicedesc {
+      font-size: 20px;
+      text-align: center;
+      font-weight: 500;
+      border-bottom-style: solid;
+      border-width: 2px;
     }
 
     /*Work Section*/
@@ -345,49 +367,57 @@
       display: flex;
       flex-direction: row;
     }
-    .workSection{
+
+    .workSection {
       color: rgb(236, 236, 236);
       font-size: 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      animation-name: serviceSectionAnim;
+      animation-name: workSectionAnim;
       animation-duration: 0.5s;
       animation-fill-mode: forwards;
       animation-delay: 1s;
       overflow: auto;
       opacity: 0;
     }
-    .ProjectsLink{
+
+    .ProjectsLink {
       padding: 20px;
-      border-bottom-style:solid;
+      border-bottom-style: solid;
       cursor: pointer;
       color: rgb(250, 184, 213);
       border-color: white;
       display: inline-block;
       margin-bottom: 40px;
     }
-    .WebTitle{
+
+    .WebTitle {
       padding: 20px;
       font-size: 30px;
       font-weight: 500;
       border-bottom-style: solid;
       margin-bottom: 40px;
     }
-    .projectHov{
-      width: 15rem; cursor: pointer;
+
+    .projectHov {
+      width: 15rem;
+      cursor: pointer;
       transition: 0.2s;
     }
-    .projectHov:hover{
+
+    .projectHov:hover {
       width: 16rem;
       background-color: black;
       color: white;
     }
-    .webdevproj{
+
+    .webdevproj {
       margin-bottom: 40px;
     }
-    .machinelearningproj{
+
+    .machinelearningproj {
       margin-bottom: 40px;
     }
 
@@ -413,16 +443,17 @@
       }
     }
 
-    
-    @media(max-width:1070px){
-      .serviceGrid{
+
+    @media(max-width:1070px) {
+      .serviceGrid {
         display: grid;
         grid-template-columns: 300px 300px;
         column-gap: 60px;
       }
     }
-    @media(max-width:720px){
-      .serviceGrid{
+
+    @media(max-width:720px) {
+      .serviceGrid {
         display: grid;
         grid-template-columns: 300px;
         column-gap: 60px;
@@ -510,6 +541,7 @@
         opacity: 1;
       }
     }
+
     @keyframes aboutmeAnim {
       0% {
         opacity: 0;
@@ -519,7 +551,18 @@
         opacity: 1;
       }
     }
-    @keyframes serviceSectionAnim{
+
+    @keyframes serviceSectionAnim {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes workSectionAnim {
       0% {
         opacity: 0;
       }
@@ -534,7 +577,7 @@
 <body>
   <canvas id="bg"></canvas>
 
-  <div class="mainWork">
+  <div class="main">
     <div class="navigation_bar">
       <div class="navebar">
         <div class="home">Home</div>
@@ -545,7 +588,7 @@
       </div>
     </div>
 
-    <div class="homeCont" style="display: none;">
+    <div class="homeCont">
       <div class="wordContent">
         <div class="compScieclass">Computer Science Student</div>
         <div class="hiClass">Hello! I am</div>
@@ -565,7 +608,9 @@
       <div class=profileImageCont>
         <canvas id="bg3"></canvas>
       </div>
-      <div style="font-style: italic; color:rgb(243, 243, 243); font-size: 30px; max-width: 700px; text-align: center; margin-top: 30px; margin-left: 40px; margin-right: 40px;">"Shaping the future with Innovative Technological Advancements"</div>
+      <div
+        style="font-style: italic; color:rgb(243, 243, 243); font-size: 30px; max-width: 700px; text-align: center; margin-top: 30px; margin-left: 40px; margin-right: 40px;">
+        "Shaping the future with Innovative Technological Advancements"</div>
       <div class="introSection" style="margin-top: 60px;">
         <div>
           <div
@@ -589,7 +634,8 @@
             EDUCATION</div>
           <div style="text-align: justify;">
             <span
-              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); text-align: left;">Bachelor of
+              style="font-weight: 500; color:rgb(255, 155, 198); font-size: 20px; color:rgb(255, 155, 198); text-align: left;">Bachelor
+              of
               Science in Computer Science</span>
             <div style="font-weight: 500; margin-bottom: 20px; color: rgb(243, 243, 243);">Cebu Institute of Technology
               - University (Expected Year 2025-2026)</div>
@@ -713,22 +759,22 @@
       </div>
     </div>
 
-    <div class = "servicesSection" style="display: none;">
+    <div class="servicesSection" style="display: none;">
       <div class="serviceGrid" style="margin-bottom: 30px; margin-top: 20px;">
         <div class="serviceGridCont" style="border-bottom-style: none;">
-          <div class = "servicenumber">
+          <div class="servicenumber">
             01
           </div>
-          <img src = "./images/fullstackimg.jpg" class = "serviceimg">
+          <img src="./images/fullstackimg.jpg" class="serviceimg">
           <div class="servicedesc">
             FullStack Web Development
           </div>
-        </div>        
-        <div class = "serviceGridCont" style="border-bottom-style: none;">
-          <div class = "servicenumber">
+        </div>
+        <div class="serviceGridCont" style="border-bottom-style: none;">
+          <div class="servicenumber">
             02
           </div>
-          <img src = "./images/frontEnd.jpg" class="serviceimg">
+          <img src="./images/frontEnd.jpg" class="serviceimg">
           <div class="servicedesc">
             FrontEnd Web Development
           </div>
@@ -737,7 +783,7 @@
           <div class="servicenumber">
             03
           </div>
-          <img src = "./images/backenddev.jpg" class="serviceimg">
+          <img src="./images/backenddev.jpg" class="serviceimg">
           <div class="servicedesc">
             Backend Web Development
           </div>
@@ -746,8 +792,8 @@
           <div class="servicenumber">
             04
           </div>
-          <img src = "./images/webdesign.jpg" class = "serviceimg">
-          <div class = "servicedesc">
+          <img src="./images/webdesign.jpg" class="serviceimg">
+          <div class="servicedesc">
             UI/UX <br> Design
           </div>
         </div>
@@ -755,22 +801,23 @@
           <div class="servicenumber">
             05
           </div>
-          <img src = "./images/machine learning.jpg" class="serviceimg">
+          <img src="./images/machine learning.jpg" class="serviceimg">
           <div class="servicedesc">
             Machine Learning Solutions
           </div>
         </div>
-      </div>        
+      </div>
     </div>
 
-    <div class = "workSection">
+    <div class="workSection" style="display: none;">
       <div style="max-width: 800px; word-wrap: break-word; width: 90%; margin-right: 40px; margin-left: 40px;">
         <div class="ProjectsLink">Projects</div>
 
         <div class="webdevproj">
-          <div class = "WebTitle">Web Development</div>
-          <div style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
-            <div class="card projectHov">
+          <div class="WebTitle">Web Development</div>
+          <div
+            style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/YapperMail.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Yapper Mail</h5>
@@ -778,14 +825,14 @@
               </div>
             </div>
 
-            <div class="card projectHov">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/technoSpace.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">TechnoSpace</h5>
                 <p class="card-text">A Marketplace Website built for CIT-University Students and Faculties.</p>
               </div>
             </div>
-            <div class="card projectHov">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/ChatBox.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">ChatBox</h5>
@@ -793,7 +840,7 @@
               </div>
             </div>
 
-            <div class="card projectHov">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/PulseNet.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">PulseNet</h5>
@@ -801,58 +848,101 @@
               </div>
             </div>
 
-            <div class="card projectHov">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/ForumApp.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Forum Website</h5>
                 <p class="card-text">A Forum Website that allows users to post texts.</p>
               </div>
             </div>
-            
+
           </div>
         </div>
 
 
-        <div class = "machinelearningproj">
-          <div class = "WebTitle">Machine Learning</div>
-          <div style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
-            <div class="card projectHov">
+        <div class="machinelearningproj">
+          <div class="WebTitle">Machine Learning</div>
+          <div
+            style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/ObjectDetector.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Object Detector</h5>
-                <p class="card-text">A computer vision model that can detect Objects using YOLO and the COCO dataset.</p>
+                <p class="card-text">A computer vision model that can detect Objects using YOLO and the COCO dataset.
+                </p>
               </div>
             </div>
 
-            <div class="card projectHov">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/CarCounter.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Car Counter</h5>
                 <p class="card-text">A computer vision model that can count the number of moving cars.</p>
               </div>
             </div>
-            <div class="card projectHov">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/Compressor.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Image Compressor</h5>
-                <p class="card-text">An unsupervised machine learning model that can compress the image by k means clustering.</p>
+                <p class="card-text">An unsupervised machine learning model that can compress the image by k means
+                  clustering.</p>
               </div>
             </div>
 
-            <div class="card projectHov">
+            <div class="card projectHov" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/Classifier.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Digit Classifier</h5>
-                <p class="card-text">A supervised machine learning model that can identify the digit(0 - 9) on an image.</p>
+                <p class="card-text">A supervised machine learning model that can identify the digit(0 - 9) on an image.
+                </p>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/backenddev.jpg" class="d-block" style="object-fit: cover; object-position: center;  width: 300px; height: 300px;margin: auto;" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/CarCounter.png" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/Classifier.png" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="color: black; font-size: 20px;">
+              <
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="color: black; font-size: 20px;">
+              >
+            </button>
+          </div>
+          <div style="word-wrap: break-word; margin-bottom: 10px; margin-top: 10px;"><span style="font-weight: 500;">Description: </span><span class="descPoint" style="font-size: 13px;">Hanjdknkjafnajksndfjkasndfjknasdkjfnakjsdnfkjasndfkjandskjfnaskjdfnjkdanfkjansdjkfansfkjdnaskjdf</span></div>
+          <div style="word-wrap: break-word; margin-bottom: 10px;"><span style="font-weight: 500;">Technologies: </span><span class="techPoint" style="font-size: 13px;">Hanjdknkjafnajksndfjkasndfjknasdkjfnakjsdnfkjasndfkjandskjfnaskjdfnjkdanfkjansdjkfansfkjdnaskjdf</span></div>
+          <div style="word-wrap: break-word; margin-bottom: 10px;"><span style="font-weight: 500;">Challenges: </span><span class="challPoint" style="font-size: 13px;">Hanjdknkjafnajksndfjkasndfjknasdkjfnakjsdnfkjasndfkjandskjfnaskjdfnjkdanfkjansdjkfansfkjdnaskjdf</span></div>
+          <div style="word-wrap: break-word; margin-bottom: 10px;"><span style="font-weight: 500;">Solution: </span><span class="solPoint" style="font-size: 13px;">Hanjdknkjafnajksndfjkasndfjknasdkjfnakjsdnfkjasndfkjandskjfnaskjdfnjkdanfkjansdjkfansfkjdnaskjdf</span></div>
+          <div style="word-wrap: break-word; margin-bottom: 10px;"><span style="font-weight: 500;">Github: </span><span class = "gitPoint" style="font-size: 13px;">Hanjdknkjafnajksndfjkasndfjknasdkjfnakjsdnfkjasndfkjandskjfnaskjdfnjkdanfkjansdjkfansfkjdnaskjdf</span></div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
   <script type="module" src="portfolio.js"></script>
 </body>
 
