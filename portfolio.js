@@ -500,6 +500,26 @@ $(document).ready(function (e) {
         var gitPoint = document.querySelector(".gitPoint")
         gitPoint.href= "https://github.com/zyle-geralde/PulseNet.git"
     })
+
+    $(".YapperMailClick").click(function (e) {
+        var pulsenetimg = ['./images/YapperMail.png','./images/YapperMail1.png', './images/YapperMail2.png', './images/YapperMail3.png', './images/YapperMail4.png', './images/YapperMail5.png', './images/YapperMail6.png','./images/YapperMail7.png','./images/YapperMail8.png']
+        
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("YapperMail")
+        $(".descPoint").text("A dynamic email management system that streamlines email organization and categorization. It offers an AI chatbot that serves as a smart assistant for users. The website offers a collaborative email option allowing multiple users to interact with each other.")
+        $(".techPoint").text("Django, Websockets, Sqlite, HTML, CSS, Bootstrap, Tailwind, Firebase, Jquery.")
+        $(".challPoint").text("Developing an efficient and smooth email management program")
+        $(".solPoint").text("Categorization of emails, Clustering and reusing similar codes, and integrating real-time capabilities")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href= "https://github.com/zyle-geralde/PulseNet.git"
+    })
 })
 
 
