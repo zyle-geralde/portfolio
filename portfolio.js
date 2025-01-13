@@ -488,7 +488,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
                 </div>
             `);
         });
@@ -508,7 +508,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
                 </div>
             `);
         });
@@ -528,7 +528,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
                 </div>
             `);
         });
@@ -542,25 +542,127 @@ $(document).ready(function (e) {
     })
 
     $(".ChatBoxClick").click(function (e) {
-        var pulsenetimg = ['./images/technoSpace.png', './images/technoSpace1.png', './images/technoSpace2.png', './images/technoSpace3.png', './images/technoSpace4.png', './images/technoSpace5.png', './images/technoSpace6.png']
+        var pulsenetimg = ['./images/ChatBox.png', './images/ChatBox1.png']
         
         $(".holdCarousel").text("")
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
                 </div>
             `);
         });
 
-        $("#exampleModalLabel").text("TechnoSpace")
-        $(".descPoint").text("A MarketPlace that sells second-hand products. This website is intended for the faculties and students of Cebu Institute of Technology-University")
-        $(".techPoint").text("ASP.NET, ReactJS, Azure, Mysql, HTML, CSS, Tailwind, Bootstrap")
-        $(".challPoint").text("Listing Categorization, Transaction Transparency, Filtering System, On App messaging, Ratings and Reviews.")
+        $("#exampleModalLabel").text("ChatBox")
+        $(".descPoint").text("A RealTime Chat Application allowing open communication between users. This platform allows users to interact with other users through chat.")
+        $(".techPoint").text("Express/NodeJs, Websockets, HTML, CSS, JQuery, Bootstrap, MongoDB, FireBase")
+        $(".challPoint").text("Responsive User Interface, RealTime Chat System")
         var gitPoint = document.querySelector(".gitPoint")
-        gitPoint.href = "https://github.com/zyle-geralde/TechnoSpaceFrontEnd.git"
+        gitPoint.href = "https://github.com/zyle-geralde/ChatBox.git"
     })
 
+    $(".ForumWebsiteClick").click(function (e) {
+        var pulsenetimg = ['./images/ForumApp.png', './images/ForumApp1.png', './images/ForumApp2.png', './images/ForumApp3.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("Forum App")
+        $(".descPoint").text("A Forum Application where users can create and manage their posts as well as reply to other posts.")
+        $(".techPoint").text("Express/NodeJs, HTML, CSS, JQuery, MongoDB")
+        $(".challPoint").text("Json webtoken implementation, Posts are divided into pages.")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href = "https://github.com/zyle-geralde/NodeForumApp.git"
+    })
+
+    
+    $(".ObjectDetectorClick").click(function (e) {
+        var pulsenetimg = ['./images/ObjectDetector.png', './images/ObjectDetector1.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("Object Detector")
+        $(".descPoint").text("An object detection system using the YOLO algorithm and the COCO dataset. It identifies and localizes multiple objects in real-time.")
+        $(".techPoint").text("Python, YOLO, COCO dataset")
+        $(".challPoint").text("Multiple Object detection, RealTime Object Detection")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href = "https://github.com/zyle-geralde/YoloObjectDetection.git"
+    })
+
+    
+    $(".CarCounterClick").click(function (e) {
+        var pulsenetimg = ['./images/CarCounter.png', './images/CarCounter1.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("Car Counter")
+        $(".descPoint").text("An object detection system using the YOLO algorithm and the COCO dataset. It identifies and counts the number of cars passing by.")
+        $(".techPoint").text("Python, YOLO, COCO dataset")
+        $(".challPoint").text("Multiple Object detection, RealTime Object Detection")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href = "https://github.com/zyle-geralde/CarCounter.git"
+    })
+
+    $(".ImageCompressorClick").click(function (e) {
+        var pulsenetimg = ['./images/Compressor.png', './images/Compressor1.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("Image Compressor")
+        $(".descPoint").text("A machine learning model that leverages K-Means Clustering for efficient image compression. By reducing the number of unique colors in an image, the model achieves significant size reduction while maintaining visual quality.")
+        $(".techPoint").text("Python, Numpy, Pandas, Matplotlib, Pillow, Scikit learn")
+        $(".challPoint").text("Image Compression, adjustable Compression size")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href = "https://github.com/zyle-geralde/ImageCompressor.git"
+    })
+
+
+    $(".DigitClassifierClick").click(function (e) {
+        var pulsenetimg = ['./images/Classifier.png', './images/Classifier1.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("Digital Classifier")
+        $(".descPoint").text("A machine learning model that accurately recognizes digits (0-9) from images, such as handwritten or printed numbers. The model processes image data, extracts relevant features, and predicts the corresponding digit with high precision.")
+        $(".techPoint").text("Python, Numpy, Pandas, Matplotlib, Pillow, Scikit learn, Tensorflow, Keras, Flask")
+        $(".challPoint").text("Has a User Interface using Flask, Image recognition")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href = "https://github.com/zyle-geralde/DigitClassifierModel.git"
+    })
 })
 
 
