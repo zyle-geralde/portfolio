@@ -479,11 +479,26 @@ $(document).ready(function (e) {
         navwork.style = ""
     })
 
-    var myModal = document.getElementById('myModal')
-    var myInput = document.getElementById('myInput')
 
-    myModal.addEventListener('shown.bs.modal', function () {
-        myInput.focus()
+
+    $(".PulseNetClick").click(function (e) {
+        var pulsenetimg = ['./images/PulseNet1.png', './images/PulseNet2.png', './images/PulseNet3.png', './images/PulseNet4.png', './images/PulseNet5.png', './images/PulseNet6.png']
+        
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit: cover; object-position: center; width: 300px; height: 300px; margin: auto;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("PulseNet")
+        $(".descPoint").text("A dynamic and interactive social media website designed to connect people, bridge communities, and sharing content. The platform features user-friendly and responsive interface.")
+        $(".techPoint").text("React Js, Django, Sqlite, HTML, CSS, Bootstrap.")
+        $(".challPoint").text("Developing an industry prefered application with smooth flow and robust data handling.")
+        $(".solPoint").text("Built a responsive and user-friendly website using JSON webtokens for authorization, and password hashing for privacy")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href= "https://github.com/zyle-geralde/PulseNet.git"
     })
 })
 
