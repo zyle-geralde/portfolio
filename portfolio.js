@@ -394,6 +394,8 @@ $(document).ready(function (e) {
         servicesSection.style.display = "none"
         var workSection = document.querySelector(".workSection")
         workSection.style.display = "none"
+        var contactsSection = document.querySelector(".contactsSection")
+        contactsSection.style.display = "none"
 
         var changeClass = document.querySelector("body")
         changeClass.firstElementChild.nextElementSibling.setAttribute("class", "main")
@@ -420,6 +422,8 @@ $(document).ready(function (e) {
         aboutmeSection.style = ""
         var workSection = document.querySelector(".workSection")
         workSection.style.display = "none"
+        var contactsSection = document.querySelector(".contactsSection")
+        contactsSection.style.display = "none"
 
         var changeClass = document.querySelector("body")
         changeClass.firstElementChild.nextElementSibling.setAttribute("class", "mainAbout")
@@ -442,6 +446,8 @@ $(document).ready(function (e) {
         aboutmeSection.style.display = "none"
         var workSection = document.querySelector(".workSection")
         workSection.style.display = "none"
+        var contactsSection = document.querySelector(".contactsSection")
+        contactsSection.style.display = "none"
 
         var changeClass = document.querySelector("body")
         changeClass.firstElementChild.nextElementSibling.setAttribute("class", "mainSection")
@@ -464,6 +470,8 @@ $(document).ready(function (e) {
         aboutmeSection.style.display = "none"
         var workSection = document.querySelector(".workSection")
         workSection.style = ""
+        var contactsSection = document.querySelector(".contactsSection")
+        contactsSection.style.display = "none"
 
         var changeClass = document.querySelector("body")
         changeClass.firstElementChild.nextElementSibling.setAttribute("class", "mainWork")
@@ -477,6 +485,20 @@ $(document).ready(function (e) {
         navaboutme.style = ""
         navservices.style = ""
         navwork.style = ""
+
+        var homeCont = document.querySelector(".homeCont")
+        homeCont.style.display = "none"
+        var servicesSection = document.querySelector(".servicesSection")
+        servicesSection.style.display = "none"
+        var aboutmeSection = document.querySelector(".aboutmeSection")
+        aboutmeSection.style.display = "none"
+        var workSection = document.querySelector(".workSection")
+        workSection.style.display = "none"
+        var contactsSection = document.querySelector(".contactsSection")
+        contactsSection.style = ""
+
+        var changeClass = document.querySelector("body")
+        changeClass.firstElementChild.nextElementSibling.setAttribute("class", "mainContacts")
     })
 
 
@@ -691,6 +713,13 @@ $(document).ready(function (e) {
             alert("An error occured")
         })
 
+    })
+
+    $(".linkIconClick").click(function (e) {
+        window.open("https://www.linkedin.com/in/zyle-geralde-de-la-peña-37b2a926b")
+    })
+    $(".githubClick").click(function (e) {
+        window.open("https://github.com/zyle-geralde")
     })
 })
 
