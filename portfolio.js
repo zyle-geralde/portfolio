@@ -663,6 +663,35 @@ $(document).ready(function (e) {
         var gitPoint = document.querySelector(".gitPoint")
         gitPoint.href = "https://github.com/zyle-geralde/DigitClassifierModel.git"
     })
+
+
+    emailjs.init('0Irig6RWuoCC36Xj3');
+
+
+    document.querySelector('.contactformSend').addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        if ($(".nameContact").val().trim() == "" || $(".emailContact").val().trim() == "" || $(".messageContact").val().trim() == "") {
+            alert("Invalid Credentials")
+            return
+        }
+
+        emailjs.send('service_joqu03p', 'template_obj31je', {
+            from_name: $(".nameContact").val(),
+            to_name: 'Zyle Geralde',
+            from_email: $(".emailContact").val(),
+            message: $(".messageContact").val()
+            },'0Irig6RWuoCC36Xj3',
+        ).then(() => {
+            alert("Email Sent Successfully")
+            $(".nameContact").val("")
+            $(".emailContact").val("")
+            $(".messageContact").val("")
+        },(error) => {
+            alert("An error occured")
+        })
+
+    })
 })
 
 
