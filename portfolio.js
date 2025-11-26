@@ -374,11 +374,11 @@ $(document).ready(function (e) {
     var navservices = document.querySelector(".services")
     var navwork = document.querySelector(".work")
     var navContacts = document.querySelector(".Contacts")
-    navHome.style.color = "rgb(255, 155, 198)"
+    navHome.style.color = "#fbda77"
     navHome.style.transform = "scale(1.2)"
 
     $(".home").click(function (e) {
-        this.style.color = "rgb(255, 155, 198)"
+        this.style.color = "#fbda77"
         this.style.transform = "scale(1.2)"
 
         navaboutme.style = ""
@@ -405,7 +405,7 @@ $(document).ready(function (e) {
     })
 
     $(".aboutme").click(function (e) {
-        this.style.color = "rgb(255, 155, 198)"
+        this.style.color = "#fbda77"
         this.style.transform = "scale(1.2)"
 
 
@@ -430,7 +430,7 @@ $(document).ready(function (e) {
     })
 
     $(".services").click(function (e) {
-        this.style.color = "rgb(255, 155, 198)"
+        this.style.color = "#fbda77"
         this.style.transform = "scale(1.2)"
 
         navHome.style = ""
@@ -454,7 +454,7 @@ $(document).ready(function (e) {
     })
 
     $(".work").click(function (e) {
-        this.style.color = "rgb(255, 155, 198)"
+        this.style.color = "#fbda77"
         this.style.transform = "scale(1.2)"
 
         navHome.style = ""
@@ -478,7 +478,7 @@ $(document).ready(function (e) {
     })
 
     $(".Contacts").click(function (e) {
-        this.style.color = "rgb(255, 155, 198)"
+        this.style.color = "#fbda77"
         this.style.transform = "scale(1.2)"
 
         navHome.style = ""
@@ -502,7 +502,44 @@ $(document).ready(function (e) {
     })
 
 
+    $(".ProbBomberClick").click(function (e) {
+        var pulsenetimg = ['./images/ProbabilityBomberSC.png', './images/ProbabilityBomberSC1.png', './images/ProbabilityBomberSC2.png', './images/ProbabilityBomberSC3.png', './images/ProbabilityBomberSC4.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                </div>
+            `);
+        });
 
+        $("#exampleModalLabel").text("ProbabilityBomber")
+        $(".descPoint").text("A gamified learning platform inspired by the classic Bomberman game, designed to transform the way students learn probability by combining interactive gameplay with educational content. The platform engages students through level-based challenges, strategic decision-making, and real-time feedback, allowing them to apply probability concepts in a fun and immersive environment. By integrating game mechanics such as point scoring, power-ups, and progressively difficult levels, the platform encourages active learning, reinforces conceptual understanding, and motivates students to explore probability through hands-on experience.")
+        $(".techPoint").text("React Js, PhaserJS, Firbase Authentication and Database, HTML, CSS, Bootstrap.")
+        $(".challPoint").text("Responsive UI, Student Dashboard, Achievement System, Real-time Game Mechanics, Probability-based Challenges, Level Progression with Adaptive Difficulty, Firebase Authentication")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href= "https://github.com/zyle-geralde/ProbabilityBomberFrontEnd.git"
+    })
+    $(".BasaBuzzClick").click(function (e) {
+        var pulsenetimg = ['./images/Basa1.png', './images/Basa2.png','./images/Basa3.png','./images/Basa4.png','./images/Basa5.png','./images/Basa6.png','./images/Basa7.png','./images/Basa8.png','./images/Basa9.png','./images/Basa10.png','./images/Basa11.png','./images/Basa12.png','./images/Basa13.png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("BasaBuzz")
+        $(".descPoint").text("BasaBuzz: BasaBuzz is an interactive book rating website developed as part of an internship project, aimed at creating a user-friendly platform for readers and administrators to engage with books efficiently. The system was built using ASP.NET for backend development, Razor Pages for frontend implementation, and MySQL for database management, following the MVC architecture to ensure clean separation of concerns and maintainability. Users can register, log in, verify their email, and reset passwords, providing a secure and personalized experience. The platform features dashboards for both admins and users, showcasing new arrivals, top-rated books, and book listings. Administrators can manage users and book genres effectively, including adding, editing, deleting, and searching entries. The responsive and organized UI, designed with Razor Pages and CSS, ensures accessibility across devices. BasaBuzz emphasizes secure data handling, structured CRUD operations, and scalability, making it a robust solution for book enthusiasts, enhancing engagement, and streamlining book management workflows.")
+        $(".techPoint").text("Razor, HTML, CSS, Javascript, FireBase, ASP.NET, MySQL")
+        $(".challPoint").text("Responsive UI, User Authentication, Admin & User Dashboards, Book Management, Email Verification, Password Reset, Secure CRUD Operations")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href= "https://github.com/zyle-geralde/ASIBasecodeCsharp.git"
+    })
     $(".PulseNetClick").click(function (e) {
         var pulsenetimg = ['./images/PulseNet1.png', './images/PulseNet2.png', './images/PulseNet3.png', './images/PulseNet4.png', './images/PulseNet5.png', './images/PulseNet6.png']
         
