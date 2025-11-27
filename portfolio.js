@@ -553,7 +553,7 @@ $(document).ready(function (e) {
         });
 
         $("#exampleModalLabel").text("PulseNet")
-        $(".descPoint").text("A dynamic and interactive social media website designed to connect people, bridge communities, and sharing content. The platform features user-friendly and responsive interface.")
+        $(".descPoint").text("A dynamic and interactive social media platform designed to connect people, build communities, and enable seamless content sharing. It features a user-friendly, fully responsive interface that ensures smooth navigation across devices. The platform supports core social features such as creating posts, liking and commenting, interacting with other users, and managing personal profiles. With its clean design and intuitive layout, it provides an engaging online environment where users can communicate, express themselves, and stay connected with others.")
         $(".techPoint").text("React Js, Django, Sqlite, HTML, CSS, Bootstrap.")
         $(".challPoint").text("Responsive User Interface, JSON Web Token Implementation for Authorization, Password Hashing for security enhancement")
         var gitPoint = document.querySelector(".gitPoint")
@@ -573,7 +573,7 @@ $(document).ready(function (e) {
         });
 
         $("#exampleModalLabel").text("YapperMail")
-        $(".descPoint").text("A dynamic email management system that streamlines email organization and categorization. It offers an AI chatbot that serves as a smart assistant for users. The website offers a collaborative email option allowing multiple users to interact with each other.")
+        $(".descPoint").text("A dynamic and feature-rich email management system designed to streamline how users organize, categorize, and interact with their emails. The platform integrates an intelligent AI chatbot that functions as a smart assistant, helping users navigate their inbox, generate responses, and manage tasks more efficiently. It also supports collaborative email functionalities, allowing multiple users to communicate, coordinate, and work together within shared email threads in real time. With its responsive interface, secure authentication, and smooth user experience, the system enhances productivity and provides a modern, intuitive approach to email handling.")
         $(".techPoint").text("Django, Websockets, Sqlite, HTML, CSS, Bootstrap, Tailwind, Firebase, Jquery.")
         $(".challPoint").text("Responsive User Interface, One-time-Password(OTP) integration, Integrated a real-time notification system, Integrated chatbot intended for user assistance, User Collaboration.")
         var gitPoint = document.querySelector(".gitPoint")
@@ -593,7 +593,7 @@ $(document).ready(function (e) {
         });
 
         $("#exampleModalLabel").text("TechnoSpace")
-        $(".descPoint").text("A MarketPlace that sells second-hand products. This website is intended for the faculties and students of Cebu Institute of Technology-University")
+        $(".descPoint").text("A dedicated online marketplace designed exclusively for students and faculty of Cebu Institute of Technology–University, providing a secure and convenient platform for buying and selling second-hand products. The system enables users to post items, browse listings, negotiate prices, and manage transactions within a trusted academic community. With features such as product categorization, user authentication, and responsive interface design, the platform ensures a smooth and reliable experience for campus users. It promotes sustainability by encouraging the reuse of items while fostering a practical and student-friendly trading environment.")
         $(".techPoint").text("ASP.NET, ReactJS, Azure, Mysql, HTML, CSS, Tailwind, Bootstrap")
         $(".challPoint").text("Listing Categorization, Transaction Transparency, Filtering System, On App messaging, Ratings and Reviews.")
         var gitPoint = document.querySelector(".gitPoint")
@@ -613,7 +613,7 @@ $(document).ready(function (e) {
         });
 
         $("#exampleModalLabel").text("ChatBox")
-        $(".descPoint").text("A RealTime Chat Application allowing open communication between users. This platform allows users to interact with other users through chat.")
+        $(".descPoint").text("ChatBox is a real-time chat application that enables open and instant communication between users in a fast, seamless, and interactive environment. Built with real-time messaging capabilities, the platform supports direct user-to-user conversations, allowing individuals to exchange messages instantly through a responsive and intuitive interface. It features reliable backend infrastructure, efficient data handling, and a user-friendly layout to ensure smooth message delivery and consistent connection. Designed for easy communication, ChatBox fosters social interaction, collaboration, and community engagement through its accessible real-time chat features.")
         $(".techPoint").text("Express/NodeJs, Websockets, HTML, CSS, JQuery, Bootstrap, MongoDB, FireBase")
         $(".challPoint").text("Responsive User Interface, RealTime Chat System")
         var gitPoint = document.querySelector(".gitPoint")
@@ -633,7 +633,7 @@ $(document).ready(function (e) {
         });
 
         $("#exampleModalLabel").text("Forum App")
-        $(".descPoint").text("A Forum Application where users can create and manage their posts as well as reply to other posts.")
+        $(".descPoint").text("A Forum Application where users can create and manage their posts, engage in discussions, and interact with the community through meaningful conversations. The platform allows users to publish new topics, edit or delete their own posts, and reply to others, fostering collaborative knowledge sharing. With its user-friendly and responsive interface, the forum ensures smooth navigation and organized content presentation, making it easier for users to participate, exchange insights, and stay connected with ongoing discussions.")
         $(".techPoint").text("Express/NodeJs, HTML, CSS, JQuery, MongoDB")
         $(".challPoint").text("Json webtoken implementation, Posts are divided into pages.")
         var gitPoint = document.querySelector(".gitPoint")
@@ -642,7 +642,7 @@ $(document).ready(function (e) {
 
     
     $(".ObjectDetectorClick").click(function (e) {
-        var pulsenetimg = ['./images/ObjectDetector.png', './images/ObjectDetector1.png']
+        var pulsenetimg = ['./images/Signlang.png', './images/Signlang1.png']
         
         $(".holdCarousel").text("")
         pulsenetimg.forEach((pn, index) => {
@@ -653,17 +653,17 @@ $(document).ready(function (e) {
             `);
         });
 
-        $("#exampleModalLabel").text("Object Detector")
-        $(".descPoint").text("An object detection system using the YOLO algorithm and the COCO dataset. It identifies and localizes multiple objects in real-time.")
-        $(".techPoint").text("Python, YOLO, COCO dataset")
-        $(".challPoint").text("Multiple Object detection, RealTime Object Detection")
+        $("#exampleModalLabel").text("Sign Language Recognition")
+        $(".descPoint").text("This project builds a complete pipeline for American Sign Language (ASL) recognition using computer vision and classical machine learning. It first converts raw hand images into structured MediaPipe hand-landmark coordinates, storing them as a dataset for training. A Random Forest classifier is trained on these 63-point landmarks, with label encoding for 26 alphabet classes. Finally, a real-time webcam-based detection system is implemented, drawing hand landmarks live and predicting the corresponding ASL letter with smoothing using prediction history.")
+        $(".techPoint").text("Python, OpenCV, MediaPipe, NumPy, Pandas, Scikit-learn, RandomForestClassifier, Joblib, TQDM")
+        $(".challPoint").text("End-to-end ASL pipeline, MediaPipe landmark extraction, Classical ML classifier (Random Forest), Label encoding, Real-time webcam detection, Prediction smoothing with history, Hand landmark visualization, Model persistence with Joblib")
         var gitPoint = document.querySelector(".gitPoint")
-        gitPoint.href = "https://github.com/zyle-geralde/YoloObjectDetection.git"
+        gitPoint.href = "https://github.com/zyle-geralde/SignLanguage.git"
     })
 
     
-    $(".CarCounterClick").click(function (e) {
-        var pulsenetimg = ['./images/CarCounter.png', './images/CarCounter1.png']
+    $(".RACClick").click(function (e) {
+        var pulsenetimg = ['./images/RAC.png', './images/RAC1.png', './images/RAC2.png', './images/RAC3.png']
         
         $(".holdCarousel").text("")
         pulsenetimg.forEach((pn, index) => {
@@ -674,12 +674,33 @@ $(document).ready(function (e) {
             `);
         });
 
-        $("#exampleModalLabel").text("Car Counter")
-        $(".descPoint").text("An object detection system using the YOLO algorithm and the COCO dataset. It identifies and counts the number of cars passing by.")
-        $(".techPoint").text("Python, YOLO, COCO dataset")
-        $(".challPoint").text("Multiple Object detection, RealTime Object Detection")
+        $("#exampleModalLabel").text("RAC Waste Segragation")
+        $(".descPoint").text("RAC Waste Segregation is an AI-powered image classification system designed to automatically identify and categorize recyclable waste materials. Using a deep-learning pipeline built on MobileNetV2 for feature extraction and FAISS for fast similarity search, the system classifies waste into categories such as plastic, metal, paper, cardboard, glass, and biodegradable. The project utilizes the Recycling App dataset from HuggingFace and implements a full machine learning workflow—from data loading and preprocessing to embedding generation, indexing, and evaluation. The model supports real-time prediction from image input and includes performance metrics such as accuracy, classification reports, and confusion matrices for validation.")
+        $(".techPoint").text("Python, TensorFlow/Keras (MobileNetV2), FAISS, Scikit-learn, NumPy, Pandas, Matplotlib, Seaborn, HuggingFace Datasets, PIL, Pickle")
+        $(".challPoint").text("Waste classification with MobileNetV2, FAISS nearest-neighbor search, HuggingFace Recycling App dataset, Real-time image prediction, Accuracy and confusion metrics, Embedding preprocessing, Modular design for prediction and evaluation")
         var gitPoint = document.querySelector(".gitPoint")
-        gitPoint.href = "https://github.com/zyle-geralde/CarCounter.git"
+        gitPoint.href = "https://github.com/zyle-geralde/RAC_WasteSegragation.git"
+    })
+
+    
+    $(".ClassiClick").click(function (e) {
+        var pulsenetimg = ['./images/ballClass.png', './images/ballClass (2).png']
+        
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                </div>
+            `);
+        });
+
+        $("#exampleModalLabel").text("Ball Classification")
+        $(".descPoint").text("This system builds a ball image classification model by fine-tuning a pre-trained ResNet50V2 network. It includes dataset loading from Kaggle, image preprocessing, data augmentation, model construction with custom classification layers, training with early stopping, and visualization of training performance. The project demonstrates a full deep learning workflow from data preparation to inference.")
+        $(".techPoint").text("TensorFlow, Keras, ResNet50V2, ImageDataGenerator, KaggleHub, NumPy, Matplotlib, Python")
+        $(".challPoint").text("Transfer learning with ResNet50V2, Custom classification head, Data augmentation pipeline, Early stopping callback, Training visualization with accuracy/loss plots, Inference on new images, Automatic preprocessing pipeline")
+        var gitPoint = document.querySelector(".gitPoint")
+        gitPoint.href = "https://github.com/zyle-geralde"
     })
 
     $(".ImageCompressorClick").click(function (e) {

@@ -396,11 +396,13 @@
       border-color: #fbda77;
       display: inline-block;
       margin-bottom: 40px;
+      font-size: 25px;
+
     }
 
     .WebTitle {
       padding: 20px;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 500;
       border-bottom-style: solid;
       margin-bottom: 40px;
@@ -868,10 +870,25 @@
 
     <div class="workSection" style="display: none;">
       <div style="max-width: 800px; word-wrap: break-word; width: 90%; margin-right: 40px; margin-left: 40px;">
+        <div class="ProjectsLink">Work Experience</div>
+        <div>
+          <div style="font-size: 20px;"><span>Position: </span>Project Manager/Software Developer Intern</div>
+          <div><span>Location: </span> Alliance Software Inc.</div>
+          <ul>
+            <li>Led a project team through the full system development lifecycle, ensuringsmooth collaboration and on-time delivery.</li>
+            <li>Managed team progress, assigned roles, and maintained project schedulesaligned with key milestones.</li>
+            <li>Developed core backend functionalities and designed a high-performance,reliable database structure.</li>
+            <li>Optimized server performance and system stability for improved efficiency.</li>
+            <li>Conducted code reviews and functionality testing to ensure quality and adherence to project requirements.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="max-width: 800px; word-wrap: break-word; width: 90%; margin-right: 40px; margin-left: 40px;">
         <div class="ProjectsLink">Projects</div>
 
         <div class="webdevproj">
-          <div class="WebTitle">Web Development</div>
+          <div class="WebTitle">Full Stack Web Development</div>
           <div
             style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
             <div class="card projectHov ProbBomberClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -936,21 +953,31 @@
           <div
             style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
             <div class="card projectHov ObjectDetectorClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/ObjectDetector.png" class="card-img-top" alt="...">
+              <img src="./images/Signlang1.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Object Detector</h5>
-                <p class="card-text">A computer vision model that can detect Objects using YOLO and the COCO dataset.
+                <h5 class="card-title">Sign Language Recognition</h5>
+                <p class="card-text">A real-time sign language recognition system using MediaPipe hand landmarks and a Random Forest classifier.
                 </p>
               </div>
             </div>
 
-            <div class="card projectHov CarCounterClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/CarCounter.png" class="card-img-top" alt="...">
+            <div class="card projectHov RACClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img src="./images/RAC1.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Car Counter</h5>
-                <p class="card-text">A computer vision model that can count the number of moving cars.</p>
+                <h5 class="card-title">RAC Waste Segragation</h5>
+                <p class="card-text">An AI-powered waste classification system that uses image recognition and FAISS similarity search to automatically identify and categorize recyclable materials.</p>
               </div>
             </div>
+
+            <div class="card projectHov ClassiClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img src="./images/ballClass.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Ball Classification</h5>
+                <p class="card-text">A TensorFlow-based ball image classification project using transfer learning with ResNet50V2.</p>
+              </div>
+            </div>
+
+
             <div class="card projectHov ImageCompressorClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/Compressor.png" class="card-img-top" alt="...">
               <div class="card-body">
@@ -959,6 +986,7 @@
                   clustering.</p>
               </div>
             </div>
+            
 
             <div class="card projectHov DigitClassifierClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="./images/Classifier.png" class="card-img-top" alt="...">
@@ -972,6 +1000,9 @@
           </div>
         </div>
       </div>
+
+
+      
     </div>
 
     <div class = "contactsSection" style="display: none;">
