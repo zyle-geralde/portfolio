@@ -748,30 +748,30 @@ $(document).ready(function (e) {
     emailjs.init('0Irig6RWuoCC36Xj3');
 
 
-    document.querySelector('.contactformSend').addEventListener('submit', function (event) {
-        event.preventDefault()
+    // document.querySelector('.contactformSend').addEventListener('submit', function (event) {
+    //     event.preventDefault()
 
-        if ($(".nameContact").val().trim() == "" || $(".emailContact").val().trim() == "" || $(".messageContact").val().trim() == "") {
-            alert("Invalid Credentials")
-            return
-        }
+    //     if ($(".nameContact").val().trim() == "" || $(".emailContact").val().trim() == "" || $(".messageContact").val().trim() == "") {
+    //         alert("Invalid Credentials")
+    //         return
+    //     }
 
-        emailjs.send('service_joqu03p', 'template_obj31je', {
-            from_name: $(".nameContact").val(),
-            to_name: 'Zyle Geralde',
-            from_email: $(".emailContact").val(),
-            message: $(".messageContact").val()
-            },'0Irig6RWuoCC36Xj3',
-        ).then(() => {
-            alert("Email Sent Successfully")
-            $(".nameContact").val("")
-            $(".emailContact").val("")
-            $(".messageContact").val("")
-        },(error) => {
-            alert("An error occured")
-        })
+    //     emailjs.send('service_joqu03p', 'template_obj31je', {
+    //         from_name: $(".nameContact").val(),
+    //         to_name: 'Zyle Geralde',
+    //         from_email: $(".emailContact").val(),
+    //         message: $(".messageContact").val()
+    //         },'0Irig6RWuoCC36Xj3',
+    //     ).then(() => {
+    //         alert("Email Sent Successfully")
+    //         $(".nameContact").val("")
+    //         $(".emailContact").val("")
+    //         $(".messageContact").val("")
+    //     },(error) => {
+    //         alert("An error occured")
+    //     })
 
-    })
+    // })
 
     $(".linkIconClick").click(function (e) {
         window.open("https://www.linkedin.com/in/zyle-geralde-de-la-peña-37b2a926b")
@@ -779,6 +779,11 @@ $(document).ready(function (e) {
     $(".githubClick").click(function (e) {
         window.open("https://github.com/zyle-geralde")
     })
+
+    $(".resumeClick").click(function (e) {
+        window.open("https://drive.google.com/file/d/1fkPKCnu5rrH4shvndWO5lRlYSk2N4TTY/view?usp=sharing")
+    })
+
 })
 
 
