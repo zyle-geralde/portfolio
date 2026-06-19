@@ -781,7 +781,7 @@ $(document).ready(function (e) {
     })
 
     $(".resumeClick").click(function (e) {
-        window.open("https://drive.google.com/file/d/1fkPKCnu5rrH4shvndWO5lRlYSk2N4TTY/view?usp=sharing")
+        window.open("https://drive.google.com/file/d/1I8XkS0cwLiOsYajM7DdWdL9WGuP_Xi7L/view?usp=sharing")
     })
 
 })

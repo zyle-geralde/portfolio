@@ -1,492 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <title>Personal Portfolio</title>
 
-<head>
-  <title>Personal Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    <!--Bootstrap ICON-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-  <!--Bootstrap ICON-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Jquery-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
 
-  <!--Jquery-->
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
+    <!--Devicon-->
 
-  <!--Devicon-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
 
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!--FontAwesome Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <!--FontAwesome Icons-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Email js-->
 
-  <!--Email js-->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+        }
+      }
+    </script>
+    <style>
+      * {
+        transition: 0.2s;
+      }
 
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
 
-  <script type="importmap">
-            {
-              "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
-                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
-              }
-            }
-          </script>
-  <style>
-    * {
-      transition: 0.2s;
-    }
+      .main {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.334);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-height: 450px;
+      }
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
+      .navigation_bar {
+        background: linear-gradient(
+          to bottom,
+          black,
+          rgba(0, 0, 0, 0.801),
+          rgba(0, 0, 0, 0)
+        );
+        height: 75px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
 
-    .main {
-      position: absolute;
-      top: 60px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.334);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      min-height: 450px;
-    }
-
-    .navigation_bar {
-      background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0));
-      height: 75px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-
-    .navebar {
-      display: flex;
-      flex-direction: row;
-      color: rgb(236, 236, 236);
-      font-weight: 500;
-      font-size: 14px;
-    }
-
-    .home,
-    .aboutme,
-    .services,
-    .work,
-    .Contacts {
-      cursor: pointer;
-      padding-left: 10px;
-      padding-right: 10px;
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      background: none;
-    }
-
-    .home:hover,
-    .aboutme:hover,
-    .services:hover,
-    .work:hover,
-    .Contacts:hover {
-      transition: 0.2s;
-      transform: scale(1.2);
-      color: #FFD966;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    body {
-      font-family: "Roboto", serif;
-      font-optical-sizing: auto;
-      font-weight: 400;
-      font-style: normal;
-      font-variation-settings: "wdth" 100;
-      letter-spacing: 1px;
-    }
-
-    .wordContent {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .homeCont {
-      color: rgb(236, 236, 236);
-      word-wrap: break-word;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: 90%;
-      animation-name: homeContAnim;
-      animation-duration: 0.5s;
-      animation-fill-mode: forwards;
-      animation-delay: 1s;
-      opacity: 0;
-    }
-
-    .compScieclass {
-      font-size: 14px;
-    }
-
-    .hiClass {
-      font-size: 50px;
-      font-weight: 500;
-    }
-
-    .nameClass {
-      font-size: 50px;
-      font-weight: 500;
-      color: #FFD966;
-    }
-
-    .ImageContent {
-      position: relative;
-      min-width: 300px;
-      min-height: 300px;
-    }
-
-    #bg2 {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-    }
-
-    .shortDescClass {
-      font-size: 14px;
-      margin-top: 20px;
-    }
-
-    .iconList {
-      display: flex;
-      flex-direction: row;
-      margin-top: 20px;
-    }
-
-    .githubIcon {
-      font-size: 2rem;
-      color: #FFD966;
-      border-style: solid;
-      border-color: #FFD966;
-      padding: 0px 7px;
-      border-radius: 1000px;
-      margin: 0px;
-      margin-right: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .linkedinIcon {
-      font-size: 1.7rem;
-      color: #FFD966;
-      border-style: solid;
-      border-color: #FFD966;
-      padding: 0px 10px;
-      border-radius: 1000px;
-      margin: 0px;
-      padding-top: 3px;
-      cursor: pointer;
-    }
-    .resumeIcon{
-      font-size: 1.7rem;
-      color: #FFD966;
-      border-style: solid;
-      border-color: #FFD966;
-      padding: 0px 10px;
-      border-radius: 1000px;
-      margin: 0px;
-      padding-top: 3px;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    .githubIcon:hover,
-    .resumeIcon:hover,
-    .linkedinIcon:hover {
-      color: #fbda77;
-      border-color: #fbda77;
-    }
-
-
-    /*About Section*/
-    .mainAbout {
-      position: absolute;
-      top: 60px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.334);
-      display: flex;
-      flex-direction: row;
-    }
-
-    .aboutmeSection {
-      color: rgb(236, 236, 236);
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      animation-name: aboutmeAnim;
-      animation-duration: 0.5s;
-      animation-fill-mode: forwards;
-      animation-delay: 1s;
-      overflow: auto;
-      opacity: 0;
-
-    }
-
-    #bg3 {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-    }
-
-    .profileImageCont {
-      position: relative;
-      min-width: 300px;
-      min-height: 300px;
-    }
-
-    .introSection {
-      max-width: 700px;
-      margin-left: 40px;
-      margin-right: 40px;
-    }
-
-    .flex-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-start;
-    }
-
-    .flex-container i {
-      width: auto;
-      height: auto;
-      object-fit: cover;
-      border-radius: 5px;
-      background-color: rgb(35, 35, 35);
-      padding: 10px;
-      transition: 0.2s;
-    }
-
-    i:hover {
-      background-color: rgba(255, 255, 255, 0.436);
-    }
-
-    /*Services Section*/
-
-    .mainSection {
-      position: absolute;
-      top: 60px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.334);
-      display: flex;
-      flex-direction: row;
-    }
-
-    .servicesSection {
-      color: rgb(236, 236, 236);
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      animation-name: serviceSectionAnim;
-      animation-duration: 0.5s;
-      animation-fill-mode: forwards;
-      animation-delay: 1s;
-      overflow: auto;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    .serviceGrid {
-      display: grid;
-      grid-template-columns: 300px 300px 300px;
-      column-gap: 60px;
-    }
-
-    .serviceGridCont {
-      width: 100%;
-      padding: 20px;
-      transition: 0.2s;
-      border-radius: 5px;
-    }
-
-    .serviceGridCont:hover {
-      background-color: rgba(200, 200, 200, 0.641);
-    }
-
-    .servicenumber {
-      font-size: 20px;
-      font-weight: 900;
-      border-style: solid;
-      border-radius: 1000px;
-      display: inline-block;
-      padding: 7px 10px;
-      color: #fbda77;
-    }
-
-    .serviceimg {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      object-position: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-    }
-
-    .servicedesc {
-      font-size: 20px;
-      text-align: center;
-      font-weight: 500;
-      border-bottom-style: solid;
-      border-width: 2px;
-    }
-
-    /*Work Section*/
-    .mainWork {
-      position: absolute;
-      top: 60px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.334);
-      display: flex;
-      flex-direction: row;
-    }
-
-    .workSection {
-      color: rgb(236, 236, 236);
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      animation-name: workSectionAnim;
-      animation-duration: 0.5s;
-      animation-fill-mode: forwards;
-      animation-delay: 1s;
-      overflow: auto;
-      opacity: 0;
-    }
-
-    .ProjectsLink {
-      padding: 20px;
-      border-bottom-style: solid;
-      cursor: pointer;
-      color: #fbda77;
-      border-color: #fbda77;
-      display: inline-block;
-      margin-bottom: 40px;
-      font-size: 25px;
-
-    }
-
-    .WebTitle {
-      padding: 20px;
-      font-size: 20px;
-      font-weight: 500;
-      border-bottom-style: solid;
-      margin-bottom: 40px;
-      color: #fbda77;
-    }
-
-    .projectHov {
-      width: 15rem;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .projectHov:hover {
-      width: 16rem;
-      background-color: black;
-      color: white;
-    }
-
-    .webdevproj {
-      margin-bottom: 40px;
-    }
-
-    .machinelearningproj {
-      margin-bottom: 40px;
-    }
-
-    /*Contact Section*/
-    .mainContacts {
-      position: absolute;
-      top: 60px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.334);
-      display: flex;
-      flex-direction: row;
-    }
-
-    .contactsSection {
-      color: rgb(236, 236, 236);
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      animation-name: contactSectionAnim;
-      animation-duration: 0.5s;
-      animation-fill-mode: forwards;
-      animation-delay: 1s;
-      overflow: auto;
-      opacity: 0;
-    }
-
-    .contactDiv {
-      background-color: rgba(36, 36, 36, 0.792);
-      width: 400px;
-      padding: 20px;
-      margin-top: 20px;
-      margin-bottom: 30px;
-      border-radius: 5px;
-    }
-
-    @media (max-width:470px) {
       .navebar {
         display: flex;
         flex-direction: row;
-        color: white;
+        color: rgb(236, 236, 236);
         font-weight: 500;
-        font-size: 13px;
-        letter-spacing: normal;
+        font-size: 14px;
       }
 
       .home,
@@ -495,651 +122,1510 @@
       .work,
       .Contacts {
         cursor: pointer;
-        padding-left: 3px;
-        padding-right: 3px;
-        white-space: nowrap;
+        padding-left: 10px;
+        padding-right: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        background: none;
       }
 
-      .contactDiv {
-        width: 300px;
+      .home:hover,
+      .aboutme:hover,
+      .services:hover,
+      .work:hover,
+      .Contacts:hover {
+        transition: 0.2s;
+        transform: scale(1.2);
+        color: #ffd966;
+        padding-left: 10px;
+        padding-right: 10px;
       }
-    }
 
-
-    @media(max-width:1070px) {
-      .serviceGrid {
-        display: grid;
-        grid-template-columns: 300px 300px;
-        column-gap: 60px;
+      body {
+        font-family: "Roboto", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        letter-spacing: 1px;
       }
-    }
 
-    @media(max-width:720px) {
-      .serviceGrid {
-        display: grid;
-        grid-template-columns: 300px;
-        column-gap: 60px;
+      .wordContent {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 600px;
       }
-    }
 
-    @media (max-width:700px) {
       .homeCont {
         color: rgb(236, 236, 236);
         word-wrap: break-word;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
         width: 90%;
+        animation-name: homeContAnim;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+        opacity: 0;
+      }
+
+      .compScieclass {
+        font-size: 14px;
+      }
+
+      .hiClass {
+        font-size: 50px;
+        font-weight: 500;
+      }
+
+      .nameClass {
+        font-size: 50px;
+        font-weight: 500;
+        color: #ffd966;
       }
 
       .ImageContent {
-        order: -1;
+        position: relative;
+        min-width: 300px;
+        min-height: 300px;
       }
 
-      .wordContent {
+      #bg2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .shortDescClass {
+        font-size: 14px;
+        margin-top: 20px;
+      }
+
+      .iconList {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+      }
+
+      .githubIcon {
+        font-size: 2rem;
+        color: #ffd966;
+        border-style: solid;
+        border-color: #ffd966;
+        padding: 0px 7px;
+        border-radius: 1000px;
+        margin: 0px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .linkedinIcon {
+        font-size: 1.7rem;
+        color: #ffd966;
+        border-style: solid;
+        border-color: #ffd966;
+        padding: 0px 10px;
+        border-radius: 1000px;
+        margin: 0px;
+        padding-top: 3px;
+        cursor: pointer;
+      }
+      .resumeIcon {
+        font-size: 1.7rem;
+        color: #ffd966;
+        border-style: solid;
+        border-color: #ffd966;
+        padding: 0px 10px;
+        border-radius: 1000px;
+        margin: 0px;
+        padding-top: 3px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .githubIcon:hover,
+      .resumeIcon:hover,
+      .linkedinIcon:hover {
+        color: #fbda77;
+        border-color: #fbda77;
+      }
+
+      /*About Section*/
+      .mainAbout {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.334);
+        display: flex;
+        flex-direction: row;
+      }
+
+      .aboutmeSection {
+        color: rgb(236, 236, 236);
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        width: 100%;
+        animation-name: aboutmeAnim;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+        overflow: auto;
+        opacity: 0;
+      }
+
+      #bg3 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .profileImageCont {
+        position: relative;
+        min-width: 300px;
+        min-height: 300px;
+      }
+
+      .introSection {
+        max-width: 700px;
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+      }
+
+      .flex-container i {
+        width: auto;
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+        background-color: rgb(35, 35, 35);
+        padding: 10px;
+        transition: 0.2s;
+      }
+
+      i:hover {
+        background-color: rgba(255, 255, 255, 0.436);
+      }
+
+      /*Services Section*/
+
+      .mainSection {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.334);
+        display: flex;
+        flex-direction: row;
+      }
+
+      .servicesSection {
+        color: rgb(236, 236, 236);
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        animation-name: serviceSectionAnim;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+        overflow: auto;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .serviceGrid {
+        display: grid;
+        grid-template-columns: 300px 300px 300px;
+        column-gap: 60px;
+      }
+
+      .serviceGridCont {
+        width: 100%;
+        padding: 20px;
+        transition: 0.2s;
+        border-radius: 5px;
+      }
+
+      .serviceGridCont:hover {
+        background-color: rgba(200, 200, 200, 0.641);
+      }
+
+      .servicenumber {
+        font-size: 20px;
+        font-weight: 900;
+        border-style: solid;
+        border-radius: 1000px;
+        display: inline-block;
+        padding: 7px 10px;
+        color: #fbda77;
+      }
+
+      .serviceimg {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        margin-top: 20px;
         margin-bottom: 20px;
+        border-radius: 5px;
       }
 
-      .main {
-        min-height: 500px;
-      }
-
-      .hiClass {
-        font-size: 40px;
-        font-weight: 500;
+      .servicedesc {
+        font-size: 20px;
         text-align: center;
-      }
-
-      .nameClass {
-        font-size: 40px;
         font-weight: 500;
-        text-align: center;
+        border-bottom-style: solid;
+        border-width: 2px;
       }
 
-      .compScieclass {
-        font-size: 12px;
-        text-align: center;
+      /*Work Section*/
+      .mainWork {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.334);
+        display: flex;
+        flex-direction: row;
       }
 
-      .shortDescClass {
-        font-size: 12px;
-        margin-top: 10px;
-        text-align: center;
+      .workSection {
+        color: rgb(236, 236, 236);
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        animation-name: workSectionAnim;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+        overflow: auto;
+        opacity: 0;
       }
 
-    }
+      .ProjectsLink {
+        padding: 20px;
+        border-bottom-style: solid;
+        cursor: pointer;
+        color: #fbda77;
+        border-color: #fbda77;
+        display: inline-block;
+        margin-bottom: 40px;
+        font-size: 25px;
+      }
 
-    @media(max-width:520px) {
-      .hiClass {
-        font-size: 35px;
+      .WebTitle {
+        padding: 20px;
+        font-size: 20px;
         font-weight: 500;
+        border-bottom-style: solid;
+        margin-bottom: 40px;
+        color: #fbda77;
       }
 
-      .nameClass {
-        font-size: 35px;
-        font-weight: 500;
+      .projectHov {
+        width: 15rem;
+        cursor: pointer;
+        transition: 0.2s;
       }
 
-      .compScieclass {
-        font-size: 12px;
+      .projectHov:hover {
+        width: 16rem;
+        background-color: black;
+        color: white;
       }
 
-      .shortDescClass {
-        font-size: 12px;
-        margin-top: 10px;
+      .webdevproj {
+        margin-bottom: 40px;
       }
-    }
 
+      .machinelearningproj {
+        margin-bottom: 40px;
+      }
 
-    /*Animation*/
-    @keyframes homeContAnim {
-      0% {
+      /*Contact Section*/
+      .mainContacts {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.334);
+        display: flex;
+        flex-direction: row;
+      }
+
+      .contactsSection {
+        color: rgb(236, 236, 236);
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        animation-name: contactSectionAnim;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+        overflow: auto;
         opacity: 0;
       }
 
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes aboutmeAnim {
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes serviceSectionAnim {
-      0% {
-        opacity: 0;
+      .contactDiv {
+        background-color: rgba(36, 36, 36, 0.792);
+        width: 400px;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        border-radius: 5px;
       }
 
-      100% {
-        opacity: 1;
+      @media (max-width: 470px) {
+        .navebar {
+          display: flex;
+          flex-direction: row;
+          color: white;
+          font-weight: 500;
+          font-size: 13px;
+          letter-spacing: normal;
+        }
+
+        .home,
+        .aboutme,
+        .services,
+        .work,
+        .Contacts {
+          cursor: pointer;
+          padding-left: 3px;
+          padding-right: 3px;
+          white-space: nowrap;
+        }
+
+        .contactDiv {
+          width: 300px;
+        }
       }
-    }
 
-    @keyframes workSectionAnim {
-      0% {
-        opacity: 0;
+      @media (max-width: 1070px) {
+        .serviceGrid {
+          display: grid;
+          grid-template-columns: 300px 300px;
+          column-gap: 60px;
+        }
       }
 
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes contactSectionAnim {
-      0% {
-        opacity: 0;
+      @media (max-width: 720px) {
+        .serviceGrid {
+          display: grid;
+          grid-template-columns: 300px;
+          column-gap: 60px;
+        }
       }
 
-      100% {
-        opacity: 1;
+      @media (max-width: 700px) {
+        .homeCont {
+          color: rgb(236, 236, 236);
+          word-wrap: break-word;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+        }
+
+        .ImageContent {
+          order: -1;
+        }
+
+        .wordContent {
+          align-items: center;
+          margin-bottom: 20px;
+        }
+
+        .main {
+          min-height: 500px;
+        }
+
+        .hiClass {
+          font-size: 40px;
+          font-weight: 500;
+          text-align: center;
+        }
+
+        .nameClass {
+          font-size: 40px;
+          font-weight: 500;
+          text-align: center;
+        }
+
+        .compScieclass {
+          font-size: 12px;
+          text-align: center;
+        }
+
+        .shortDescClass {
+          font-size: 12px;
+          margin-top: 10px;
+          text-align: center;
+        }
       }
-    }
-  </style>
-</head>
 
-<body>
-  <canvas id="bg"></canvas>
+      @media (max-width: 520px) {
+        .hiClass {
+          font-size: 35px;
+          font-weight: 500;
+        }
 
-  <div class="main">
-    <div class="navigation_bar">
-      <div class="navebar">
-        <div class="home">Home</div>
-        <div class="aboutme">About Me</div>
-        <div class="services">Services</div>
-        <div class="work">Work</div>
-        <div class="Contacts">Contacts</div>
-      </div>
-    </div>
+        .nameClass {
+          font-size: 35px;
+          font-weight: 500;
+        }
 
-    <div class="homeCont">
-      <div class="wordContent">
-        <div class="compScieclass">Computer Science Student</div>
-        <div class="hiClass">Hello! I am</div>
-        <div class="nameClass">Zyle Geralde de la Peña</div>
-        <div class="shortDescClass">A programmer proficient in web development and machine learning.</div>
-        <div class="iconList">
-          <i class="bi bi-github githubIcon githubClick"></i>
-          <i class="bi bi-linkedin linkedinIcon linkIconClick"></i>
-          <i class="bi bi-file-earmark-text resumeIcon resumeClick"></i>
+        .compScieclass {
+          font-size: 12px;
+        }
+
+        .shortDescClass {
+          font-size: 12px;
+          margin-top: 10px;
+        }
+      }
+
+      /*Animation*/
+      @keyframes homeContAnim {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes aboutmeAnim {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes serviceSectionAnim {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes workSectionAnim {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes contactSectionAnim {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="bg"></canvas>
+
+    <div class="main">
+      <div class="navigation_bar">
+        <div class="navebar">
+          <div class="home">Home</div>
+          <div class="aboutme">About Me</div>
+          <div class="services">Services</div>
+          <div class="work">Work</div>
+          <div class="Contacts">Contacts</div>
         </div>
       </div>
-      <div class="ImageContent">
-        <canvas id="bg2"></canvas>
-      </div>
-    </div>
 
-    <div class="aboutmeSection" style="display: none;">
-      <div class=profileImageCont>
-        <canvas id="bg3"></canvas>
+      <div class="homeCont">
+        <div class="wordContent">
+          <div class="compScieclass">Software Engineer</div>
+          <div class="hiClass">Hello! I am</div>
+          <div class="nameClass">Zyle Geralde de la Peña</div>
+          <div class="shortDescClass">
+            A Software Engineer proficient in web development and machine
+            learning.
+          </div>
+          <div class="iconList">
+            <i class="bi bi-github githubIcon githubClick"></i>
+            <i class="bi bi-linkedin linkedinIcon linkIconClick"></i>
+            <i class="bi bi-file-earmark-text resumeIcon resumeClick"></i>
+          </div>
+        </div>
+        <div class="ImageContent">
+          <canvas id="bg2"></canvas>
+        </div>
       </div>
-      <div
-        style="font-style: italic; color:rgb(243, 243, 243); font-size: 30px; max-width: 700px; text-align: center; margin-top: 30px; margin-left: 40px; margin-right: 40px;">
-        "Shaping the future with Innovative Technological Advancements"</div>
-      <div class="introSection" style="margin-top: 60px;">
-        <div>
-          <div
-            style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: #fbda77;">
-            INTRODUCTION</div>
-          <div style="color:#FFD966; font-size: 40px; font-weight: 500;">Hello!</div>
-          <div style="text-align: justify; color: rgb(243, 243, 243);">
-            I am Zyle Geralde de la Peña, A passionate programmer, specializing in full-stack web development
-            and machine learning, with expertise in technologies such as React.js,
-            Django, TensorFlow, and scikit-learn. Eager to apply my skills in a
-            challenging environment where I can contribute to innovative projects
-            and continue to grow professionally, while expanding my knowledge and
-            experience in the field.
+
+      <div class="aboutmeSection" style="display: none">
+        <div class="profileImageCont">
+          <canvas id="bg3"></canvas>
+        </div>
+        <div
+          style="
+            font-style: italic;
+            color: rgb(243, 243, 243);
+            font-size: 30px;
+            max-width: 700px;
+            text-align: center;
+            margin-top: 30px;
+            margin-left: 40px;
+            margin-right: 40px;
+          "
+        >
+          "Shaping the future with Innovative Technological Advancements"
+        </div>
+        <div class="introSection" style="margin-top: 60px">
+          <div>
+            <div
+              style="
+                font-weight: 500;
+                border-bottom-style: solid;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                color: #fbda77;
+              "
+            >
+              INTRODUCTION
+            </div>
+            <div style="color: #ffd966; font-size: 40px; font-weight: 500">
+              Hello!
+            </div>
+            <div style="text-align: justify; color: rgb(243, 243, 243)">
+              I am Zyle Geralde de la Peña, A passionate Software Engineer,
+              specializing in full-stack web development and machine learning,
+              with expertise in technologies such as React.js, Django,
+              TensorFlow, and scikit-learn. Eager to apply my skills in a
+              challenging environment where I can contribute to innovative
+              projects and continue to grow professionally, while expanding my
+              knowledge and experience in the field.
+            </div>
+          </div>
+        </div>
+
+        <div class="introSection" style="margin-top: 50px">
+          <div>
+            <div
+              style="
+                font-weight: 500;
+                border-bottom-style: solid;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                color: #fbda77;
+              "
+            >
+              EDUCATION
+            </div>
+            <div style="text-align: justify">
+              <span
+                style="
+                  font-weight: 500;
+                  color: #fbda77;
+                  font-size: 20px;
+                  color: #fbda77;
+                  text-align: left;
+                "
+                >Bachelor of Science in Computer Science</span
+              >
+              <div
+                style="
+                  font-weight: 500;
+                  margin-bottom: 20px;
+                  color: rgb(243, 243, 243);
+                "
+              >
+                Cebu Institute of Technology - University Year 2025-2026
+              </div>
+              <div style="color: rgb(243, 243, 243); margin-bottom: 20px">
+                <span style="color: #fbda77; font-weight: 500; font-size: 20px"
+                  >Relevant Courses:
+                </span>
+                AI/Machine Learning, Data Science, Application Development,
+                Software Engineering, Data Structures and Algorithms, Object
+                Oriented Programming
+              </div>
+              <div
+                style="
+                  font-weight: 500;
+                  color: #fbda77;
+                  font-size: 20px;
+                  margin-bottom: 10px;
+                "
+              >
+                Certifications
+              </div>
+              <ul>
+                <li style="margin-bottom: 10px">
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/specialization/4EVB7STR33JW"
+                    target="_blank"
+                    style="
+                      color: rgb(243, 243, 243);
+                      text-decoration: underline;
+                    "
+                    >Machine Learning Specialization</a
+                  >
+                </li>
+                <li style="margin-bottom: 10px">
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/records/8OXEF8R2LEAJ"
+                    target="_blank"
+                    style="
+                      color: rgb(243, 243, 243);
+                      text-decoration: underline;
+                    "
+                    >Advanced Learning Algorithms</a
+                  >
+                </li>
+                <li style="margin-bottom: 10px">
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/records/LKFLNZLFESWP"
+                    target="_blank"
+                    style="
+                      color: rgb(243, 243, 243);
+                      text-decoration: underline;
+                    "
+                    >Supervised Machine Learning: Regression and
+                    Classification</a
+                  >
+                </li>
+                <li style="margin-bottom: 10px">
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/records/EMEPNEG5HP0P"
+                    target="_blank"
+                    style="
+                      color: rgb(243, 243, 243);
+                      text-decoration: underline;
+                    "
+                    >Unsupervised Learning, Recommenders, Reinforcement
+                    Learning</a
+                  >
+                </li>
+                <li style="margin-bottom: 10px">
+                  <a
+                    href="https://www.credly.com/badges/5e3385ac-fcbe-40dd-87f5-b29e496abd3c/linked_in_profile"
+                    target="_blank"
+                    style="
+                      color: rgb(243, 243, 243);
+                      text-decoration: underline;
+                    "
+                    >Amazon Web Services (AWS) logo AWS Academy Graduate - Cloud
+                    Foundations - Training Badge</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="introSection" style="margin-top: 50px">
+          <div>
+            <div
+              style="
+                font-weight: 500;
+                border-bottom-style: solid;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                color: #fbda77;
+              "
+            >
+              SKILLS
+            </div>
+            <div style="text-align: justify">
+              <div
+                style="
+                  font-weight: 500;
+                  color: #fbda77;
+                  font-size: 20px;
+                  color: #fbda77;
+                  margin-bottom: 20px;
+                  margin-top: 40px;
+                "
+              >
+                Programming Languages
+              </div>
+              <div style="font-size: 50px" class="flex-container">
+                <i class="devicon-python-plain-wordmark colored"></i>
+                <i class="devicon-java-plain-wordmark colored"></i>
+                <i class="devicon-javascript-plain colored"></i>
+                <i class="devicon-c-plain colored"></i>
+                <i class="devicon-cplusplus-plain colored"></i>
+                <i class="devicon-csharp-plain-wordmark colored"></i>
+                <i class="devicon-php-plain colored"></i>
+              </div>
+
+              <div
+                style="
+                  font-weight: 500;
+                  color: #fbda77;
+                  font-size: 20px;
+                  color: #fbda77;
+                  margin-bottom: 20px;
+                  margin-top: 40px;
+                "
+              >
+                FrontEnd
+              </div>
+              <div style="font-size: 50px" class="flex-container">
+                <i class="devicon-react-original-wordmark colored"></i>
+                <i class="devicon-html5-plain-wordmark colored"></i>
+                <i class="devicon-css3-plain-wordmark colored"></i>
+                <i class="devicon-jquery-plain-wordmark colored"></i>
+                <i class="devicon-bootstrap-plain-wordmark colored"></i>
+              </div>
+
+              <div
+                style="
+                  font-weight: 500;
+                  color: #fbda77;
+                  font-size: 20px;
+                  color: #fbda77;
+                  margin-bottom: 20px;
+                  margin-top: 40px;
+                "
+              >
+                BackEnd
+              </div>
+              <div style="font-size: 50px" class="flex-container">
+                <i class="devicon-nodejs-plain-wordmark colored"></i>
+                <i class="devicon-express-original-wordmark"></i>
+                <i class="devicon-django-plain-wordmark"></i>
+                <i class="devicon-dotnetcore-plain colored"></i>
+                <i class="devicon-flask-original-wordmark"></i>
+              </div>
+
+              <div
+                style="
+                  font-weight: 500;
+                  color: #fbda77;
+                  font-size: 20px;
+                  color: #fbda77;
+                  margin-bottom: 20px;
+                  margin-top: 40px;
+                "
+              >
+                Machine Learning
+              </div>
+              <div style="font-size: 50px" class="flex-container">
+                <i class="devicon-tensorflow-original-wordmark colored"></i>
+                <i class="devicon-scikitlearn-plain colored"></i>
+                <i class="devicon-numpy-plain-wordmark colored"></i>
+                <i class="devicon-pandas-plain-wordmark"></i>
+                <i class="devicon-matplotlib-plain-wordmark colored"></i>
+              </div>
+
+              <div
+                style="
+                  font-weight: 500;
+                  color: #fbda77;
+                  font-size: 20px;
+                  color: #fbda77;
+                  margin-bottom: 20px;
+                  margin-top: 40px;
+                "
+              >
+                Database
+              </div>
+              <div style="font-size: 50px" class="flex-container">
+                <i class="devicon-mysql-plain-wordmark colored"></i>
+                <i class="devicon-postgresql-plain-wordmark colored"></i>
+                <i class="devicon-mongodb-plain-wordmark colored"></i>
+                <i class="devicon-firebase-plain-wordmark colored"></i>
+              </div>
+
+              <div
+                style="
+                  font-weight: 500;
+                  color: #fbda77;
+                  font-size: 20px;
+                  color: #fbda77;
+                  margin-bottom: 20px;
+                  margin-top: 40px;
+                "
+              >
+                SoftSkills
+              </div>
+              <div
+                style="font-size: 50px; margin-bottom: 40px"
+                class="flex-container"
+              >
+                <i
+                  class="fa-solid fa-people-arrows"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                  ><span style="font-size: 6px">Communication</span></i
+                >
+                <i
+                  class="fa-regular fa-lightbulb"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                  ><span style="font-size: 6px">Problem Solving</span></i
+                >
+                <i
+                  class="fa-solid fa-person-walking-arrow-right"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                  ><span style="font-size: 6px">Leadership</span></i
+                >
+                <i
+                  class="fa-solid fa-file-lines"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                  ><span style="font-size: 6px"
+                    >Technical Documentation</span
+                  ></i
+                >
+                <i
+                  class="fa-solid fa-brain"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                  ><span style="font-size: 6px">Critical Thinking</span></i
+                >
+                <i
+                  class="fa-solid fa-person-digging"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                  ><span style="font-size: 6px">Work Under Pressure</span></i
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="introSection" style="margin-top: 50px;">
-        <div>
-          <div
-            style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: #fbda77;">
-            EDUCATION</div>
-          <div style="text-align: justify;">
-            <span style="font-weight: 500; color:#fbda77; font-size: 20px; color:#fbda77; text-align: left;">Bachelor
-              of
-              Science in Computer Science</span>
-            <div style="font-weight: 500; margin-bottom: 20px; color: rgb(243, 243, 243);">Cebu Institute of Technology
-              - University (Expected Year 2025-2026)</div>
-            <div style="color: rgb(243, 243, 243); margin-bottom: 20px;"><span
-                style="color:#fbda77; font-weight: 500; font-size: 20px;">Relevant Courses: </span>
-              AI/Machine Learning, Data Science, Application Development, Software Engineering, Data Structures and
-              Algorithms, Object Oriented Programming </div>
-            <div style="font-weight: 500; color:#fbda77; font-size: 20px; margin-bottom: 10px;">
-              Certifications</div>
+      <div class="servicesSection" style="display: none">
+        <div class="serviceGrid" style="margin-bottom: 30px; margin-top: 20px">
+          <div class="serviceGridCont" style="border-bottom-style: none">
+            <div class="servicenumber">01</div>
+            <img src="./images/fullstackimg.jpg" class="serviceimg" />
+            <div class="servicedesc">FullStack Web Development</div>
+          </div>
+          <div class="serviceGridCont" style="border-bottom-style: none">
+            <div class="servicenumber">02</div>
+            <img src="./images/frontEnd.jpg" class="serviceimg" />
+            <div class="servicedesc">FrontEnd Web Development</div>
+          </div>
+          <div class="serviceGridCont" style="border-bottom-style: none">
+            <div class="servicenumber">03</div>
+            <img src="./images/backenddev.jpg" class="serviceimg" />
+            <div class="servicedesc">Backend Web Development</div>
+          </div>
+          <div class="serviceGridCont" style="border-bottom-style: none">
+            <div class="servicenumber">04</div>
+            <img src="./images/webdesign.jpg" class="serviceimg" />
+            <div class="servicedesc">
+              UI/UX <br />
+              Design
+            </div>
+          </div>
+          <div class="serviceGridCont" style="border-bottom-style: none">
+            <div class="servicenumber">05</div>
+            <img src="./images/machine learning.jpg" class="serviceimg" />
+            <div class="servicedesc">Machine Learning Solutions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="workSection" style="display: none">
+        <div
+          style="
+            max-width: 800px;
+            word-wrap: break-word;
+            width: 90%;
+            margin-right: 40px;
+            margin-left: 40px;
+          "
+        >
+          <div class="ProjectsLink">Work Experience</div>
+          <div>
+            <div style="font-size: 20px; margin-bottom: 15px">
+              <span style="color: #fbda77">Position: </span>Software Engineer
+            </div>
+
+            <div style="margin-bottom: 15px">
+              <span style="color: #fbda77">Location: </span>Digital Superstore
+              Pte Limited
+            </div>
+
             <ul>
-              <li style="margin-bottom: 10px;"><a
-                  href="https://www.coursera.org/account/accomplishments/specialization/4EVB7STR33JW" target="_blank"
-                  style="color: rgb(243, 243, 243); text-decoration: underline;">Machine Learning Specialization</a>
+              <li style="margin-bottom: 10px">
+                Developed scalable RESTful APIs and backend services powering
+                e-commerce and business operations.
               </li>
-              <li style="margin-bottom: 10px;"><a
-                  href="https://www.coursera.org/account/accomplishments/records/8OXEF8R2LEAJ" target="_blank"
-                  style="color: rgb(243, 243, 243); text-decoration: underline; ">Advanced Learning Algorithms</a></li>
-              <li style="margin-bottom: 10px;"><a
-                  href="https://www.coursera.org/account/accomplishments/records/LKFLNZLFESWP" target="_blank"
-                  style="color: rgb(243, 243, 243); text-decoration: underline; ">Supervised Machine Learning:
-                  Regression and
-                  Classification</a></li>
-              <li style="margin-bottom: 10px;"><a
-                  href="https://www.coursera.org/account/accomplishments/records/EMEPNEG5HP0P" target="_blank"
-                  style="color: rgb(243, 243, 243); text-decoration: underline; ">Unsupervised Learning, Recommenders,
-                  Reinforcement Learning</a></li>
-              <li style="margin-bottom: 10px;"><a
-                  href="https://www.credly.com/badges/5e3385ac-fcbe-40dd-87f5-b29e496abd3c/linked_in_profile"
-                  target="_blank" style="color: rgb(243, 243, 243); text-decoration: underline; ">Amazon Web Services
-                  (AWS) logo
-                  AWS Academy Graduate - Cloud Foundations - Training Badge</a></li>
+
+              <li style="margin-bottom: 10px">
+                Integrated external systems including CRM, inventory, logistics,
+                and warehouse management platforms.
+              </li>
+
+              <li style="margin-bottom: 10px">
+                Designed efficient database solutions, enhanced application
+                security, and optimized system performance.
+              </li>
+
+              <li style="margin-bottom: 10px">
+                Built and maintained modern React applications and internal
+                tools to streamline business workflows.
+              </li>
+
+              <li style="margin-bottom: 10px">
+                Collaborated across the full software development lifecycle,
+                from requirements gathering to deployment and maintenance.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size: 20px; margin-bottom: 15px">
+              <span style="color: #fbda77">Position: </span>Project
+              Manager/Software Developer Intern
+            </div>
+            <div style="margin-bottom: 15px">
+              <span style="color: #fbda77">Location: </span> Alliance Software
+              Inc.
+            </div>
+            <ul>
+              <li style="margin-bottom: 10px">
+                Led a project team through the full system development
+                lifecycle, ensuringsmooth collaboration and on-time delivery.
+              </li>
+              <li style="margin-bottom: 10px">
+                Managed team progress, assigned roles, and maintained project
+                schedulesaligned with key milestones.
+              </li>
+              <li style="margin-bottom: 10px">
+                Developed core backend functionalities and designed a
+                high-performance,reliable database structure.
+              </li>
+              <li style="margin-bottom: 10px">
+                Optimized server performance and system stability for improved
+                efficiency.
+              </li>
+              <li style="margin-bottom: 10px">
+                Conducted code reviews and functionality testing to ensure
+                quality and adherence to project requirements.
+              </li>
             </ul>
           </div>
         </div>
-      </div>
 
+        <div
+          style="
+            max-width: 800px;
+            word-wrap: break-word;
+            width: 90%;
+            margin-right: 40px;
+            margin-left: 40px;
+          "
+        >
+          <div class="ProjectsLink">Projects</div>
 
-
-      <div class="introSection" style="margin-top: 50px;">
-        <div>
-          <div
-            style="font-weight: 500; border-bottom-style: solid; padding-bottom: 10px; margin-bottom: 10px; color: #fbda77;">
-            SKILLS</div>
-          <div style="text-align: justify;">
+          <div class="webdevproj">
+            <div class="WebTitle">Full Stack Web Development</div>
             <div
-              style="font-weight: 500; color:#fbda77; font-size: 20px; color:#fbda77; margin-bottom: 20px; margin-top: 40px;">
-              Programming Languages</div>
-            <div style="font-size: 50px;" class="flex-container">
-              <i class="devicon-python-plain-wordmark colored"></i>
-              <i class="devicon-java-plain-wordmark colored"></i>
-              <i class="devicon-javascript-plain colored"></i>
-              <i class="devicon-c-plain colored"></i>
-              <i class="devicon-cplusplus-plain colored"></i>
-              <i class="devicon-csharp-plain-wordmark colored"></i>
-              <i class="devicon-php-plain colored"></i>
-            </div>
+              style="
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+              "
+            >
+              <div
+                class="card projectHov ProbBomberClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/ProbabilityBomberSC.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Probability Bomber</h5>
+                  <p class="card-text">
+                    A gamified learning platform modeled after Bomberman to
+                    boost student engagement in probability.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card projectHov BasaBuzzClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img src="./images/Basa1.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">BasaBuzz</h5>
+                  <p class="card-text">
+                    A responsive book rating website with user and admin
+                    capabilities
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card projectHov YapperMailClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/YapperMail.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Yapper Mail</h5>
+                  <p class="card-text">
+                    An Email management website that allows users to create and
+                    manage emails.
+                  </p>
+                </div>
+              </div>
 
-            <div
-              style="font-weight: 500; color:#fbda77; font-size: 20px; color:#fbda77; margin-bottom: 20px; margin-top: 40px;">
-              FrontEnd</div>
-            <div style="font-size: 50px;" class="flex-container">
-              <i class="devicon-react-original-wordmark colored"></i>
-              <i class="devicon-html5-plain-wordmark colored"></i>
-              <i class="devicon-css3-plain-wordmark colored"></i>
-              <i class="devicon-jquery-plain-wordmark colored"></i>
-              <i class="devicon-bootstrap-plain-wordmark colored"></i>
-            </div>
+              <div
+                class="card projectHov TechnoSpaceClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/technoSpace.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">TechnoSpace</h5>
+                  <p class="card-text">
+                    A Marketplace Website built for CIT-University Students and
+                    Faculties.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card projectHov ChatBoxClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/ChatBox.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">ChatBox</h5>
+                  <p class="card-text">
+                    A Real-Time Chat Website allowing interactions between
+                    users.
+                  </p>
+                </div>
+              </div>
 
-            <div
-              style="font-weight: 500; color:#fbda77; font-size: 20px; color:#fbda77; margin-bottom: 20px; margin-top: 40px;">
-              BackEnd</div>
-            <div style="font-size: 50px;" class="flex-container">
-              <i class="devicon-nodejs-plain-wordmark colored"></i>
-              <i class="devicon-express-original-wordmark"></i>
-              <i class="devicon-django-plain-wordmark"></i>
-              <i class="devicon-dotnetcore-plain colored"></i>
-              <i class="devicon-flask-original-wordmark"></i>
-            </div>
+              <div
+                class="card projectHov PulseNetClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/PulseNet.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">PulseNet</h5>
+                  <p class="card-text">
+                    A Social Media Clone that allows users to create and manage
+                    posts.
+                  </p>
+                </div>
+              </div>
 
-            <div
-              style="font-weight: 500; color:#fbda77; font-size: 20px; color:#fbda77; margin-bottom: 20px; margin-top: 40px;">
-              Machine Learning</div>
-            <div style="font-size: 50px;" class="flex-container">
-              <i class="devicon-tensorflow-original-wordmark colored"></i>
-              <i class="devicon-scikitlearn-plain colored"></i>
-              <i class="devicon-numpy-plain-wordmark colored"></i>
-              <i class="devicon-pandas-plain-wordmark"></i>
-              <i class="devicon-matplotlib-plain-wordmark colored"></i>
-            </div>
-
-            <div
-              style="font-weight: 500; color:#fbda77; font-size: 20px; color:#fbda77; margin-bottom: 20px; margin-top: 40px;">
-              Database</div>
-            <div style="font-size: 50px;" class="flex-container">
-              <i class="devicon-mysql-plain-wordmark colored"></i>
-              <i class="devicon-postgresql-plain-wordmark colored"></i>
-              <i class="devicon-mongodb-plain-wordmark colored"></i>
-              <i class="devicon-firebase-plain-wordmark colored"></i>
-            </div>
-
-
-            <div
-              style="font-weight: 500; color:#fbda77; font-size: 20px; color:#fbda77; margin-bottom: 20px; margin-top: 40px;">
-              SoftSkills</div>
-            <div style="font-size: 50px; margin-bottom: 40px;" class="flex-container">
-
-              <i class="fa-solid fa-people-arrows"
-                style="display: flex; flex-direction:column; align-items: center;"><span
-                  style="font-size: 6px;">Communication</span></i>
-              <i class="fa-regular fa-lightbulb"
-                style="display: flex; flex-direction:column; align-items: center;"><span style="font-size: 6px;">Problem
-                  Solving</span></i>
-              <i class="fa-solid fa-person-walking-arrow-right"
-                style="display: flex; flex-direction:column; align-items: center;"><span
-                  style="font-size: 6px;">Leadership</span></i>
-              <i class="fa-solid fa-file-lines" style="display: flex; flex-direction:column; align-items: center;"><span
-                  style="font-size: 6px;">Technical Documentation</span></i>
-              <i class="fa-solid fa-brain" style="display: flex; flex-direction:column; align-items: center;"><span
-                  style="font-size: 6px;">Critical Thinking</span></i>
-              <i class="fa-solid fa-person-digging"
-                style="display: flex; flex-direction:column; align-items: center;"><span style="font-size: 6px;">Work
-                  Under Pressure</span></i>
+              <div
+                class="card projectHov ForumWebsiteClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/ForumApp.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Forum Website</h5>
+                  <p class="card-text">
+                    A Forum Website that allows users to post texts.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
+          <div class="machinelearningproj">
+            <div class="WebTitle">Machine Learning</div>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+              "
+            >
+              <div
+                class="card projectHov ObjectDetectorClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/Signlang1.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Sign Language Recognition</h5>
+                  <p class="card-text">
+                    A real-time sign language recognition system using MediaPipe
+                    hand landmarks and a Random Forest classifier.
+                  </p>
+                </div>
+              </div>
 
+              <div
+                class="card projectHov RACClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img src="./images/RAC1.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">RAC Waste Segragation</h5>
+                  <p class="card-text">
+                    An AI-powered waste classification system that uses image
+                    recognition and FAISS similarity search to automatically
+                    identify and categorize recyclable materials.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="card projectHov ClassiClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/ballClass.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Ball Classification</h5>
+                  <p class="card-text">
+                    A TensorFlow-based ball image classification project using
+                    transfer learning with ResNet50V2.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="card projectHov ImageCompressorClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/Compressor.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Image Compressor</h5>
+                  <p class="card-text">
+                    An unsupervised machine learning model that can compress the
+                    image by k means clustering.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="card projectHov DigitClassifierClick"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img
+                  src="./images/Classifier.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Digit Classifier</h5>
+                  <p class="card-text">
+                    A supervised machine learning model that can identify the
+                    digit(0 - 9) on an image.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contactsSection" style="display: none">
+        <div class="contactDiv">
+          <div style="font-size: 12px">Get In Touch</div>
+          <div style="font-size: 30px; font-weight: 600; margin-bottom: 20px">
+            Contact Me
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div style="display: flex; align-items: center; gap: 12px">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 5.55 5.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <span>09950374262</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <div style="text-decoration: none; color: inherit">
+                zylgerdlp19@gmail.com
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+              <a
+                href="https://github.com/zyle-geralde"
+                target="_blank"
+                style="text-decoration: none; color: inherit"
+                >github.com/zyle-geralde</a
+              >
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
+              <a
+                href="https://zyle-geralde.github.io/portfolio"
+                target="_blank"
+                style="text-decoration: none; color: inherit"
+                >zyle-geralde.github.io/portfolio</a
+              >
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              <a
+                href="https://linkedin.com/in/zyle-geralde-de-la-peña-37b2a926b"
+                target="_blank"
+                style="text-decoration: none; color: inherit"
+                >linkedin.com/in/zyle-geralde-de-la-peña-37b2a926b</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner holdCarousel"></div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev"
+                style="color: black; font-size: 30px; font-weight: bold"
+              ></button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next"
+                style="color: black; font-size: 30px; font-weight: bold"
+              >
+                >
+              </button>
+            </div>
+            <div
+              style="
+                word-wrap: break-word;
+                margin-bottom: 10px;
+                margin-top: 10px;
+              "
+            >
+              <span style="font-weight: 500">Description: </span
+              ><span class="descPoint" style="font-size: 13px"></span>
+            </div>
+            <div style="word-wrap: break-word; margin-bottom: 10px">
+              <span style="font-weight: 500">Technologies: </span
+              ><span class="techPoint" style="font-size: 13px"></span>
+            </div>
+            <div style="word-wrap: break-word; margin-bottom: 10px">
+              <span style="font-weight: 500">Highlights: </span
+              ><span class="challPoint" style="font-size: 13px"></span>
+            </div>
+            <div style="word-wrap: break-word; margin-bottom: 10px">
+              <span style="font-weight: 500">Github: </span
+              ><span style="font-size: 13px"
+                ><a class="gitPoint" href="" target="_blank"
+                  >Github Link</a
+                ></span
+              >
+            </div>
+          </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
 
-    <div class="servicesSection" style="display: none;">
-      <div class="serviceGrid" style="margin-bottom: 30px; margin-top: 20px;">
-        <div class="serviceGridCont" style="border-bottom-style: none;">
-          <div class="servicenumber">
-            01
-          </div>
-          <img src="./images/fullstackimg.jpg" class="serviceimg">
-          <div class="servicedesc">
-            FullStack Web Development
-          </div>
-        </div>
-        <div class="serviceGridCont" style="border-bottom-style: none;">
-          <div class="servicenumber">
-            02
-          </div>
-          <img src="./images/frontEnd.jpg" class="serviceimg">
-          <div class="servicedesc">
-            FrontEnd Web Development
-          </div>
-        </div>
-        <div class="serviceGridCont" style="border-bottom-style: none;">
-          <div class="servicenumber">
-            03
-          </div>
-          <img src="./images/backenddev.jpg" class="serviceimg">
-          <div class="servicedesc">
-            Backend Web Development
-          </div>
-        </div>
-        <div class="serviceGridCont" style="border-bottom-style: none;">
-          <div class="servicenumber">
-            04
-          </div>
-          <img src="./images/webdesign.jpg" class="serviceimg">
-          <div class="servicedesc">
-            UI/UX <br> Design
-          </div>
-        </div>
-        <div class="serviceGridCont" style="border-bottom-style: none;">
-          <div class="servicenumber">
-            05
-          </div>
-          <img src="./images/machine learning.jpg" class="serviceimg">
-          <div class="servicedesc">
-            Machine Learning Solutions
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="workSection" style="display: none;">
-      <div style="max-width: 800px; word-wrap: break-word; width: 90%; margin-right: 40px; margin-left: 40px;">
-        <div class="ProjectsLink">Work Experience</div>
-        <div>
-          <div style="font-size: 20px; margin-bottom: 15px; "><span style="color:#fbda77">Position: </span>Project
-            Manager/Software Developer Intern</div>
-          <div style="margin-bottom: 15px;"><span style="color:#fbda77">Location: </span> Alliance Software Inc.</div>
-          <ul>
-            <li style="margin-bottom: 10px;">Led a project team through the full system development lifecycle,
-              ensuringsmooth collaboration and on-time delivery.</li>
-            <li style="margin-bottom: 10px;">Managed team progress, assigned roles, and maintained project
-              schedulesaligned with key milestones.</li>
-            <li style="margin-bottom: 10px;">Developed core backend functionalities and designed a
-              high-performance,reliable database structure.</li>
-            <li style="margin-bottom: 10px;">Optimized server performance and system stability for improved efficiency.
-            </li>
-            <li style="margin-bottom: 10px;">Conducted code reviews and functionality testing to ensure quality and
-              adherence to project requirements.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="max-width: 800px; word-wrap: break-word; width: 90%; margin-right: 40px; margin-left: 40px;">
-        <div class="ProjectsLink">Projects</div>
-
-        <div class="webdevproj">
-          <div class="WebTitle">Full Stack Web Development</div>
-          <div
-            style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
-            <div class="card projectHov ProbBomberClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/ProbabilityBomberSC.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Probability Bomber</h5>
-                <p class="card-text">A gamified learning platform modeled after Bomberman to boost student engagement in
-                  probability.</p>
-              </div>
-            </div>
-            <div class="card projectHov BasaBuzzClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/Basa1.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">BasaBuzz</h5>
-                <p class="card-text">A responsive book rating website with user and admin capabilities</p>
-              </div>
-            </div>
-            <div class="card projectHov YapperMailClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/YapperMail.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Yapper Mail</h5>
-                <p class="card-text">An Email management website that allows users to create and manage emails.</p>
-              </div>
-            </div>
-
-            <div class="card projectHov TechnoSpaceClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/technoSpace.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">TechnoSpace</h5>
-                <p class="card-text">A Marketplace Website built for CIT-University Students and Faculties.</p>
-              </div>
-            </div>
-            <div class="card projectHov ChatBoxClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/ChatBox.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">ChatBox</h5>
-                <p class="card-text">A Real-Time Chat Website allowing interactions between users.</p>
-              </div>
-            </div>
-
-            <div class="card projectHov PulseNetClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/PulseNet.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">PulseNet</h5>
-                <p class="card-text">A Social Media Clone that allows users to create and manage posts.</p>
-              </div>
-            </div>
-
-            <div class="card projectHov ForumWebsiteClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/ForumApp.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Forum Website</h5>
-                <p class="card-text">A Forum Website that allows users to post texts.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-
-        <div class="machinelearningproj">
-          <div class="WebTitle">Machine Learning</div>
-          <div
-            style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; gap: 30px; justify-content: center;">
-            <div class="card projectHov ObjectDetectorClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/Signlang1.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Sign Language Recognition</h5>
-                <p class="card-text">A real-time sign language recognition system using MediaPipe hand landmarks and a
-                  Random Forest classifier.
-                </p>
-              </div>
-            </div>
-
-            <div class="card projectHov RACClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/RAC1.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">RAC Waste Segragation</h5>
-                <p class="card-text">An AI-powered waste classification system that uses image recognition and FAISS
-                  similarity search to automatically identify and categorize recyclable materials.</p>
-              </div>
-            </div>
-
-            <div class="card projectHov ClassiClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/ballClass.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Ball Classification</h5>
-                <p class="card-text">A TensorFlow-based ball image classification project using transfer learning with
-                  ResNet50V2.</p>
-              </div>
-            </div>
-
-
-            <div class="card projectHov ImageCompressorClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/Compressor.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Image Compressor</h5>
-                <p class="card-text">An unsupervised machine learning model that can compress the image by k means
-                  clustering.</p>
-              </div>
-            </div>
-
-
-            <div class="card projectHov DigitClassifierClick" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./images/Classifier.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Digit Classifier</h5>
-                <p class="card-text">A supervised machine learning model that can identify the digit(0 - 9) on an image.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-
-    </div>
-
-    <div class="contactsSection" style="display: none;">
-      <div class="contactDiv">
-        <div style="font-size: 12px;">Get In Touch</div>
-        <div style="font-size: 30px; font-weight: 600; margin-bottom: 20px;">Contact Me</div>
-
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 5.55 5.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            <span>09950374262</span>
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect width="20" height="16" x="2" y="4" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-            <div
-              style="text-decoration: none; color: inherit;">zylgerdlp19@gmail.com</div>
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-              <path d="M9 18c-4.51 2-5-2-7-2" />
-            </svg>
-            <a href="https://github.com/zyle-geralde" target="_blank"
-              style="text-decoration: none; color: inherit;">github.com/zyle-geralde</a>
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-              <path d="M2 12h20" />
-            </svg>
-            <a href="https://zyle-geralde.github.io/portfolio" target="_blank"
-              style="text-decoration: none; color: inherit;">zyle-geralde.github.io/portfolio</a>
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect width="4" height="12" x="2" y="9" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-            <a href="https://linkedin.com/in/zyle-geralde-de-la-peña-37b2a926b" target="_blank"
-              style="text-decoration: none; color: inherit;">linkedin.com/in/zyle-geralde-de-la-peña-37b2a926b</a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner holdCarousel">
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-              data-bs-slide="prev" style="color: black; font-size: 30px; font-weight: bold;">
-               </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                  data-bs-slide="next" style="color: black; font-size: 30px; font-weight: bold;">
-                  >
-                </button>
-          </div>
-          <div style="word-wrap: break-word; margin-bottom: 10px; margin-top: 10px;"><span
-              style="font-weight: 500;">Description: </span><span class="descPoint" style="font-size: 13px;"></span>
-          </div>
-          <div style="word-wrap: break-word; margin-bottom: 10px;"><span style="font-weight: 500;">Technologies:
-            </span><span class="techPoint" style="font-size: 13px;"></span></div>
-          <div style="word-wrap: break-word; margin-bottom: 10px;"><span style="font-weight: 500;">Highlights:
-            </span><span class="challPoint" style="font-size: 13px;"></span></div>
-          <div style="word-wrap: break-word; margin-bottom: 10px;"><span style="font-weight: 500;">Github: </span><span
-              style="font-size: 13px;"><a class="gitPoint" href="" target="_blank">Github Link</a></span></div>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="module" src="portfolio.js"></script>
-</body>
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="module" src="portfolio.js"></script>
+  </body>
 </html>
