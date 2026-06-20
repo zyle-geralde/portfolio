@@ -379,7 +379,26 @@ $(document).ready(function (e) {
     })
 
     $('#exampleModal').on('hidden.bs.modal', function () {
-        $("#gitLinkContainer").html('<a class="gitPoint" href="" target="_blank">Github Link</a>')
+        $("#gitLinkContainer").html('<a class="proj-git-btn gitPoint" href="" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>')
+    })
+
+    $('#exampleModal').on('show.bs.modal', function () {
+        var techText = $(".techPoint").text().trim()
+        if (techText) {
+            var chips = techText.split(',').map(function(t) {
+                t = t.trim()
+                return t ? '<span class="proj-tech-chip">' + t + '</span>' : ''
+            }).filter(Boolean).join('')
+            $(".techPoint").html(chips)
+        }
+        var challText = $(".challPoint").text().trim()
+        if (challText) {
+            var items = challText.split(',').map(function(h) {
+                h = h.trim()
+                return h ? '<li>' + h + '</li>' : ''
+            }).filter(Boolean).join('')
+            $(".challPoint").html(items)
+        }
     })
 
     $(".home").addClass("nav-active")
@@ -499,7 +518,7 @@ $(document).ready(function (e) {
         $(".descPoint").text("A community-driven electrical incident reporting and response platform designed to streamline how citizens, volunteers, electricians, and administrators manage power-related emergencies in Bogo City. The platform enables the public to report electrical outages, hazards, and maintenance requests by clicking directly on an interactive map, while AI automatically classifies and prioritizes each report by analyzing its description. Role-based dashboards give admins a strategic view of the electrical grid's health, volunteers tools to claim and complete field jobs, and the public transparent visibility into ongoing incidents. By combining real-time WebSocket updates, AI-generated operational insights, and geospatial mapping, Bantay Kuryente bridges the gap between community reporting and rapid emergency response.")
         $(".techPoint").text("React 19, TypeScript, Vite, Tailwind CSS, Node.js, Express.js, Supabase (PostgreSQL), Redis, WebSocket (ws), Groq AI API, Leaflet.js / React-Leaflet, TanStack React Query, Zustand, Recharts, Lucide React, JWT, Bcrypt, Multer")
         $(".challPoint").text("Interactive Map-Based Incident Reporting, AI-Powered Report Classification and Priority Detection, AI-Generated Admin Operational Insights, Real-Time Updates via WebSocket, Role-Based Access Control (Public / Volunteer / Electrician / Admin), Admin Dashboard with Incident Logs and Charts, Volunteer Job Claiming and Management, Proof Image Upload, Geocoding and Location Search, Report Filtering by Date, Status, and Severity")
-        $("#gitLinkContainer").html('<a class="gitPoint" href="https://github.com/zyle-geralde/Bantay_Kuryente_Backend-.git" target="_blank">Backend</a> &nbsp;|&nbsp; <a href="https://github.com/zyle-geralde/react-native-bantay-kuryente.git" target="_blank">Frontend</a>')
+        $("#gitLinkContainer").html('<a class="proj-git-btn" href="https://github.com/zyle-geralde/Bantay_Kuryente_Backend-.git" target="_blank"><i class="bi bi-github"></i> Backend</a><a class="proj-git-btn" href="https://github.com/zyle-geralde/react-native-bantay-kuryente.git" target="_blank"><i class="bi bi-github"></i> Frontend</a>')
     })
 
     $(".SpatialAggClick").click(function (e) {
@@ -518,7 +537,7 @@ $(document).ready(function (e) {
         $(".descPoint").text("A spatial aggregation framework that organizes AI-detected thyrocytes into interpretable cluster structures using an IoU-based graph clustering approach. Two strategies were evaluated — a direct 2-step aggregation and a multi-stage 3-step approach — with the 3-step method producing less fragmented clusters that more closely aligned with expert-annotated adequate groupings.")
         $(".techPoint").text("Python, ONNX-based YOLO Detector, Weighted Boxes Fusion (WBF), IoU-based Graph Clustering, NetworkX, NumPy, OpenCV")
         $(".challPoint").text("IoU-based graph clustering framework, Multi-stage vs. direct aggregation comparison, Wilcoxon signed-rank expert evaluation, MCC-based detection agreement analysis, Tile-level inference with coordinate transformation, IQR aspect ratio & containment filtering")
-        $("#gitLinkContainer").html('<a class="gitPoint" href="https://github.com/avrilnigelchua0412/Adequacy" target="_blank">Github Link</a>')
+        $("#gitLinkContainer").html('<a class="proj-git-btn" href="https://github.com/avrilnigelchua0412/Adequacy" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>')
     })
 
     $(".CurriculumClick").click(function (e) {
@@ -537,7 +556,7 @@ $(document).ready(function (e) {
         $(".descPoint").text("An investigation into curriculum learning as a training strategy for improving detection stability and interpretability in thyrocyte detection under increasing FNAB smear complexity. YOLOv5 Nano and YOLOv7 Tiny were trained with progressive difficulty schedules and evaluated using head-wise Grad-CAM localization metrics.")
         $(".techPoint").text("Python, YOLOv5 Nano, YOLOv7 Tiny, Grad-CAM, Albumentations, ONNX, NumPy, OpenCV, Scikit-learn")
         $(".challPoint").text("Progressive curriculum schedule with stage-wise augmentation, Head-wise Grad-CAM localization (P3/P4/P5), Pointing Game & Energy-Inside-Ground-Truth metrics, Focus Ratio for attention selectivity, Backbone freezing at final curriculum stage, Morphological Complexity Level (MCL) stratification")
-        $("#gitLinkContainer").html('<a class="gitPoint" href="https://github.com/avrilnigelchua0412/Adequacy" target="_blank">Github Link</a>')
+        $("#gitLinkContainer").html('<a class="proj-git-btn" href="https://github.com/avrilnigelchua0412/Adequacy" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>')
     })
 
     $(".ThyrAClick").click(function (e) {
@@ -556,7 +575,7 @@ $(document).ready(function (e) {
         $(".descPoint").text("An AI-powered mobile application that assists doctors in analyzing Fine Needle Aspiration Biopsy (FNAB) thyroid slides. The system automatically detects thyrocytes and cell clusters, draws bounding boxes, and generates a visual summary to support faster and more consistent medical analysis.")
         $(".techPoint").text("React Native, Expo, FastAPI, Python, Supabase (PostgreSQL, Auth, Storage), Computer Vision Detection Model")
         $(".challPoint").text("AI-powered thyrocyte & cluster detection, Bounding box visualization, Detection summary generation, Folder-based image organization, Processed image download, Layered Architecture (Presentation, Application, Service, Data)")
-        $("#gitLinkContainer").html('<a class="gitPoint" href="https://github.com/zyle-geralde/ThyrA_FrontEnd.git" target="_blank">Frontend</a> &nbsp;|&nbsp; <a href="https://github.com/zyle-geralde/Thyrocyte_Detection_Backend.git" target="_blank">Backend</a>')
+        $("#gitLinkContainer").html('<a class="proj-git-btn" href="https://github.com/zyle-geralde/ThyrA_FrontEnd.git" target="_blank"><i class="bi bi-github"></i> Frontend</a><a class="proj-git-btn" href="https://github.com/zyle-geralde/Thyrocyte_Detection_Backend.git" target="_blank"><i class="bi bi-github"></i> Backend</a>')
     })
 
     $(".ProbBomberClick").click(function (e) {

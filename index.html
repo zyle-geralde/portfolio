@@ -1391,6 +1391,259 @@
         color: var(--accent);
         font-size: 15px;
       }
+
+      /* === WORK EXPERIENCE REDESIGN === */
+      .work-meta-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+
+      .work-meta-row .work-date {
+        margin-bottom: 0;
+      }
+
+      .work-type-badge {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding: 3px 10px;
+        border-radius: var(--radius-pill);
+        background: var(--accent-dim);
+        color: var(--accent);
+        border: 1px solid var(--accent-border);
+      }
+
+      .work-type-intern {
+        background: rgba(99, 179, 237, 0.08);
+        color: #93c5fd;
+        border-color: rgba(99, 179, 237, 0.2);
+      }
+
+      .work-resp-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .work-resp-list li {
+        font-size: 13.5px;
+        color: #d1d5db;
+        padding-left: 20px;
+        position: relative;
+        line-height: 1.7;
+      }
+
+      .work-resp-list li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 10px;
+        top: 5px;
+      }
+
+      .work-tech-section {
+        padding: 14px 16px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .work-tech-label {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+
+      .work-tech-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .work-tech-chip {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 4px 11px;
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.06);
+        color: #d1d5db;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .work-gallery-label {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+      }
+
+      /* === PROJECT MODAL REDESIGN === */
+      #exampleModal .modal-content {
+        background: #0d1117;
+        border: 1px solid rgba(255, 217, 102, 0.15);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      #exampleModal .modal-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 20px 24px 18px;
+        background: #111827;
+      }
+
+      #exampleModal .modal-title {
+        color: var(--accent);
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      #exampleModal .btn-close {
+        filter: invert(1) opacity(0.7);
+      }
+
+      #exampleModal .modal-body {
+        padding: 0;
+      }
+
+      #exampleModal .modal-footer {
+        display: none;
+      }
+
+      .proj-carousel-wrap {
+        background: #080d14;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .proj-carousel-wrap .carousel-inner img {
+        max-height: 280px;
+        object-fit: contain;
+        width: 100%;
+      }
+
+      .proj-content {
+        padding: 20px 24px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .proj-section {
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .proj-section--last {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+
+      .proj-label {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+
+      .proj-text {
+        color: #d1d5db;
+        font-size: 13.5px;
+        line-height: 1.8;
+      }
+
+      .proj-tech-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .proj-tech-chip {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 4px 11px;
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.06);
+        color: #d1d5db;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .proj-hl-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .proj-hl-list li {
+        font-size: 13px;
+        color: #d1d5db;
+        padding-left: 18px;
+        position: relative;
+        line-height: 1.65;
+      }
+
+      .proj-hl-list li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 10px;
+        top: 4px;
+      }
+
+      .proj-git-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 8px 18px;
+        border: 1px solid var(--accent-border);
+        border-radius: var(--radius-pill);
+        background: var(--accent-dim);
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+      }
+
+      .proj-git-btn:hover {
+        background: rgba(255, 217, 102, 0.2);
+        border-color: rgba(255, 217, 102, 0.45);
+        color: var(--accent);
+      }
+
+      .proj-git-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 576px) {
+        #exampleModal .modal-header { padding: 14px 16px 12px; }
+        .proj-content { padding: 16px 18px 22px; }
+        .proj-carousel-wrap .carousel-inner img { max-height: 200px; }
+      }
     </style>
   </head>
 
@@ -1766,30 +2019,31 @@
           <div class="work-entry">
             <div class="work-title">Software Engineer</div>
             <div class="work-company">Digital Superstore Pte Limited</div>
-            <div class="work-date">2025 – Present</div>
-            <ul>
-              <li style="margin-bottom: 10px">
-                Developed scalable RESTful APIs and backend services powering
-                e-commerce and business operations.
-              </li>
-              <li style="margin-bottom: 10px">
-                Integrated external systems including CRM, inventory, logistics,
-                and warehouse management platforms.
-              </li>
-              <li style="margin-bottom: 10px">
-                Designed efficient database solutions, enhanced application
-                security, and optimized system performance.
-              </li>
-              <li style="margin-bottom: 10px">
-                Built and maintained modern React applications and internal
-                tools to streamline business workflows.
-              </li>
-              <li style="margin-bottom: 10px">
-                Collaborated across the full software development lifecycle,
-                from requirements gathering to deployment and maintenance.
-              </li>
+            <div class="work-meta-row">
+              <span class="work-date">2025 – Present</span>
+              <span class="work-type-badge">Full-time</span>
+            </div>
+            <ul class="work-resp-list">
+              <li>Developed scalable RESTful APIs and backend services powering e-commerce and business operations.</li>
+              <li>Integrated external systems including CRM, inventory, logistics, and warehouse management platforms.</li>
+              <li>Designed efficient database solutions, enhanced application security, and optimized system performance.</li>
+              <li>Built and maintained modern React applications and internal tools to streamline business workflows.</li>
+              <li>Collaborated across the full software development lifecycle, from requirements gathering to deployment and maintenance.</li>
             </ul>
-            <div style="margin-top: 20px; max-width: 500px;">
+            <div class="work-tech-section">
+              <div class="work-tech-label">Technologies</div>
+              <div class="work-tech-row">
+                <span class="work-tech-chip">RESTful APIs</span>
+                <span class="work-tech-chip">React.js</span>
+                <span class="work-tech-chip">CRM Integration</span>
+                <span class="work-tech-chip">Inventory Systems</span>
+                <span class="work-tech-chip">Database Design</span>
+                <span class="work-tech-chip">Security</span>
+                <span class="work-tech-chip">Full SDLC</span>
+              </div>
+            </div>
+            <div class="work-gallery-label">Gallery</div>
+            <div style="max-width: 500px;">
               <img src="./images/Superstore.png" class="d-block w-100 lightbox-img" style="object-fit:cover; height:260px; border-radius:8px; cursor:pointer;" alt="Digital Superstore" />
             </div>
           </div>
@@ -1797,29 +2051,34 @@
           <div class="work-entry">
             <div class="work-title">Project Manager / Software Developer Intern</div>
             <div class="work-company">Alliance Software Inc.</div>
-            <div class="work-date">June – July 2025</div>
-            <ul>
-              <li style="margin-bottom: 10px">
-                Led a project team through the full system development lifecycle, ensuring smooth collaboration and on-time delivery.
-              </li>
-              <li style="margin-bottom: 10px">
-                Managed team progress, assigned roles, and maintained project schedules aligned with key milestones.
-              </li>
-              <li style="margin-bottom: 10px">
-                Developed core backend functionalities and designed a high-performance, reliable database structure.
-              </li>
-              <li style="margin-bottom: 10px">
-                Optimized server performance and system stability for improved efficiency.
-              </li>
-              <li style="margin-bottom: 10px">
-                Conducted code reviews and functionality testing to ensure quality and adherence to project requirements.
-              </li>
+            <div class="work-meta-row">
+              <span class="work-date">June – July 2025</span>
+              <span class="work-type-badge work-type-intern">Internship</span>
+            </div>
+            <ul class="work-resp-list">
+              <li>Led a project team through the full system development lifecycle, ensuring smooth collaboration and on-time delivery.</li>
+              <li>Managed team progress, assigned roles, and maintained project schedules aligned with key milestones.</li>
+              <li>Developed core backend functionalities and designed a high-performance, reliable database structure.</li>
+              <li>Optimized server performance and system stability for improved efficiency.</li>
+              <li>Conducted code reviews and functionality testing to ensure quality and adherence to project requirements.</li>
             </ul>
+            <div class="work-tech-section">
+              <div class="work-tech-label">Technologies</div>
+              <div class="work-tech-row">
+                <span class="work-tech-chip">Project Management</span>
+                <span class="work-tech-chip">Backend Development</span>
+                <span class="work-tech-chip">Database Design</span>
+                <span class="work-tech-chip">System Architecture</span>
+                <span class="work-tech-chip">Code Review</span>
+                <span class="work-tech-chip">Performance Optimization</span>
+              </div>
+            </div>
+            <div class="work-gallery-label">Gallery</div>
             <div
               id="ojtCarousel"
               class="carousel slide"
               data-bs-ride="carousel"
-              style="margin-top: 20px; max-width: 500px;"
+              style="max-width: 500px;"
             >
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -2426,7 +2685,7 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -2438,59 +2697,56 @@
             ></button>
           </div>
           <div class="modal-body">
-            <div
-              id="carouselExampleControls"
-              class="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner holdCarousel"></div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev"
-                style="width:40px; height:40px; background:rgba(0,0,0,0.5); border-radius:50%; top:50%; transform:translateY(-50%); left:8px;"
+            <div class="proj-carousel-wrap">
+              <div
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-bs-ride="carousel"
               >
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="next"
-                style="width:40px; height:40px; background:rgba(0,0,0,0.5); border-radius:50%; top:50%; transform:translateY(-50%); right:8px;"
-              >
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              </button>
+                <div class="carousel-inner holdCarousel"></div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev"
+                  style="width:40px; height:40px; background:rgba(0,0,0,0.5); border-radius:50%; top:50%; transform:translateY(-50%); left:8px;"
+                >
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next"
+                  style="width:40px; height:40px; background:rgba(0,0,0,0.5); border-radius:50%; top:50%; transform:translateY(-50%); right:8px;"
+                >
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+              </div>
             </div>
-            <div
-              style="
-                word-wrap: break-word;
-                margin-bottom: 10px;
-                margin-top: 10px;
-              "
-            >
-              <span style="font-weight: 500">Description: </span
-              ><span class="descPoint" style="font-size: 13px"></span>
-            </div>
-            <div style="word-wrap: break-word; margin-bottom: 10px">
-              <span style="font-weight: 500">Technologies: </span
-              ><span class="techPoint" style="font-size: 13px"></span>
-            </div>
-            <div style="word-wrap: break-word; margin-bottom: 10px">
-              <span style="font-weight: 500">Highlights: </span
-              ><span class="challPoint" style="font-size: 13px"></span>
-            </div>
-            <div style="word-wrap: break-word; margin-bottom: 10px">
-              <span style="font-weight: 500">Github: </span
-              ><span id="gitLinkContainer" style="font-size: 13px"
-                ><a class="gitPoint" href="" target="_blank"
-                  >Github Link</a
-                ></span
-              >
+            <div class="proj-content">
+              <div class="proj-section">
+                <div class="proj-label">Description</div>
+                <div class="descPoint proj-text"></div>
+              </div>
+              <div class="proj-section">
+                <div class="proj-label">Technologies</div>
+                <div class="proj-tech-wrap techPoint"></div>
+              </div>
+              <div class="proj-section">
+                <div class="proj-label">Key Features</div>
+                <ul class="proj-hl-list challPoint"></ul>
+              </div>
+              <div class="proj-section proj-section--last">
+                <div class="proj-label">Source Code</div>
+                <div id="gitLinkContainer" class="proj-git-row">
+                  <a class="proj-git-btn gitPoint" href="" target="_blank">
+                    <i class="bi bi-github"></i> View on GitHub
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
