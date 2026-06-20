@@ -66,8 +66,21 @@
       }
     </script>
     <style>
-      * {
-        transition: 0.2s;
+      :root {
+        --accent: #ffd966;
+        --accent-dim: rgba(255, 217, 102, 0.1);
+        --accent-border: rgba(255, 217, 102, 0.25);
+        --text-primary: rgb(243, 243, 243);
+        --text-muted: #9ca3af;
+        --bg-card: #111827;
+        --radius: 10px;
+        --radius-pill: 999px;
+      }
+
+      button, a, .projectHov, .serviceGridCont, .flex-container i,
+      .home, .aboutme, .services, .work, .Contacts,
+      .githubIcon, .linkedinIcon, .resumeIcon, .btn-cta {
+        transition: all 0.2s ease;
       }
 
       canvas {
@@ -135,20 +148,15 @@
       .services:hover,
       .work:hover,
       .Contacts:hover {
-        transition: 0.2s;
-        transform: scale(1.2);
         color: #ffd966;
-        padding-left: 10px;
-        padding-right: 10px;
       }
 
       body {
-        font-family: "Roboto", serif;
+        font-family: "Roboto", sans-serif;
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
         font-variation-settings: "wdth" 100;
-        letter-spacing: 1px;
       }
 
       .wordContent {
@@ -321,7 +329,7 @@
       }
 
       i:hover {
-        background-color: rgba(255, 255, 255, 0.436);
+        background-color: rgba(255, 217, 102, 0.15);
       }
 
       /*Services Section*/
@@ -355,19 +363,24 @@
 
       .serviceGrid {
         display: grid;
-        grid-template-columns: 300px 300px 300px;
-        column-gap: 60px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 24px;
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 20px;
       }
 
       .serviceGridCont {
         width: 100%;
         padding: 20px;
-        transition: 0.2s;
-        border-radius: 5px;
+        border-radius: var(--radius);
+        border: 1px solid transparent;
       }
 
       .serviceGridCont:hover {
-        background-color: rgba(200, 200, 200, 0.641);
+        background-color: var(--accent-dim);
+        border-color: var(--accent-border) !important;
+        transform: translateY(-4px);
       }
 
       .servicenumber {
@@ -448,7 +461,11 @@
       .projectHov {
         width: 15rem;
         cursor: pointer;
-        transition: 0.2s;
+        background: #111827 !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: #e5e7eb !important;
+        border-radius: var(--radius) !important;
+        overflow: hidden;
       }
 
       .projectHov .card-img-top {
@@ -458,9 +475,9 @@
       }
 
       .projectHov:hover {
-        width: 16rem;
-        background-color: black;
-        color: white;
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+        border-color: var(--accent-border) !important;
       }
 
       .webdevproj {
@@ -499,12 +516,15 @@
       }
 
       .contactDiv {
-        background-color: rgba(36, 36, 36, 0.792);
-        width: 400px;
-        padding: 20px;
+        background-color: rgba(15, 15, 30, 0.92);
+        max-width: 560px;
+        width: 90%;
+        padding: 32px;
         margin-top: 20px;
         margin-bottom: 30px;
-        border-radius: 5px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 217, 102, 0.12);
+        border-left: 3px solid var(--accent);
       }
 
       @media (max-width: 470px) {
@@ -530,22 +550,6 @@
 
         .contactDiv {
           width: 300px;
-        }
-      }
-
-      @media (max-width: 1070px) {
-        .serviceGrid {
-          display: grid;
-          grid-template-columns: 300px 300px;
-          column-gap: 60px;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .serviceGrid {
-          display: grid;
-          grid-template-columns: 300px;
-          column-gap: 60px;
         }
       }
 
@@ -668,6 +672,266 @@
           opacity: 1;
         }
       }
+
+      /* === NAVIGATION === */
+      .navebar {
+        align-items: center;
+        gap: 4px;
+      }
+
+      .nav-brand {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--accent);
+        letter-spacing: -0.5px;
+        margin-right: 20px;
+        cursor: default;
+        flex-shrink: 0;
+      }
+
+      .home, .aboutme, .services, .work, .Contacts {
+        position: relative;
+        padding-bottom: 6px;
+      }
+
+      .home::after, .aboutme::after, .services::after, .work::after, .Contacts::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: width 0.25s ease;
+      }
+
+      .home:hover::after, .aboutme:hover::after, .services:hover::after,
+      .work:hover::after, .Contacts:hover::after {
+        width: 70%;
+      }
+
+      .nav-active {
+        color: var(--accent) !important;
+      }
+
+      .nav-active::after {
+        width: 70% !important;
+      }
+
+      /* === HOME — SPECIALTY CHIPS === */
+      .specialty-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+        margin-bottom: 4px;
+      }
+
+      .spec-chip {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 4px 12px;
+        border-radius: var(--radius-pill);
+        background: var(--accent-dim);
+        color: var(--accent);
+        border: 1px solid var(--accent-border);
+        letter-spacing: 0.4px;
+      }
+
+      /* === HOME — CTA BUTTONS === */
+      .cta-group {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .btn-cta {
+        padding: 10px 24px;
+        border-radius: var(--radius-pill);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        letter-spacing: 0.4px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: inherit;
+        text-decoration: none;
+      }
+
+      .btn-primary-cta {
+        background: var(--accent);
+        color: #0d0d1a;
+      }
+
+      .btn-primary-cta:hover {
+        background: #ffe594;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 217, 102, 0.3);
+      }
+
+      .btn-outline-cta {
+        background: transparent;
+        color: var(--accent);
+        border: 1.5px solid var(--accent);
+      }
+
+      .btn-outline-cta:hover {
+        background: var(--accent-dim);
+        transform: translateY(-2px);
+      }
+
+      /* === PROJECT CARDS === */
+      .projectHov .card-title {
+        color: #f3f4f6;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .projectHov .card-text {
+        color: #9ca3af;
+        font-size: 12px;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+
+      .card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 10px;
+      }
+
+      .card-tag {
+        font-size: 10px;
+        font-weight: 500;
+        padding: 2px 8px;
+        border-radius: var(--radius-pill);
+        background: var(--accent-dim);
+        color: var(--accent);
+        border: 1px solid var(--accent-border);
+        white-space: nowrap;
+      }
+
+      /* === SECTION HEADERS === */
+      .ProjectsLink {
+        font-size: 26px !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.3px;
+        padding: 0 0 12px 0 !important;
+        border-bottom: 2px solid rgba(255, 217, 102, 0.3) !important;
+        margin-bottom: 32px !important;
+        cursor: default !important;
+      }
+
+      .WebTitle {
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        color: var(--text-muted) !important;
+        border: none !important;
+        border-left: 3px solid var(--accent) !important;
+        padding: 2px 0 2px 12px !important;
+        margin-bottom: 24px !important;
+      }
+
+      /* === WORK TIMELINE === */
+      .work-entry {
+        position: relative;
+        padding-left: 24px;
+        border-left: 2px solid rgba(255, 217, 102, 0.3);
+        margin-bottom: 40px;
+      }
+
+      .work-entry::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 7px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .work-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 3px;
+      }
+
+      .work-company {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 3px;
+      }
+
+      .work-date {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+      }
+
+      /* === PROJECT MODAL — DARK THEME === */
+      #exampleModal .modal-content {
+        background: #111827;
+        color: #e5e7eb;
+        border: 1px solid rgba(255, 217, 102, 0.15);
+        border-radius: var(--radius);
+      }
+
+      #exampleModal .modal-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 16px 20px;
+      }
+
+      #exampleModal .modal-title {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      #exampleModal .btn-close {
+        filter: invert(1) opacity(0.7);
+      }
+
+      #exampleModal .modal-body {
+        padding: 20px;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      #exampleModal .modal-footer {
+        border-top: none;
+      }
+
+      .descPoint, .techPoint, .challPoint {
+        color: #d1d5db;
+      }
+
+      .gitPoint {
+        color: var(--accent);
+      }
+
+      /* === CONTACT === */
+      .contactDiv a:hover {
+        color: var(--accent) !important;
+        transition: color 0.2s;
+      }
+
+      @media (max-width: 700px) {
+        .cta-group { justify-content: center; }
+        .specialty-chips { justify-content: center; }
+        .nav-brand { display: none; }
+      }
     </style>
   </head>
 
@@ -677,27 +941,37 @@
     <div class="main">
       <div class="navigation_bar">
         <div class="navebar">
-          <div class="home">Home</div>
-          <div class="aboutme">About Me</div>
-          <div class="services">Services</div>
-          <div class="work">Work</div>
-          <div class="Contacts">Contacts</div>
+          <span class="nav-brand">ZG.</span>
+          <div class="home navitem">Home</div>
+          <div class="aboutme navitem">About Me</div>
+          <div class="services navitem">Services</div>
+          <div class="work navitem">Work</div>
+          <div class="Contacts navitem">Contacts</div>
         </div>
       </div>
 
       <div class="homeCont">
         <div class="wordContent">
           <div class="compScieclass">Software Engineer</div>
-          <div class="hiClass">Hello! I am</div>
+          <div class="hiClass">Hi, I'm</div>
           <div class="nameClass">Zyle Geralde de la Peña</div>
+          <div class="specialty-chips">
+            <span class="spec-chip">Full Stack</span>
+            <span class="spec-chip">Mobile Dev</span>
+            <span class="spec-chip">Machine Learning</span>
+          </div>
           <div class="shortDescClass">
-            A Software Engineer proficient in web development and machine
-            learning.
+            Building scalable web apps, cross-platform mobile solutions, and AI-powered systems. Magna Cum Laude · PhilNITS FE · TOPCIT Level II.
+          </div>
+          <div class="cta-group">
+            <button class="btn-cta btn-primary-cta work-nav-btn">View My Work</button>
+            <button class="btn-cta btn-outline-cta resumeClick">
+              <i class="bi bi-file-earmark-text"></i> Resume
+            </button>
           </div>
           <div class="iconList">
             <i class="bi bi-github githubIcon githubClick"></i>
             <i class="bi bi-linkedin linkedinIcon linkIconClick"></i>
-            <i class="bi bi-file-earmark-text resumeIcon resumeClick"></i>
           </div>
         </div>
         <div class="ImageContent">
@@ -1107,37 +1381,28 @@
           "
         >
           <div class="ProjectsLink">Work Experience</div>
-          <div>
-            <div style="font-size: 20px; margin-bottom: 15px">
-              <span style="color: #fbda77">Position: </span>Software Engineer
-            </div>
 
-            <div style="margin-bottom: 15px">
-              <span style="color: #fbda77">Location: </span>Digital Superstore
-              Pte Limited
-            </div>
-
+          <div class="work-entry">
+            <div class="work-title">Software Engineer</div>
+            <div class="work-company">Digital Superstore Pte Limited</div>
+            <div class="work-date">2025 – Present</div>
             <ul>
               <li style="margin-bottom: 10px">
                 Developed scalable RESTful APIs and backend services powering
                 e-commerce and business operations.
               </li>
-
               <li style="margin-bottom: 10px">
                 Integrated external systems including CRM, inventory, logistics,
                 and warehouse management platforms.
               </li>
-
               <li style="margin-bottom: 10px">
                 Designed efficient database solutions, enhanced application
                 security, and optimized system performance.
               </li>
-
               <li style="margin-bottom: 10px">
                 Built and maintained modern React applications and internal
                 tools to streamline business workflows.
               </li>
-
               <li style="margin-bottom: 10px">
                 Collaborated across the full software development lifecycle,
                 from requirements gathering to deployment and maintenance.
@@ -1147,35 +1412,26 @@
               <img src="./images/Superstore.png" class="d-block w-100 lightbox-img" style="object-fit:cover; height:260px; border-radius:8px; cursor:pointer;" alt="Digital Superstore" />
             </div>
           </div>
-          <div>
-            <div style="font-size: 20px; margin-bottom: 15px">
-              <span style="color: #fbda77">Position: </span>Project
-              Manager/Software Developer Intern
-            </div>
-            <div style="margin-bottom: 15px">
-              <span style="color: #fbda77">Location: </span> Alliance Software
-              Inc.
-            </div>
+
+          <div class="work-entry">
+            <div class="work-title">Project Manager / Software Developer Intern</div>
+            <div class="work-company">Alliance Software Inc.</div>
+            <div class="work-date">June – July 2025</div>
             <ul>
               <li style="margin-bottom: 10px">
-                Led a project team through the full system development
-                lifecycle, ensuringsmooth collaboration and on-time delivery.
+                Led a project team through the full system development lifecycle, ensuring smooth collaboration and on-time delivery.
               </li>
               <li style="margin-bottom: 10px">
-                Managed team progress, assigned roles, and maintained project
-                schedulesaligned with key milestones.
+                Managed team progress, assigned roles, and maintained project schedules aligned with key milestones.
               </li>
               <li style="margin-bottom: 10px">
-                Developed core backend functionalities and designed a
-                high-performance,reliable database structure.
+                Developed core backend functionalities and designed a high-performance, reliable database structure.
               </li>
               <li style="margin-bottom: 10px">
-                Optimized server performance and system stability for improved
-                efficiency.
+                Optimized server performance and system stability for improved efficiency.
               </li>
               <li style="margin-bottom: 10px">
-                Conducted code reviews and functionality testing to ensure
-                quality and adherence to project requirements.
+                Conducted code reviews and functionality testing to ensure quality and adherence to project requirements.
               </li>
             </ul>
             <div
@@ -1254,6 +1510,12 @@
                     response platform for Bogo City with AI classification
                     and real-time updates.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">React</span>
+                    <span class="card-tag">TypeScript</span>
+                    <span class="card-tag">FastAPI</span>
+                    <span class="card-tag">Supabase</span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1272,6 +1534,11 @@
                     An AI-powered mobile app that detects thyrocytes in FNAB
                     thyroid slides to support faster medical analysis.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">React Native</span>
+                    <span class="card-tag">FastAPI</span>
+                    <span class="card-tag">Supabase</span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1290,6 +1557,11 @@
                     A gamified learning platform modeled after Bomberman to
                     boost student engagement in probability.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">React.js</span>
+                    <span class="card-tag">Phaser.js</span>
+                    <span class="card-tag">Firebase</span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1304,6 +1576,11 @@
                     A responsive book rating website with user and admin
                     capabilities
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">ASP.NET</span>
+                    <span class="card-tag">MySQL</span>
+                    <span class="card-tag">Razor Pages</span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1322,6 +1599,11 @@
                     An Email management website that allows users to create and
                     manage emails.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">Django</span>
+                    <span class="card-tag">WebSockets</span>
+                    <span class="card-tag">Firebase</span>
+                  </div>
                 </div>
               </div>
 
@@ -1341,6 +1623,11 @@
                     A Marketplace Website built for CIT-University Students and
                     Faculties.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">React.js</span>
+                    <span class="card-tag">ASP.NET</span>
+                    <span class="card-tag">Azure</span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1359,6 +1646,11 @@
                     A Real-Time Chat Website allowing interactions between
                     users.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">Node.js</span>
+                    <span class="card-tag">Socket.io</span>
+                    <span class="card-tag">MongoDB</span>
+                  </div>
                 </div>
               </div>
 
@@ -1378,6 +1670,11 @@
                     A Social Media Clone that allows users to create and manage
                     posts.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">React.js</span>
+                    <span class="card-tag">Django</span>
+                    <span class="card-tag">SQLite</span>
+                  </div>
                 </div>
               </div>
 
@@ -1396,6 +1693,11 @@
                   <p class="card-text">
                     A Forum Website that allows users to post texts.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">Node.js</span>
+                    <span class="card-tag">Express.js</span>
+                    <span class="card-tag">MongoDB</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1429,6 +1731,12 @@
                     IoU-based graph clustering to aggregate thyrocyte
                     detections into interpretable cluster structures.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">Python</span>
+                    <span class="card-tag">YOLO</span>
+                    <span class="card-tag">NetworkX</span>
+                    <span class="card-tag">OpenCV</span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1447,6 +1755,11 @@
                     Progressive training strategy improving detection
                     stability and interpretability under increasing FNAB smear complexity.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">Python</span>
+                    <span class="card-tag">YOLOv5/7</span>
+                    <span class="card-tag">Grad-CAM</span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1465,6 +1778,11 @@
                     A real-time sign language recognition system using MediaPipe
                     hand landmarks and a Random Forest classifier.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">Python</span>
+                    <span class="card-tag">MediaPipe</span>
+                    <span class="card-tag">Random Forest</span>
+                  </div>
                 </div>
               </div>
 
@@ -1475,12 +1793,17 @@
               >
                 <img src="./images/RAC1.png" class="card-img-top" alt="..." />
                 <div class="card-body">
-                  <h5 class="card-title">RAC Waste Segragation</h5>
+                  <h5 class="card-title">RAC Waste Segregation</h5>
                   <p class="card-text">
                     An AI-powered waste classification system that uses image
                     recognition and FAISS similarity search to automatically
                     identify and categorize recyclable materials.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">Python</span>
+                    <span class="card-tag">MobileNetV2</span>
+                    <span class="card-tag">FAISS</span>
+                  </div>
                 </div>
               </div>
 
@@ -1500,6 +1823,11 @@
                     A TensorFlow-based ball image classification project using
                     transfer learning with ResNet50V2.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">TensorFlow</span>
+                    <span class="card-tag">ResNet50V2</span>
+                    <span class="card-tag">Keras</span>
+                  </div>
                 </div>
               </div>
 
@@ -1519,6 +1847,11 @@
                     An unsupervised machine learning model that can compress the
                     image by k means clustering.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">Python</span>
+                    <span class="card-tag">K-Means</span>
+                    <span class="card-tag">Scikit-learn</span>
+                  </div>
                 </div>
               </div>
 
@@ -1538,6 +1871,11 @@
                     A supervised machine learning model that can identify the
                     digit(0 - 9) on an image.
                   </p>
+                  <div class="card-tags">
+                    <span class="card-tag">TensorFlow</span>
+                    <span class="card-tag">Keras</span>
+                    <span class="card-tag">Flask</span>
+                  </div>
                 </div>
               </div>
             </div>

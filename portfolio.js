@@ -382,22 +382,11 @@ $(document).ready(function (e) {
         $("#gitLinkContainer").html('<a class="gitPoint" href="" target="_blank">Github Link</a>')
     })
 
-    var navHome = document.querySelector(".home")
-    var navaboutme = document.querySelector(".aboutme")
-    var navservices = document.querySelector(".services")
-    var navwork = document.querySelector(".work")
-    var navContacts = document.querySelector(".Contacts")
-    navHome.style.color = "#fbda77"
-    navHome.style.transform = "scale(1.2)"
+    $(".home").addClass("nav-active")
 
     $(".home").click(function (e) {
-        this.style.color = "#fbda77"
-        this.style.transform = "scale(1.2)"
-
-        navaboutme.style = ""
-        navservices.style = ""
-        navwork.style = ""
-        navContacts.style = ""
+        $(".navitem").removeClass("nav-active")
+        $(this).addClass("nav-active")
 
         var homeCont = document.querySelector(".homeCont")
         homeCont.style = ""
@@ -418,14 +407,8 @@ $(document).ready(function (e) {
     })
 
     $(".aboutme").click(function (e) {
-        this.style.color = "#fbda77"
-        this.style.transform = "scale(1.2)"
-
-
-        navHome.style = ""
-        navservices.style = ""
-        navwork.style = ""
-        navContacts.style = ""
+        $(".navitem").removeClass("nav-active")
+        $(this).addClass("nav-active")
 
         var homeCont = document.querySelector(".homeCont")
         homeCont.style.display = "none"
@@ -443,13 +426,8 @@ $(document).ready(function (e) {
     })
 
     $(".services").click(function (e) {
-        this.style.color = "#fbda77"
-        this.style.transform = "scale(1.2)"
-
-        navHome.style = ""
-        navaboutme.style = ""
-        navwork.style = ""
-        navContacts.style = ""
+        $(".navitem").removeClass("nav-active")
+        $(this).addClass("nav-active")
 
         var homeCont = document.querySelector(".homeCont")
         homeCont.style.display = "none"
@@ -467,13 +445,8 @@ $(document).ready(function (e) {
     })
 
     $(".work").click(function (e) {
-        this.style.color = "#fbda77"
-        this.style.transform = "scale(1.2)"
-
-        navHome.style = ""
-        navaboutme.style = ""
-        navservices.style = ""
-        navContacts.style = ""
+        $(".navitem").removeClass("nav-active")
+        $(this).addClass("nav-active")
 
         var homeCont = document.querySelector(".homeCont")
         homeCont.style.display = "none"
@@ -491,13 +464,8 @@ $(document).ready(function (e) {
     })
 
     $(".Contacts").click(function (e) {
-        this.style.color = "#fbda77"
-        this.style.transform = "scale(1.2)"
-
-        navHome.style = ""
-        navaboutme.style = ""
-        navservices.style = ""
-        navwork.style = ""
+        $(".navitem").removeClass("nav-active")
+        $(this).addClass("nav-active")
 
         var homeCont = document.querySelector(".homeCont")
         homeCont.style.display = "none"
@@ -907,8 +875,8 @@ $(document).ready(function (e) {
         }
     }
 
-    $(".serviceClick").click(function (e) {
-        var key = $(this).data("service")
+    $('#serviceModal').on('show.bs.modal', function (event) {
+        var key = $(event.relatedTarget).data('service')
         var d = serviceData[key]
         if (!d) return
         $("#serviceModalLabel").text(d.title)
@@ -916,6 +884,10 @@ $(document).ready(function (e) {
         $(".svcTech").text(d.tech)
         $(".svcExp").text(d.exp)
         $(".svcHighlights").text(d.highlights)
+    })
+
+    $(".work-nav-btn").click(function () {
+        $(".work").trigger("click")
     })
 
     $(".linkIconClick").click(function (e) {
