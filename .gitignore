@@ -1,0 +1,13 @@
+# Environment variables — never commit real credentials
+.env
+
+# Dependencies
+node_modules/
+
+# Resumes / personal documents — keep off public repo
+*.pdf
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/

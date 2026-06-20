@@ -369,6 +369,19 @@ function addObjects() {
 
 
 $(document).ready(function (e) {
+    $(document).on('click', '.lightbox-img', function () {
+        $('#lightboxImg').attr('src', $(this).attr('src'))
+        $('#lightboxOverlay').css('display', 'flex')
+    })
+
+    $('#lightboxOverlay').on('click', function () {
+        $(this).css('display', 'none')
+    })
+
+    $('#exampleModal').on('hidden.bs.modal', function () {
+        $("#gitLinkContainer").html('<a class="gitPoint" href="" target="_blank">Github Link</a>')
+    })
+
     var navHome = document.querySelector(".home")
     var navaboutme = document.querySelector(".aboutme")
     var navservices = document.querySelector(".services")
@@ -502,6 +515,82 @@ $(document).ready(function (e) {
     })
 
 
+    $(".BantayKuryenteClick").click(function (e) {
+        var pulsenetimg = ['./images/bantay1.png', './images/bantay2.png', './images/bantay3.png']
+
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
+                </div>
+            `)
+        });
+
+        $("#exampleModalLabel").text("Bantay Kuryente")
+        $(".descPoint").text("A community-driven electrical incident reporting and response platform designed to streamline how citizens, volunteers, electricians, and administrators manage power-related emergencies in Bogo City. The platform enables the public to report electrical outages, hazards, and maintenance requests by clicking directly on an interactive map, while AI automatically classifies and prioritizes each report by analyzing its description. Role-based dashboards give admins a strategic view of the electrical grid's health, volunteers tools to claim and complete field jobs, and the public transparent visibility into ongoing incidents. By combining real-time WebSocket updates, AI-generated operational insights, and geospatial mapping, Bantay Kuryente bridges the gap between community reporting and rapid emergency response.")
+        $(".techPoint").text("React 19, TypeScript, Vite, Tailwind CSS, Node.js, Express.js, Supabase (PostgreSQL), Redis, WebSocket (ws), Groq AI API, Leaflet.js / React-Leaflet, TanStack React Query, Zustand, Recharts, Lucide React, JWT, Bcrypt, Multer")
+        $(".challPoint").text("Interactive Map-Based Incident Reporting, AI-Powered Report Classification and Priority Detection, AI-Generated Admin Operational Insights, Real-Time Updates via WebSocket, Role-Based Access Control (Public / Volunteer / Electrician / Admin), Admin Dashboard with Incident Logs and Charts, Volunteer Job Claiming and Management, Proof Image Upload, Geocoding and Location Search, Report Filtering by Date, Status, and Severity")
+        $("#gitLinkContainer").html('<a class="gitPoint" href="https://github.com/zyle-geralde/Bantay_Kuryente_Backend-.git" target="_blank">Backend</a> &nbsp;|&nbsp; <a href="https://github.com/zyle-geralde/react-native-bantay-kuryente.git" target="_blank">Frontend</a>')
+    })
+
+    $(".SpatialAggClick").click(function (e) {
+        var pulsenetimg = ['./images/Spatial1.jpg', './images/Spatial2.jpg', './images/Spatial3.jpg']
+
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
+                </div>
+            `)
+        });
+
+        $("#exampleModalLabel").text("Spatial Aggregation for FNAB Adequacy Assessment")
+        $(".descPoint").text("A spatial aggregation framework that organizes AI-detected thyrocytes into interpretable cluster structures using an IoU-based graph clustering approach. Two strategies were evaluated — a direct 2-step aggregation and a multi-stage 3-step approach — with the 3-step method producing less fragmented clusters that more closely aligned with expert-annotated adequate groupings.")
+        $(".techPoint").text("Python, ONNX-based YOLO Detector, Weighted Boxes Fusion (WBF), IoU-based Graph Clustering, NetworkX, NumPy, OpenCV")
+        $(".challPoint").text("IoU-based graph clustering framework, Multi-stage vs. direct aggregation comparison, Wilcoxon signed-rank expert evaluation, MCC-based detection agreement analysis, Tile-level inference with coordinate transformation, IQR aspect ratio & containment filtering")
+        $("#gitLinkContainer").html('<a class="gitPoint" href="https://github.com/avrilnigelchua0412/Adequacy" target="_blank">Github Link</a>')
+    })
+
+    $(".CurriculumClick").click(function (e) {
+        var pulsenetimg = ['./images/Curriculum1.jpg', './images/Curriculum2.jpg', './images/Curriculum3.jpg']
+
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
+                </div>
+            `)
+        });
+
+        $("#exampleModalLabel").text("Curriculum Learning for Thyrocyte Detection")
+        $(".descPoint").text("An investigation into curriculum learning as a training strategy for improving detection stability and interpretability in thyrocyte detection under increasing FNAB smear complexity. YOLOv5 Nano and YOLOv7 Tiny were trained with progressive difficulty schedules and evaluated using head-wise Grad-CAM localization metrics.")
+        $(".techPoint").text("Python, YOLOv5 Nano, YOLOv7 Tiny, Grad-CAM, Albumentations, ONNX, NumPy, OpenCV, Scikit-learn")
+        $(".challPoint").text("Progressive curriculum schedule with stage-wise augmentation, Head-wise Grad-CAM localization (P3/P4/P5), Pointing Game & Energy-Inside-Ground-Truth metrics, Focus Ratio for attention selectivity, Backbone freezing at final curriculum stage, Morphological Complexity Level (MCL) stratification")
+        $("#gitLinkContainer").html('<a class="gitPoint" href="https://github.com/avrilnigelchua0412/Adequacy" target="_blank">Github Link</a>')
+    })
+
+    $(".ThyrAClick").click(function (e) {
+        var pulsenetimg = ['./images/ThyraAI1.png', './images/ThyraAI2.png', './images/ThyraAI3.png']
+
+        $(".holdCarousel").text("")
+        pulsenetimg.forEach((pn, index) => {
+            $(".holdCarousel").append(`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:60%; margin: 0 auto; max-height: 300px; cursor:pointer;" alt="...">
+                </div>
+            `)
+        });
+
+        $("#exampleModalLabel").text("ThyrA")
+        $(".descPoint").text("An AI-powered mobile application that assists doctors in analyzing Fine Needle Aspiration Biopsy (FNAB) thyroid slides. The system automatically detects thyrocytes and cell clusters, draws bounding boxes, and generates a visual summary to support faster and more consistent medical analysis.")
+        $(".techPoint").text("React Native, Expo, FastAPI, Python, Supabase (PostgreSQL, Auth, Storage), Computer Vision Detection Model")
+        $(".challPoint").text("AI-powered thyrocyte & cluster detection, Bounding box visualization, Detection summary generation, Folder-based image organization, Processed image download, Layered Architecture (Presentation, Application, Service, Data)")
+        $("#gitLinkContainer").html('<a class="gitPoint" href="https://github.com/zyle-geralde/ThyrA_FrontEnd.git" target="_blank">Frontend</a> &nbsp;|&nbsp; <a href="https://github.com/zyle-geralde/Thyrocyte_Detection_Backend.git" target="_blank">Backend</a>')
+    })
+
     $(".ProbBomberClick").click(function (e) {
         var pulsenetimg = ['./images/ProbabilityBomberSC.png', './images/ProbabilityBomberSC1.png', './images/ProbabilityBomberSC2.png', './images/ProbabilityBomberSC3.png', './images/ProbabilityBomberSC4.png']
         
@@ -509,7 +598,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -528,7 +617,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -547,7 +636,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -567,7 +656,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -587,7 +676,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -607,7 +696,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -627,7 +716,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -648,7 +737,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -669,7 +758,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -690,7 +779,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -710,7 +799,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -731,7 +820,7 @@ $(document).ready(function (e) {
         pulsenetimg.forEach((pn, index) => {
             $(".holdCarousel").append(`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${pn}" class="d-block" style="object-fit:contain; object-position: center; width:100%;" alt="...">
+                    <img src="${pn}" class="d-block lightbox-img" style="object-fit:contain; object-position: center; width:100%; cursor:pointer;" alt="...">
                 </div>
             `);
         });
@@ -772,6 +861,62 @@ $(document).ready(function (e) {
     //     })
 
     // })
+
+    var serviceData = {
+        fullstack: {
+            title: "FullStack Web Development",
+            desc: "Building complete web applications end-to-end, from responsive frontend UIs to robust backend APIs and database management.",
+            tech: "React.js, Node.js, Express.js, Django, ASP.NET, Firebase, MySQL, MongoDB, HTML, CSS, Bootstrap, jQuery, Socket.io",
+            exp: "Developed Probability Bomber (React.js + Express.js + Firebase), BasaBuzz (ASP.NET + Razor Pages + MySQL), TechnoSpace (React JS + ASP.NET + Azure Database), Yapper Mail (Django + WebSockets + Firebase), ChatBox (Socket.io + ExpressJS + MongoDB), and Bantay Kuryente (React JS + FastAPI).",
+            highlights: "Experienced with MVC architecture, RESTful APIs, real-time WebSocket communication, secure authentication, CRUD operations, role-based access control, and cloud database integration."
+        },
+        frontend: {
+            title: "FrontEnd Web Development",
+            desc: "Crafting responsive, interactive, and user-friendly interfaces using modern frontend frameworks and libraries.",
+            tech: "React.js, Bootstrap, HTML, CSS, jQuery, Tailwind CSS, Phaser.js, DOM Manipulation",
+            exp: "Built responsive UIs for Probability Bomber (student dashboard + achievement system with React + custom CSS), BasaBuzz (admin and user dashboards with Razor Pages + CSS), TechnoSpace (marketplace interface with React JS), and Yapper Mail (email platform with Bootstrap + Tailwind CSS).",
+            highlights: "Skilled in component-based UI design, adaptive responsive layouts, interactive game UIs with Phaser.js, and consistent cross-device user experience."
+        },
+        backend: {
+            title: "Backend Web Development",
+            desc: "Designing scalable, secure backend systems, RESTful APIs, and high-performance database architectures to power web applications.",
+            tech: "Node.js, Express.js, Django, ASP.NET, FastAPI, MySQL, MongoDB, Firebase, SQL, Socket.io, Supabase, Azure Database",
+            exp: "Interned as Project Manager/Software Developer at Alliance Inc. (June–July 2025), developing backend functionalities and high-performance databases. Built backends for ChatBox (Socket.io + MongoDB), ThyrA (FastAPI + Supabase), Bantay Kuryente (FastAPI + role-based access), BasaBuzz (ASP.NET + MySQL), Yapper Mail (Django + WebSockets), and TechnoSpace (ASP.NET + Azure).",
+            highlights: "Experienced with REST API design, real-time WebSocket communication, role-based access control, server performance optimization, secure authentication (OTP, email verification), and database design."
+        },
+        uiux: {
+            title: "UI/UX Design",
+            desc: "Designing clean, organized, and user-centered interfaces that prioritize usability, visual consistency, and an intuitive experience.",
+            tech: "HTML, CSS, Bootstrap, Tailwind CSS, Razor Pages, Figma",
+            exp: "Designed UIs for BasaBuzz (clean admin/user dashboards with organized book management), Probability Bomber (adaptive student dashboard with achievement tracking), TechnoSpace (intuitive marketplace interface for CIT University students), and Yapper Mail (email management platform with responsive layout and AI chatbot integration).",
+            highlights: "Focused on responsive design, visual hierarchy, intuitive navigation, and clean aesthetics. Designed both admin and user-facing views ensuring a smooth and consistent experience across devices."
+        },
+        ml: {
+            title: "Machine Learning Solutions",
+            desc: "Building and deploying AI/ML models for image classification, object detection, and real-time recognition using deep learning and classical ML techniques.",
+            tech: "TensorFlow, Scikit-Learn, NumPy, pandas, Matplotlib, MobileNetV2, MediaPipe, OpenCV, ResNet-50 v2, FAISS, Keras, Random Forest",
+            exp: "Completed Machine Learning Specialization (DeepLearning.AI + Stanford University, Aug 2024). Projects include CNN Waste Segregation Classification (MobileNetV2), ASL Hand Landmark Detection (99.02% accuracy with Random Forest), Tumor Classification (CNN on MRI scans), Sports Ball Classification (ResNet-50 v2), and ThyrA thyrocyte detection research (curriculum learning + interpretability).",
+            highlights: "Experienced with transfer learning, CNNs, early stopping, model evaluation (confusion matrices, classification reports), supervised/unsupervised/reinforcement learning, and deployment in .h5 and TensorFlow Lite formats."
+        },
+        mobile: {
+            title: "Mobile Development",
+            desc: "Building cross-platform mobile applications with clean UIs, seamless backend integration, and AI-powered features.",
+            tech: "React Native, Expo, FastAPI, Supabase",
+            exp: "Developed ThyrA (AI-powered FNAB thyroid slide detection app using React Native Expo + FastAPI + Supabase, Dec 2025–Feb 2026) and Bantay Kuryente (electricity incident reporting mobile app using React Native + FastAPI, Feb–Mar 2026).",
+            highlights: "Implemented folder-based image management, downloadable AI detection results, map-click location capture for incident tracking, role-based access (User/Technician/Admin), and a layered architecture (Presentation → Application → Service → Data) for scalability and maintainability."
+        }
+    }
+
+    $(".serviceClick").click(function (e) {
+        var key = $(this).data("service")
+        var d = serviceData[key]
+        if (!d) return
+        $("#serviceModalLabel").text(d.title)
+        $(".svcDesc").text(d.desc)
+        $(".svcTech").text(d.tech)
+        $(".svcExp").text(d.exp)
+        $(".svcHighlights").text(d.highlights)
+    })
 
     $(".linkIconClick").click(function (e) {
         window.open("https://www.linkedin.com/in/zyle-geralde-de-la-peña-37b2a926b")
