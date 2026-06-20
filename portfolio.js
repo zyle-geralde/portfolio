@@ -877,13 +877,21 @@ $(document).ready(function (e) {
 
     $('#serviceModal').on('show.bs.modal', function (event) {
         var key = $(event.relatedTarget).data('service')
+        var icon = $(event.relatedTarget).data('icon')
         var d = serviceData[key]
         if (!d) return
         $("#serviceModalLabel").text(d.title)
+        $("#svcModalIcon").attr('class', icon)
         $(".svcDesc").text(d.desc)
-        $(".svcTech").text(d.tech)
+        var chips = d.tech.split(', ').map(function(t) {
+            return '<span class="svc-tech-chip">' + t.trim() + '</span>'
+        }).join('')
+        $(".svcTech").html(chips)
         $(".svcExp").text(d.exp)
-        $(".svcHighlights").text(d.highlights)
+        var items = d.highlights.split(', ').map(function(h) {
+            return '<li>' + h.trim() + '</li>'
+        }).join('')
+        $(".svcHighlights").html(items)
     })
 
     $(".work-nav-btn").click(function () {

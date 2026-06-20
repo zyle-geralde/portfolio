@@ -383,32 +383,254 @@
         transform: translateY(-4px);
       }
 
-      .servicenumber {
-        font-size: 20px;
-        font-weight: 900;
-        border-style: solid;
-        border-radius: 1000px;
-        display: inline-block;
-        padding: 7px 10px;
-        color: #fbda77;
+      /* === SERVICE CARDS === */
+      .servicesSection { cursor: default; }
+
+      .svc-section-header {
+        text-align: center;
+        margin-bottom: 36px;
+        padding: 0 20px;
       }
 
-      .serviceimg {
+      .svc-section-eyebrow {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+        border-left: none;
+        padding: 0;
+      }
+
+      .svc-section-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: -0.3px;
+      }
+
+      .svc-card {
+        background: var(--bg-card);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .svc-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--accent-border);
+        border-color: var(--accent-border);
+      }
+
+      .svc-card-header {
+        position: relative;
+        height: 150px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .svc-card-bg {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
         object-position: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-radius: 5px;
+        filter: brightness(0.28) saturate(0.4);
+        transition: filter 0.35s ease, transform 0.35s ease;
       }
 
-      .servicedesc {
+      .svc-card:hover .svc-card-bg {
+        filter: brightness(0.38) saturate(0.6);
+        transform: scale(1.04);
+      }
+
+      .svc-card-icon {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 46px;
+        color: var(--accent);
+        filter: drop-shadow(0 2px 12px rgba(255, 217, 102, 0.35));
+        transition: transform 0.25s ease;
+      }
+
+      .svc-card:hover .svc-card-icon {
+        transform: scale(1.08);
+      }
+
+      .svc-card-body {
+        padding: 20px 22px 22px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .svc-num {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .svc-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1.3;
+        margin-bottom: 0;
+        flex: 1;
+      }
+
+      .svc-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        margin-top: 16px;
+        opacity: 0.7;
+        transition: opacity 0.2s, gap 0.2s;
+        letter-spacing: 0.3px;
+      }
+
+      .svc-card:hover .svc-cta {
+        opacity: 1;
+        gap: 9px;
+      }
+
+      /* === SERVICE MODAL === */
+      #serviceModal .modal-content {
+        background: #0d1117;
+        border: 1px solid rgba(255, 217, 102, 0.15);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      #serviceModal .svc-modal-top {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 24px 28px 22px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .svc-modal-icon-box {
+        width: 52px;
+        height: 52px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color: var(--accent);
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        border-radius: 12px;
+      }
+
+      .svc-modal-title-text {
         font-size: 20px;
-        text-align: center;
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1.2;
+      }
+
+      #serviceModal .modal-body {
+        padding: 24px 28px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .svc-block {
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .svc-block:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+
+      .svc-label {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+
+      .svc-desc-text {
+        color: #d1d5db;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .svc-tech-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .svc-tech-chip {
+        font-size: 11px;
         font-weight: 500;
-        border-bottom-style: solid;
-        border-width: 2px;
+        padding: 4px 11px;
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.06);
+        color: #d1d5db;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .svc-exp-text {
+        color: #d1d5db;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .svc-hl-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .svc-hl-list li {
+        font-size: 13px;
+        color: #d1d5db;
+        padding-left: 18px;
+        position: relative;
+        line-height: 1.65;
+      }
+
+      .svc-hl-list li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 10px;
+        top: 4px;
+      }
+
+      @media (max-width: 600px) {
+        #serviceModal .svc-modal-top { padding: 18px 20px 16px; gap: 12px; }
+        #serviceModal .modal-body { padding: 18px 20px 22px; }
+        .svc-modal-title-text { font-size: 17px; }
       }
 
       /*Work Section*/
@@ -932,6 +1154,243 @@
         .specialty-chips { justify-content: center; }
         .nav-brand { display: none; }
       }
+
+      /* === ABOUT ME REDESIGN === */
+      .about-quote {
+        font-style: italic;
+        color: rgb(243, 243, 243);
+        font-size: 20px;
+        max-width: 700px;
+        text-align: left;
+        margin: 30px 40px 0;
+        padding: 18px 24px;
+        border-left: 3px solid var(--accent);
+        background: var(--accent-dim);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        line-height: 1.6;
+      }
+
+      .about-quote::before {
+        content: '\201C';
+        font-size: 48px;
+        color: var(--accent);
+        line-height: 0;
+        vertical-align: -18px;
+        margin-right: 4px;
+        opacity: 0.6;
+      }
+
+      .intro-label {
+        font-weight: 600;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--text-muted);
+        border-left: 3px solid var(--accent);
+        padding: 2px 0 2px 12px;
+        margin-bottom: 18px;
+      }
+
+      .edu-card {
+        background: var(--bg-card);
+        border: 1px solid rgba(255,255,255,0.07);
+        border-left: 3px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 20px 24px;
+        margin-bottom: 16px;
+      }
+
+      .edu-degree {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 5px;
+      }
+
+      .edu-meta {
+        font-size: 14px;
+        color: var(--text-primary);
+        font-weight: 500;
+        margin-bottom: 2px;
+      }
+
+      .edu-location {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+      }
+
+      .edu-honors {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+
+      .edu-badge {
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: var(--radius-pill);
+        background: var(--accent-dim);
+        color: var(--accent);
+        border: 1px solid var(--accent-border);
+        font-weight: 600;
+      }
+
+      .edu-list {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0 0;
+      }
+
+      .edu-list li {
+        font-size: 13px;
+        color: var(--text-primary);
+        padding: 4px 0 4px 18px;
+        position: relative;
+      }
+
+      .edu-list li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 10px;
+        top: 6px;
+      }
+
+      .courses-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .course-chip {
+        font-size: 11px;
+        padding: 4px 12px;
+        border-radius: var(--radius-pill);
+        background: rgba(255,255,255,0.05);
+        color: #d1d5db;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .cert-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+        background: var(--bg-card);
+        border: 1px solid rgba(255,255,255,0.07);
+        border-radius: var(--radius);
+        text-decoration: none;
+        transition: border-color 0.2s, transform 0.2s;
+      }
+
+      .cert-item:hover {
+        border-color: var(--accent-border);
+        transform: translateY(-2px);
+      }
+
+      .cert-icon-wrap {
+        font-size: 20px;
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 1px;
+        opacity: 0.85;
+      }
+
+      .cert-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 3px;
+        line-height: 1.4;
+      }
+
+      .cert-detail {
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.5;
+        display: block;
+      }
+
+      .org-card {
+        background: var(--bg-card);
+        border: 1px solid rgba(255,255,255,0.07);
+        border-left: 3px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .org-icon-wrap {
+        font-size: 26px;
+        color: var(--accent);
+        flex-shrink: 0;
+        opacity: 0.85;
+      }
+
+      .org-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 2px;
+      }
+
+      .org-role {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      .skill-group {
+        margin-bottom: 28px;
+      }
+
+      .skill-category {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .softskill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 40px;
+      }
+
+      .softskill-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 16px;
+        background: var(--bg-card);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius-pill);
+        font-size: 13px;
+        color: var(--text-primary);
+      }
+
+      .softskill-chip i {
+        color: var(--accent);
+        font-size: 15px;
+      }
     </style>
   </head>
 
@@ -983,390 +1442,312 @@
         <div class="profileImageCont">
           <canvas id="bg3"></canvas>
         </div>
-        <div
-          style="
-            font-style: italic;
-            color: rgb(243, 243, 243);
-            font-size: 30px;
-            max-width: 700px;
-            text-align: center;
-            margin-top: 30px;
-            margin-left: 40px;
-            margin-right: 40px;
-          "
-        >
-          "Shaping the future with Innovative Technological Advancements"
+
+        <!-- Quote -->
+        <div class="about-quote">
+          Shaping the future with Innovative Technological Advancements
         </div>
-        <div class="introSection" style="margin-top: 60px">
-          <div>
-            <div
-              style="
-                font-weight: 500;
-                border-bottom-style: solid;
-                padding-bottom: 10px;
-                margin-bottom: 10px;
-                color: #fbda77;
-              "
-            >
-              INTRODUCTION
+
+        <!-- Introduction -->
+        <div class="introSection" style="margin-top: 48px">
+          <div class="intro-label">Introduction</div>
+          <div style="color: #ffd966; font-size: 36px; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.5px;">Hello!</div>
+          <div style="color: rgb(243, 243, 243); line-height: 1.75; font-size: 14px;">
+            I am <span style="color:#ffd966; font-weight:600;">Zyle Geralde de la Peña</span>, a Software Engineer and Magna Cum Laude graduate of BS Computer Science from Cebu Institute of Technology University. I specialize in full-stack web development, mobile development, and machine learning — building complete, production-ready applications from clean responsive frontends to secure backend APIs and intelligent AI-powered systems.
+          </div>
+          <div style="color: rgb(243, 243, 243); line-height: 1.75; font-size: 14px; margin-top: 14px;">
+            With hands-on experience in React.js, React Native, Spring Boot, Django, FastAPI, TensorFlow, and Scikit-Learn, I bring both the technical depth and the adaptability to tackle diverse challenges. I am driven by a passion for creating software that is not only functional but meaningful — whether it's a real-time web application, a machine learning model, or a cross-platform mobile app.
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="introSection" style="margin-top: 48px">
+          <div class="intro-label">Education</div>
+
+          <div class="edu-card">
+            <div class="edu-degree">Bachelor of Science in Computer Science</div>
+            <div class="edu-meta">Cebu Institute of Technology University &nbsp;·&nbsp; 2022 – 2026</div>
+            <div class="edu-location">N. Bacalso Avenue, Cebu City</div>
+            <div class="edu-honors">
+              <span class="edu-badge">Magna Cum Laude</span>
+              <span class="edu-badge">Top 1 · 1st Year BSCS</span>
+              <span class="edu-badge">Presidential Scholar · Rank 21</span>
+              <span class="edu-badge">College Scholar · Rank 55</span>
             </div>
-            <div style="color: #ffd966; font-size: 40px; font-weight: 500">
-              Hello!
-            </div>
-            <div style="text-align: justify; color: rgb(243, 243, 243)">
-              I am <span style="color:#ffd966; font-weight:500;">Zyle Geralde de la Peña</span>, a Software Engineer and Magna Cum Laude graduate of BS Computer Science from Cebu Institute of Technology University. I specialize in full-stack web development, mobile development, and machine learning — building complete, production-ready applications from clean responsive frontends to secure backend APIs and intelligent AI-powered systems.
-              <br><br>
-              With hands-on experience in React.js, React Native, Spring Boot, Django, FastAPI, TensorFlow, and Scikit-Learn, I bring both the technical depth and the adaptability to tackle diverse challenges. I am driven by a passion for creating software that is not only functional but meaningful — whether it's a real-time web application, a machine learning model, or a cross-platform mobile app.
+            <ul class="edu-list">
+              <li>Top 1 in 1st Year BS Computer Science</li>
+              <li>Presidential Scholar — Rank 21 (2nd Sem 2022–2023)</li>
+              <li>College Scholar — Rank 55 (1st Sem 2024–2025)</li>
+            </ul>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-degree">STEM Graduate — With High Honors</div>
+            <div class="edu-meta">Bantayan Science High School &nbsp;·&nbsp; 2016 – 2022</div>
+            <div class="edu-location">Ticad, Bantayan, Cebu</div>
+          </div>
+
+          <div style="margin-top: 24px; margin-bottom: 6px;">
+            <div class="intro-label" style="margin-bottom: 12px;">Relevant Courses</div>
+            <div class="courses-row">
+              <span class="course-chip">AI / Machine Learning</span>
+              <span class="course-chip">Data Science</span>
+              <span class="course-chip">Application Development</span>
+              <span class="course-chip">Software Engineering</span>
+              <span class="course-chip">Data Structures and Algorithms</span>
+              <span class="course-chip">Object-Oriented Programming</span>
             </div>
           </div>
         </div>
 
-        <div class="introSection" style="margin-top: 50px">
-          <div>
-            <div
-              style="
-                font-weight: 500;
-                border-bottom-style: solid;
-                padding-bottom: 10px;
-                margin-bottom: 10px;
-                color: #fbda77;
-              "
-            >
-              EDUCATION
-            </div>
-            <div style="text-align: justify">
+        <!-- Certifications -->
+        <div class="introSection" style="margin-top: 48px">
+          <div class="intro-label">Certifications</div>
+          <div class="cert-grid">
 
-              <!-- University -->
-              <div style="margin-bottom: 6px;">
-                <span style="font-weight:600; color:#fbda77; font-size:18px;">Bachelor of Science in Computer Science</span>
+            <a class="cert-item" href="https://drive.google.com/file/d/1gBh456XtORCpiFd_cB9XFvsKUkvuzqRb/view?usp=sharing" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-patch-check-fill"></i></div>
+              <div>
+                <span class="cert-name">PhilNITS FE 2026</span>
+                <span class="cert-detail">Passed the Philippine IT Engineers Examination (Fundamental Information Technology Engineer Examination), 2026</span>
               </div>
-              <div style="color:rgb(243,243,243); font-weight:500; margin-bottom:4px;">
-                Cebu Institute of Technology University &nbsp;|&nbsp; 2022 – 2026
-              </div>
-              <div style="color:#aaa; font-size:13px; margin-bottom:6px;">
-                N. Bacalso Avenue, Cebu City
-              </div>
-              <ul style="color:rgb(243,243,243); margin-bottom:20px; font-size:13px;">
-                <li style="margin-bottom:4px;"><span style="color:#ffd966; font-weight:600;">Magna Cum Laude</span> Graduate</li>
-                <li style="margin-bottom:4px;">Top 1 in 1st Year BS Computer Science</li>
-                <li style="margin-bottom:4px;">Presidential Scholar — Rank 21 (2nd Sem 2022–2023)</li>
-                <li style="margin-bottom:4px;">College Scholar — Rank 55 (1st Sem 2024–2025)</li>
-              </ul>
+            </a>
 
-              <!-- High School -->
-              <div style="margin-bottom: 6px;">
-                <span style="font-weight:600; color:#fbda77; font-size:18px;">STEM Graduate — With High Honors</span>
+            <a class="cert-item" href="https://drive.google.com/file/d/1MstJtY9z9gZCMsJalEgXySnQpxowRsWf/view?usp=sharing" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-award-fill"></i></div>
+              <div>
+                <span class="cert-name">TOPCIT Level II</span>
+                <span class="cert-detail">13th TOPCIT Philippines (DEC10)</span>
               </div>
-              <div style="color:rgb(243,243,243); font-weight:500; margin-bottom:4px;">
-                Bantayan Science High School &nbsp;|&nbsp; 2016 – 2022
-              </div>
-              <div style="color:#aaa; font-size:13px; margin-bottom:20px;">
-                Ticad, Bantayan, Cebu
-              </div>
+            </a>
 
-              <!-- Relevant Courses -->
-              <div style="color:rgb(243,243,243); margin-bottom:20px;">
-                <span style="color:#fbda77; font-weight:500; font-size:18px;">Relevant Courses: </span>
-                AI / Machine Learning, Data Science, Application Development,
-                Software Engineering, Data Structures and Algorithms, Object-Oriented Programming
+            <a class="cert-item" href="https://drive.google.com/file/d/1UBf_kuCOgZ_koT8WC1XG-mfXJmBhXaZs/view?usp=sharing" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-award-fill"></i></div>
+              <div>
+                <span class="cert-name">TOPCIT Level II</span>
+                <span class="cert-detail">12th TOPCIT Philippines (JUN2)</span>
               </div>
+            </a>
 
-              <!-- Certifications -->
-              <div style="font-weight:500; color:#fbda77; font-size:18px; margin-bottom:10px;">
-                Certifications
+            <a class="cert-item" href="https://www.coursera.org/account/accomplishments/specialization/4EVB7STR33JW" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
+              <div>
+                <span class="cert-name">Machine Learning Specialization</span>
+                <span class="cert-detail">DeepLearning.AI, Stanford University (Aug 2024)</span>
               </div>
-              <ul>
-                <li style="margin-bottom:10px;">
-                  <a href="https://drive.google.com/file/d/1gBh456XtORCpiFd_cB9XFvsKUkvuzqRb/view?usp=sharing" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    <span style="color:#ffd966; font-weight:600;">PhilNITS FE 2026</span> — Passed the Philippine IT Engineers Examination (Fundamental Information Technology Engineer Examination), 2026
-                  </a>
-                </li>
-                <li style="margin-bottom:10px;">
-                  <a href="https://drive.google.com/file/d/1MstJtY9z9gZCMsJalEgXySnQpxowRsWf/view?usp=sharing" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    <span style="color:#ffd966; font-weight:600;">TOPCIT Level II</span> — 13th TOPCIT Philippines (DEC10)
-                  </a>
-                </li>
-                <li style="margin-bottom:10px;">
-                  <a href="https://drive.google.com/file/d/1UBf_kuCOgZ_koT8WC1XG-mfXJmBhXaZs/view?usp=sharing" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    <span style="color:#ffd966; font-weight:600;">TOPCIT Level II</span> — 12th TOPCIT Philippines (JUN2)
-                  </a>
-                </li>
-                <li style="margin-bottom:10px;">
-                  <a href="https://www.coursera.org/account/accomplishments/specialization/4EVB7STR33JW" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    Machine Learning Specialization — DeepLearning.AI, Stanford University (Aug 2024)
-                  </a>
-                </li>
-                <li style="margin-bottom:10px;">
-                  <a href="https://www.coursera.org/account/accomplishments/records/8OXEF8R2LEAJ" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    Advanced Learning Algorithms — DeepLearning.AI, Stanford University (Aug 2024)
-                  </a>
-                </li>
-                <li style="margin-bottom:10px;">
-                  <a href="https://www.coursera.org/account/accomplishments/records/LKFLNZLFESWP" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    Supervised Machine Learning: Regression and Classification — DeepLearning.AI, Stanford University (Aug 2024)
-                  </a>
-                </li>
-                <li style="margin-bottom:10px;">
-                  <a href="https://www.coursera.org/account/accomplishments/records/EMEPNEG5HP0P" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    Unsupervised Learning, Recommenders, Reinforcement Learning — DeepLearning.AI, Stanford University (Aug 2024)
-                  </a>
-                </li>
-                <li style="margin-bottom:10px;">
-                  <a href="https://www.credly.com/badges/5e3385ac-fcbe-40dd-87f5-b29e496abd3c/linked_in_profile" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    AWS Academy Graduate — Cloud Foundations Training Badge
-                  </a>
-                </li>
-                <li style="margin-bottom:10px;">
-                  <a href="https://www.credly.com/badges/230077fc-a2bb-4ec0-b1ce-3832ba78b0de/print" target="_blank" style="color:rgb(243,243,243); text-decoration:underline;">
-                    AWS Academy Graduate — Cloud Architecting Training Badge
-                  </a>
-                </li>
-              </ul>
+            </a>
 
-              <!-- Organizations -->
-              <div style="font-weight:500; color:#fbda77; font-size:18px; margin-bottom:10px; margin-top:10px;">
-                Organizations
+            <a class="cert-item" href="https://www.coursera.org/account/accomplishments/records/8OXEF8R2LEAJ" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
+              <div>
+                <span class="cert-name">Advanced Learning Algorithms</span>
+                <span class="cert-detail">DeepLearning.AI, Stanford University (Aug 2024)</span>
               </div>
-              <ul>
-                <li style="color:rgb(243,243,243); margin-bottom:6px;">
-                  Computer Student Society (CCS) — Secretariat Committee, 2023–2024
-                </li>
-              </ul>
+            </a>
 
+            <a class="cert-item" href="https://www.coursera.org/account/accomplishments/records/LKFLNZLFESWP" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
+              <div>
+                <span class="cert-name">Supervised Machine Learning: Regression and Classification</span>
+                <span class="cert-detail">DeepLearning.AI, Stanford University (Aug 2024)</span>
+              </div>
+            </a>
+
+            <a class="cert-item" href="https://www.coursera.org/account/accomplishments/records/EMEPNEG5HP0P" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
+              <div>
+                <span class="cert-name">Unsupervised Learning, Recommenders, Reinforcement Learning</span>
+                <span class="cert-detail">DeepLearning.AI, Stanford University (Aug 2024)</span>
+              </div>
+            </a>
+
+            <a class="cert-item" href="https://www.credly.com/badges/5e3385ac-fcbe-40dd-87f5-b29e496abd3c/linked_in_profile" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-cloud-fill"></i></div>
+              <div>
+                <span class="cert-name">AWS Academy Graduate</span>
+                <span class="cert-detail">Cloud Foundations Training Badge</span>
+              </div>
+            </a>
+
+            <a class="cert-item" href="https://www.credly.com/badges/230077fc-a2bb-4ec0-b1ce-3832ba78b0de/print" target="_blank">
+              <div class="cert-icon-wrap"><i class="bi bi-cloud-fill"></i></div>
+              <div>
+                <span class="cert-name">AWS Academy Graduate</span>
+                <span class="cert-detail">Cloud Architecting Training Badge</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Organizations -->
+        <div class="introSection" style="margin-top: 48px">
+          <div class="intro-label">Organizations</div>
+          <div class="org-card">
+            <div class="org-icon-wrap"><i class="bi bi-people-fill"></i></div>
+            <div>
+              <div class="org-name">Computer Student Society (CCS)</div>
+              <div class="org-role">Secretariat Committee, 2023–2024</div>
             </div>
           </div>
         </div>
 
-        <div class="introSection" style="margin-top: 50px">
-          <div>
-            <div
-              style="
-                font-weight: 500;
-                border-bottom-style: solid;
-                padding-bottom: 10px;
-                margin-bottom: 10px;
-                color: #fbda77;
-              "
-            >
-              SKILLS
-            </div>
-            <div style="text-align: justify">
-              <div
-                style="
-                  font-weight: 500;
-                  color: #fbda77;
-                  font-size: 20px;
-                  color: #fbda77;
-                  margin-bottom: 20px;
-                  margin-top: 40px;
-                "
-              >
-                Programming Languages
-              </div>
-              <div style="font-size: 50px" class="flex-container">
-                <i class="devicon-python-plain-wordmark colored"></i>
-                <i class="devicon-java-plain-wordmark colored"></i>
-                <i class="devicon-javascript-plain colored"></i>
-                <i class="devicon-c-plain colored"></i>
-                <i class="devicon-cplusplus-plain colored"></i>
-                <i class="devicon-csharp-plain-wordmark colored"></i>
-                <i class="devicon-php-plain colored"></i>
-              </div>
+        <!-- Skills -->
+        <div class="introSection" style="margin-top: 48px; margin-bottom: 0;">
+          <div class="intro-label">Skills</div>
 
-              <div
-                style="
-                  font-weight: 500;
-                  color: #fbda77;
-                  font-size: 20px;
-                  color: #fbda77;
-                  margin-bottom: 20px;
-                  margin-top: 40px;
-                "
-              >
-                FrontEnd
-              </div>
-              <div style="font-size: 50px" class="flex-container">
-                <i class="devicon-react-original-wordmark colored"></i>
-                <i class="devicon-react-original colored" style="display:flex; flex-direction:column; align-items:center;"><span style="font-size:8px; color:rgb(243,243,243);">React Native</span></i>
-                <i class="devicon-html5-plain-wordmark colored"></i>
-                <i class="devicon-css3-plain-wordmark colored"></i>
-                <i class="devicon-jquery-plain-wordmark colored"></i>
-                <i class="devicon-bootstrap-plain-wordmark colored"></i>
-              </div>
-
-              <div
-                style="
-                  font-weight: 500;
-                  color: #fbda77;
-                  font-size: 20px;
-                  color: #fbda77;
-                  margin-bottom: 20px;
-                  margin-top: 40px;
-                "
-              >
-                BackEnd
-              </div>
-              <div style="font-size: 50px" class="flex-container">
-                <i class="devicon-nodejs-plain-wordmark colored"></i>
-                <i class="devicon-express-original-wordmark"></i>
-                <i class="devicon-django-plain-wordmark"></i>
-                <i class="devicon-dotnetcore-plain colored"></i>
-                <i class="devicon-flask-original-wordmark"></i>
-                <i class="devicon-spring-plain-wordmark colored"></i>
-              </div>
-
-              <div
-                style="
-                  font-weight: 500;
-                  color: #fbda77;
-                  font-size: 20px;
-                  color: #fbda77;
-                  margin-bottom: 20px;
-                  margin-top: 40px;
-                "
-              >
-                Machine Learning
-              </div>
-              <div style="font-size: 50px" class="flex-container">
-                <i class="devicon-tensorflow-original-wordmark colored"></i>
-                <i class="devicon-scikitlearn-plain colored"></i>
-                <i class="devicon-numpy-plain-wordmark colored"></i>
-                <i class="devicon-pandas-plain-wordmark"></i>
-                <i class="devicon-matplotlib-plain-wordmark colored"></i>
-              </div>
-
-              <div
-                style="
-                  font-weight: 500;
-                  color: #fbda77;
-                  font-size: 20px;
-                  color: #fbda77;
-                  margin-bottom: 20px;
-                  margin-top: 40px;
-                "
-              >
-                Database
-              </div>
-              <div style="font-size: 50px" class="flex-container">
-                <i class="devicon-mysql-plain-wordmark colored"></i>
-                <i class="devicon-postgresql-plain-wordmark colored"></i>
-                <i class="devicon-mongodb-plain-wordmark colored"></i>
-                <i class="devicon-firebase-plain-wordmark colored"></i>
-              </div>
-
-              <div
-                style="
-                  font-weight: 500;
-                  color: #fbda77;
-                  font-size: 20px;
-                  color: #fbda77;
-                  margin-bottom: 20px;
-                  margin-top: 40px;
-                "
-              >
-                SoftSkills
-              </div>
-              <div
-                style="font-size: 50px; margin-bottom: 40px"
-                class="flex-container"
-              >
-                <i
-                  class="fa-solid fa-people-arrows"
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                  ><span style="font-size: 6px">Communication</span></i
-                >
-                <i
-                  class="fa-regular fa-lightbulb"
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                  ><span style="font-size: 6px">Problem Solving</span></i
-                >
-                <i
-                  class="fa-solid fa-person-walking-arrow-right"
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                  ><span style="font-size: 6px">Leadership</span></i
-                >
-                <i
-                  class="fa-solid fa-file-lines"
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                  ><span style="font-size: 6px"
-                    >Technical Documentation</span
-                  ></i
-                >
-                <i
-                  class="fa-solid fa-brain"
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                  ><span style="font-size: 6px">Critical Thinking</span></i
-                >
-                <i
-                  class="fa-solid fa-person-digging"
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                  ><span style="font-size: 6px">Work Under Pressure</span></i
-                >
-              </div>
+          <div class="skill-group">
+            <div class="skill-category">Programming Languages</div>
+            <div class="flex-container" style="font-size: 48px;">
+              <i class="devicon-python-plain-wordmark colored"></i>
+              <i class="devicon-java-plain-wordmark colored"></i>
+              <i class="devicon-javascript-plain colored"></i>
+              <i class="devicon-c-plain colored"></i>
+              <i class="devicon-cplusplus-plain colored"></i>
+              <i class="devicon-csharp-plain-wordmark colored"></i>
+              <i class="devicon-php-plain colored"></i>
             </div>
           </div>
+
+          <div class="skill-group">
+            <div class="skill-category">Frontend</div>
+            <div class="flex-container" style="font-size: 48px;">
+              <i class="devicon-react-original-wordmark colored"></i>
+              <i class="devicon-react-original colored" style="display:flex; flex-direction:column; align-items:center;"><span style="font-size:8px; color:rgb(243,243,243);">React Native</span></i>
+              <i class="devicon-html5-plain-wordmark colored"></i>
+              <i class="devicon-css3-plain-wordmark colored"></i>
+              <i class="devicon-jquery-plain-wordmark colored"></i>
+              <i class="devicon-bootstrap-plain-wordmark colored"></i>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-category">Backend</div>
+            <div class="flex-container" style="font-size: 48px;">
+              <i class="devicon-nodejs-plain-wordmark colored"></i>
+              <i class="devicon-express-original-wordmark"></i>
+              <i class="devicon-django-plain-wordmark"></i>
+              <i class="devicon-dotnetcore-plain colored"></i>
+              <i class="devicon-flask-original-wordmark"></i>
+              <i class="devicon-spring-plain-wordmark colored"></i>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-category">Machine Learning</div>
+            <div class="flex-container" style="font-size: 48px;">
+              <i class="devicon-tensorflow-original-wordmark colored"></i>
+              <i class="devicon-scikitlearn-plain colored"></i>
+              <i class="devicon-numpy-plain-wordmark colored"></i>
+              <i class="devicon-pandas-plain-wordmark"></i>
+              <i class="devicon-matplotlib-plain-wordmark colored"></i>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-category">Database</div>
+            <div class="flex-container" style="font-size: 48px;">
+              <i class="devicon-mysql-plain-wordmark colored"></i>
+              <i class="devicon-postgresql-plain-wordmark colored"></i>
+              <i class="devicon-mongodb-plain-wordmark colored"></i>
+              <i class="devicon-firebase-plain-wordmark colored"></i>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-category">Soft Skills</div>
+            <div class="softskill-row">
+              <span class="softskill-chip"><i class="fa-solid fa-people-arrows"></i> Communication</span>
+              <span class="softskill-chip"><i class="fa-regular fa-lightbulb"></i> Problem Solving</span>
+              <span class="softskill-chip"><i class="fa-solid fa-person-walking-arrow-right"></i> Leadership</span>
+              <span class="softskill-chip"><i class="fa-solid fa-file-lines"></i> Technical Documentation</span>
+              <span class="softskill-chip"><i class="fa-solid fa-brain"></i> Critical Thinking</span>
+              <span class="softskill-chip"><i class="fa-solid fa-person-digging"></i> Work Under Pressure</span>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <div class="servicesSection" style="display: none">
-        <div class="serviceGrid" style="margin-bottom: 30px; margin-top: 20px">
-          <div class="serviceGridCont serviceClick" data-service="fullstack" style="border-bottom-style: none; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#serviceModal">
-            <div class="servicenumber">01</div>
-            <img src="./images/fullstackimg.jpg" class="serviceimg" />
-            <div class="servicedesc">FullStack Web Development</div>
-          </div>
-          <div class="serviceGridCont serviceClick" data-service="frontend" style="border-bottom-style: none; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#serviceModal">
-            <div class="servicenumber">02</div>
-            <img src="./images/frontEnd.jpg" class="serviceimg" />
-            <div class="servicedesc">FrontEnd Web Development</div>
-          </div>
-          <div class="serviceGridCont serviceClick" data-service="backend" style="border-bottom-style: none; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#serviceModal">
-            <div class="servicenumber">03</div>
-            <img src="./images/backenddev.jpg" class="serviceimg" />
-            <div class="servicedesc">Backend Web Development</div>
-          </div>
-          <div class="serviceGridCont serviceClick" data-service="uiux" style="border-bottom-style: none; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#serviceModal">
-            <div class="servicenumber">04</div>
-            <img src="./images/webdesign.jpg" class="serviceimg" />
-            <div class="servicedesc">
-              UI/UX <br />
-              Design
+        <div class="svc-section-header">
+          <div class="svc-section-eyebrow">What I Offer</div>
+          <div class="svc-section-title">My Services</div>
+        </div>
+        <div class="serviceGrid" style="margin-bottom: 40px;">
+
+          <div class="svc-card serviceClick" data-service="fullstack" data-icon="bi bi-layers-half" data-bs-toggle="modal" data-bs-target="#serviceModal">
+            <div class="svc-card-header">
+              <img src="./images/fullstackimg.jpg" class="svc-card-bg" alt="" />
+              <div class="svc-card-icon"><i class="bi bi-layers-half"></i></div>
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-num">01</div>
+              <div class="svc-title">FullStack Web Development</div>
+              <span class="svc-cta">View Details <i class="bi bi-arrow-right"></i></span>
             </div>
           </div>
-          <div class="serviceGridCont serviceClick" data-service="ml" style="border-bottom-style: none; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#serviceModal">
-            <div class="servicenumber">05</div>
-            <img src="./images/machine learning.jpg" class="serviceimg" />
-            <div class="servicedesc">Machine Learning Solutions</div>
+
+          <div class="svc-card serviceClick" data-service="frontend" data-icon="bi bi-display" data-bs-toggle="modal" data-bs-target="#serviceModal">
+            <div class="svc-card-header">
+              <img src="./images/frontEnd.jpg" class="svc-card-bg" alt="" />
+              <div class="svc-card-icon"><i class="bi bi-display"></i></div>
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-num">02</div>
+              <div class="svc-title">FrontEnd Web Development</div>
+              <span class="svc-cta">View Details <i class="bi bi-arrow-right"></i></span>
+            </div>
           </div>
-          <div class="serviceGridCont serviceClick" data-service="mobile" style="border-bottom-style: none; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#serviceModal">
-            <div class="servicenumber">06</div>
-            <img src="./images/mobiledev.jpg" class="serviceimg" />
-            <div class="servicedesc">Mobile <br>Development</div>
+
+          <div class="svc-card serviceClick" data-service="backend" data-icon="bi bi-server" data-bs-toggle="modal" data-bs-target="#serviceModal">
+            <div class="svc-card-header">
+              <img src="./images/backenddev.jpg" class="svc-card-bg" alt="" />
+              <div class="svc-card-icon"><i class="bi bi-server"></i></div>
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-num">03</div>
+              <div class="svc-title">Backend Web Development</div>
+              <span class="svc-cta">View Details <i class="bi bi-arrow-right"></i></span>
+            </div>
           </div>
+
+          <div class="svc-card serviceClick" data-service="uiux" data-icon="bi bi-pen" data-bs-toggle="modal" data-bs-target="#serviceModal">
+            <div class="svc-card-header">
+              <img src="./images/webdesign.jpg" class="svc-card-bg" alt="" />
+              <div class="svc-card-icon"><i class="bi bi-pen"></i></div>
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-num">04</div>
+              <div class="svc-title">UI/UX Design</div>
+              <span class="svc-cta">View Details <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <div class="svc-card serviceClick" data-service="ml" data-icon="bi bi-cpu-fill" data-bs-toggle="modal" data-bs-target="#serviceModal">
+            <div class="svc-card-header">
+              <img src="./images/machine learning.jpg" class="svc-card-bg" alt="" />
+              <div class="svc-card-icon"><i class="bi bi-cpu-fill"></i></div>
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-num">05</div>
+              <div class="svc-title">Machine Learning Solutions</div>
+              <span class="svc-cta">View Details <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <div class="svc-card serviceClick" data-service="mobile" data-icon="bi bi-phone-fill" data-bs-toggle="modal" data-bs-target="#serviceModal">
+            <div class="svc-card-header">
+              <img src="./images/mobiledev.jpg" class="svc-card-bg" alt="" />
+              <div class="svc-card-icon"><i class="bi bi-phone-fill"></i></div>
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-num">06</div>
+              <div class="svc-title">Mobile Development</div>
+              <span class="svc-cta">View Details <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -2006,28 +2387,31 @@
 
     <!-- Service Modal -->
     <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content" style="background:#1a1a2e; color:#e0e0e0;">
-          <div class="modal-header" style="border-bottom:1px solid #333;">
-            <h5 class="modal-title" id="serviceModalLabel" style="color:#ffd966; font-weight:600;"></h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="svc-modal-top">
+            <div class="svc-modal-icon-box"><i id="svcModalIcon"></i></div>
+            <div style="flex:1; min-width:0;">
+              <div class="svc-modal-title-text" id="serviceModalLabel"></div>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="flex-shrink:0;"></button>
           </div>
-          <div class="modal-body" style="font-size:13px;">
-            <div style="margin-bottom:14px;">
-              <span style="font-weight:600; color:#ffd966;">Description: </span>
-              <span class="svcDesc"></span>
+          <div class="modal-body">
+            <div class="svc-block">
+              <div class="svc-label">Description</div>
+              <div class="svc-desc-text svcDesc"></div>
             </div>
-            <div style="margin-bottom:14px;">
-              <span style="font-weight:600; color:#ffd966;">Tech Stack: </span>
-              <span class="svcTech"></span>
+            <div class="svc-block">
+              <div class="svc-label">Tech Stack</div>
+              <div class="svc-tech-wrap svcTech"></div>
             </div>
-            <div style="margin-bottom:14px;">
-              <span style="font-weight:600; color:#ffd966;">Experience: </span>
-              <span class="svcExp"></span>
+            <div class="svc-block">
+              <div class="svc-label">Experience</div>
+              <div class="svc-exp-text svcExp"></div>
             </div>
-            <div style="margin-bottom:6px;">
-              <span style="font-weight:600; color:#ffd966;">Highlights: </span>
-              <span class="svcHighlights"></span>
+            <div class="svc-block">
+              <div class="svc-label">Highlights</div>
+              <ul class="svc-hl-list svcHighlights"></ul>
             </div>
           </div>
         </div>
